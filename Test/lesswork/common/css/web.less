@@ -1,0 +1,978 @@
+@import "acme/all";
+
+@support-old-ie: true;
+
+// 多行溢出渐隐最后几个字
+.omit(@height, @color, @sign...){
+  .relative();
+  overflow: hidden;
+  height: @height;
+  &:after{
+    .absolute(_, 0, 0, _);
+    width: 6em;
+    @from: fade(@color, 0);
+    @to: fade(@color, 100%);
+    background: -moz-linear-gradient(left, @from, @to, @to);
+    background: -webkit-linear-gradient(left, @from, @to, @to);
+    background: -o-linear-gradient(left, @from, @to, @to);
+    text-align: right;
+    text-decoration: inherit;
+    .do() when (length(@arguments) = 2){
+      content: '　';
+      text-decoration: none;
+    }
+    .do() when (length(@arguments) = 3){
+      content: @sign;
+    }
+    .do();
+  }
+}
+
+// 按钮
+.using-btn(){
+
+  .btn{
+    .inline-block();
+    margin-bottom:.1em;
+    .border-radius(5px);
+    padding: .4em 1.2em;
+    line-height: 1.5em;
+    text-align: center;
+    text-decoration: none;
+    &.full{
+      display: block;
+    }
+    &.big{
+      width: 210px;
+      height: 60px;
+      padding: 0;
+      line-height: 60px;
+      font-size: 24px;
+    }
+    &.angle{
+      .border-radius(0);
+    }
+
+    //红色按钮
+    &.red{
+      box-shadow: 0 .1em 0 #a91b26;
+      background-color: #c93d4e;
+      color: #fff;
+      &:hover{
+        background-color: #a91b26;
+      }
+    }
+
+    //红色按钮2
+    &.red2{
+      box-shadow: 0 .1em 0 #c63a2f;
+      background-color: #dc685b;
+      color: #fff;
+      &:hover{
+        background-color: #c63a2f;
+      }
+    }
+
+    //红色按钮3
+    &.red3{
+      box-shadow: 0 .1em 0 #c73043;
+      background-color: #db4759;
+      color: #fff;
+      &:hover{
+        background-color: #c73043;
+      }
+    }
+    //橙色按钮
+    &.orange{
+      box-shadow: 0 .1em 0 #d2792b;
+      background-color: #e89b57;
+      color: #fff;
+      &:hover{
+        background-color: #d2792b;
+      }
+    }
+
+    //灰色按钮
+    &.gray{
+      box-shadow: 0 .1em 0 #969696;
+      background-color: #bbb;
+      color: #fff;
+      &:hover{
+        background-color: #969696;
+      }
+    }
+
+    // 二维码按钮
+    &.btn-qrcode{
+      .relative();
+      height: 32px;
+      line-height: 32px;
+      margin: 0;
+      padding: 0 0 0 35px;
+      background: url("../images/qrcode.gif") no-repeat 0 center;
+      color: #00f;
+      img{
+        display: none;
+        .absolute(_, _, 32px, 0);
+      }
+      &:hover{
+        img{
+          display: block;
+        }
+      }
+    }
+
+
+    &.full{
+      display: block;
+    }
+    &.angle{
+      .border-radius(0);
+    }
+
+    // 由于各个项目按钮颜色不一，所以颜色不定义在这里
+    // 在project.less里先调用.using-btn()导入按钮类，再用make方法制作按钮
+    // 参数：【字体色, 背景色, hover色, 阴影色(不设置则和hover同色)】
+    // 例：
+    //    .btn{
+    //      &.red{
+    //        .btn.make(#fff, #0ff, #0ee, #fda);
+    //      }
+    //    }
+    .make(@color, @background-color, @hover-color, @shadow-color: @hover-color){
+      box-shadow: 0 .1em 0 @shadow-color;
+      background-color: @background-color;
+      color: @color;
+      &:hover{
+        background-color: @hover-color;
+      }
+    }
+  }
+}
+
+// 选项卡
+.using-tab(){
+  .tab{
+    ul {
+      overflow: hidden;
+      li{
+        float: left;
+        width:33.33%;
+        text-align: center;
+        color: #999;
+        &.on{
+          font-weight: bold;
+        }
+        a{
+          display: block;
+        }
+      }
+    }
+
+    .v1(){
+      ul{
+        border-bottom: 1px solid #F77182;
+        li{
+          margin-left: -1px;
+          border-left:1px solid #fff;
+          background-color: #eee;
+          line-height: 2.5em;
+          cursor: pointer;
+          color: #666;
+          &.on{
+            background-color: #F77182;
+            color: #fff;
+            a{
+              color: #fff;
+            }
+          }
+        }
+      }
+    }
+
+    .mv1(){
+      ul{
+        border-bottom: 2px solid #619cd6;
+        background-color: #e6f2fd;
+        color: #666;
+        li{
+          margin-left: -1px;
+          border-left:1px solid #dfe2e5;
+          line-height: 3.2em;
+          &.on{
+            background-color: #619cd6;
+            a{
+              color: #fff;
+            }
+          }
+        }
+      }
+    }
+    .mv2(){
+      ul{
+        border-bottom: 1px solid #dfe2e5;
+        li{
+          position: relative;
+          //border-left:1px solid @bdc;
+          line-height: 3.5em;
+          &:before{
+            content: '|';
+            position: absolute;
+            left: -.2em;
+            color: #888;
+            font-weight: normal;
+          }
+          &.on{
+            a{
+              color: #619cd6;
+            }
+          }
+        }
+      }
+    }
+    .mv3(){
+      ul{
+        border-bottom: 1px solid #dfe2e5;
+        li{
+          margin-top: .8em;
+          margin-bottom: .8em;
+          margin-left: -1px;
+          border-left:1px solid #dfe2e5;
+          padding: .2em 0;
+          &.on{
+            color: #619cd6;
+          }
+        }
+      }
+    }
+  }
+}
+
+// 提示标签
+.using-tips(){
+  .tips{
+    .inline-block();
+
+    .v1() {
+      margin-right: 1em;
+      font-size: 16px;
+      .tips-ct {
+        .relative();
+        .inline-block();
+        height: 28px;
+        padding: 0 .5em;
+        line-height: 28px;
+        background-color: #90C595;
+        text-align: center;
+        color: #fff;
+        .x1 {
+          .triangle(right, 20px, #90C595);
+          .absolute(14px, -28px, _, _);
+        }
+        .x2 {
+          .triangle(top-right, 6px, darken(#90C595, 25%));
+          .absolute(_, _, -6px, 6px);
+        }
+      }
+      &.red {
+        .tips-ct {
+          background-color: #db4759;
+          .x1 {
+            .triangle(right, 20px, #db4759);
+          }
+          .x2 {
+            .triangle(top-right, 6px, darken(#db4759, 25%));
+            .absolute(_, _, -6px, 6px);
+          }
+        }
+      }
+      &.orange {
+        .tips-ct {
+          background-color: #e89b57;
+          .x1 {
+            .triangle(right, 20px, #e89b57);
+          }
+          .x2 {
+            .triangle(top-right, 6px, darken(#e89b57, 25%));
+            .absolute(_, _, -6px, 6px);
+          }
+        }
+      }
+      &.gray {
+        .tips-ct {
+          background-color: #bebebe;
+          .x1 {
+            .triangle(right, 20px, #bebebe);
+          }
+          .x2 {
+            .triangle(top-right, 6px, darken(#bebebe, 25%));
+            .absolute(_, _, -6px, 6px);
+          }
+        }
+      }
+    }
+
+    .v2() {
+      margin-right: 1em;
+      font-size: 22px;
+      .tips-ct {
+        .relative();
+        .inline-block();
+        height: 32px;
+        padding: 0 .5em;
+        line-height: 32px;
+        background-color: #90C595;
+        text-align: center;
+        color: #fff;
+        .x1 {
+          .triangle(right, 24px, #90C595);
+          .absolute(16px, -32px, _, _);
+        }
+      }
+    }
+
+  }
+}
+
+// 图文模块
+.using-imgtext(){
+  .using-tips();
+  // 图文结构
+  .imgtext{
+    .relative();
+    //margin: 10px 15px;
+    border: 0;
+    .box-shadow(1px 1px 5px #ccc);
+    padding: 5px;
+
+    // 主图
+    .img{
+      .relative();
+      min-height: 50px;
+      img{
+        display: block;
+        width: 100%;
+      }
+      .info{
+        .absolute(_, _, 0, 0);
+        display: block;
+        width: 90%;
+        //_width: 100%;
+        padding: .5em 5%;
+        .background-color(rgba(0, 0, 0, .6));
+        line-height: 1.5em;
+        color: #eee;
+        text-align: right;
+      }
+    }
+    // 文字区域
+    .text{
+      margin: 5px 0;
+      line-height: 1.5em;
+      h2{
+        line-height: 1.5em;
+        font-size: 1.3em;
+      }
+    }
+
+    .tips {
+      .tips.v1;
+      font-size: 14px;
+      .tips-ct{
+        padding: 0 1em;
+      }
+      .absolute(20px, _, _, -.5em);
+    }
+
+    // 缩略图列表
+    .imglist {
+      .relative();
+      height: 80px;
+      margin-top: 8px;
+      padding: 0 35px;
+      .btn-prev, .btn-next {
+        .absolute(0, _, _, _);
+        display: block;
+        overflow: hidden;
+        width: 30px;
+        line-height: 80px;
+        text-indent: -100%;
+        background: no-repeat center 50%;
+      }
+      .btn-prev {
+        left: 0;
+        background-image: url("../images/imgtext-prev.png");
+      }
+      .btn-next {
+        right: 0;
+        background-image: url("../images/imgtext-next.png");
+      }
+      .list {
+        overflow: hidden;
+        width: 100%;
+        height: 80px;
+        ul {
+          .clearfix();
+          width: 1000%;
+          //margin-left: -5px;
+          li {
+            float: left;
+            width: 100px;
+            height: 80px;
+            //margin-left: 5px;
+            padding: 0 5px 0 0;
+            //background-color: #eee;
+            a, a img {
+              display: block;
+              width: 100%;
+              height: 80px;
+            }
+          }
+        }
+      }
+    }
+
+
+    // 其他工具栏
+    .toolbar{
+
+    }
+
+
+
+    // Extension version.
+    // 扩展版1：discount页
+    .v1(){
+      padding: 10px;
+      background-color: #F9F9F9;
+    }
+    // 扩展版2：detail页
+    .v2(){
+      padding: 7px;
+      background-color: #fff;
+    }
+  }
+}
+
+// 面包屑
+.using-crumb(){
+  // 面包屑导航
+  .crumb{
+    //margin-bottom: 15px;
+    padding: 5px;
+    list-style: none;
+    font-size: 14px;
+    li{
+      .inline-block();
+      padding: 0 5px;
+      + li{
+        &:before{
+          content: ">";
+          .margin(_, 5px, _, -5px);
+        }
+      }
+      &.active{
+        //...
+      }
+      a{
+        color: #00f;
+        text-decoration: none;
+      }
+    }
+
+    // 这个是bootstrap的样式
+    .v1() {
+      .border-radius(4px);
+      padding: 8px 15px;
+      background-color: #f5f5f5;
+      li {
+        + li {
+          &:before {
+            content: "/\00a0";
+            color: #ccc;
+          }
+        }
+        &.active {
+          color: #777;
+        }
+        a {
+          color: #337ab7;
+        }
+      }
+    }
+  }
+}
+
+// 侧边栏
+.using-sidebar(){
+  // 侧边栏
+  .sidebar{
+    .tt{
+
+    }
+    .v1(){
+      .tt{
+        font-size: 22px;
+        border-bottom: 1px solid #ccc;
+        padding-bottom: 10px;
+      }
+      .link{
+        display: block;
+        margin-top: 15px;
+
+      }
+    }
+  }
+}
+
+// 分步模块
+.using-steps() {
+  .steps {
+    .v1() {
+      .relative();
+      overflow: hidden;
+      margin-left: -1px;
+      border: 0;
+      background-color: #f6f6f6;
+      li {
+        .relative();
+        line-height: 60px;
+        font-size: 20px;
+        text-align: center;
+        color: #c93d4e;
+        &.on {
+          background-color: #f77182;
+          color: #fff;
+          z-index: 10;
+          .x1 {
+            .triangle(right; 43px; #f6f6f6);
+            .absolute(30px, _, _, 30px);
+          }
+          .x2 {
+            .triangle(right; 43px; #f77182);
+            .absolute(30px, -60px, _, _);
+          }
+        }
+        .x1 {
+          .triangle(right; 43px; #f6f6f6);
+          .absolute(30px, _, _, 29px);
+        }
+        .x2 {
+          .triangle(right; 43px; #d8d8d8);
+          .absolute(30px, -61px, _, _);
+        }
+        &:first-child {
+          .x1 {
+            display: none;
+          }
+        }
+        &:last-child {
+          .x2 {
+            display: none;
+          }
+        }
+      }
+    }
+  }
+}
+
+// 价钱盒子（yo里面用到的）
+.using-pricebox(){
+  .using-tips();
+  .pricebox{
+    .relative();
+    height: 72px;
+    line-height: 1;
+    .tips {
+      .tips.v2;
+      .absolute(20px, _, _, 10px);
+    }
+
+    .price{
+      .absolute(8px, _, _, 110px);
+      font-size: 40px;
+      color: #000;
+    }
+    .price-old{
+      .absolute(50px, _, _, 115px);
+      text-decoration: line-through;
+      color: #999;
+    }
+    .price-drop-info{
+      .absolute(15px, _, _, 220px);
+      height: 45px;
+      line-height: 45px;
+      border-left: 2px solid #ccc;
+      padding-left: 8px;
+      font-size: 18px;
+      color: #999;
+    }
+    .price-drop{
+      .absolute(15px, _, _, 280px);
+      font-size: 40px;
+      color: #000;
+    }
+  }
+}
+
+// 标记
+.using-sign(){
+  // 标记
+  .sign-price{
+    font-size: .75em;
+    font-style: normal;
+  }
+  .sign-import{
+    margin-right: 5px;
+    color: #f00;
+    font-style: normal;
+    font-weight: bold;
+  }
+
+  //.sign-clock, .sign-sale{
+  //  .inline-block();
+  //  .size(1.5em, 1.5em);
+  //  margin-right: .3em;
+  //  vertical-align: text-bottom;
+  //  img{
+  //    height: 100%;
+  //  }
+  //}
+  //
+  .sign-clock, .sign-sale{
+    .inline-block();
+    .relative();
+    width: 1.5em;
+    margin-right: .3em;
+    img{
+      display: block;
+      height: 1.5em !important;
+      .absolute(_, _, -.35em, 0);
+      margin: 0;
+    }
+  }
+
+  .sign-clock{
+    //background: url("../images/sign-clock.png") no-repeat center;
+  }
+  .sign-sale{
+
+  }
+
+  .sign-star{
+    .inline-block();
+    //.relative();
+    //width: 1em;
+    margin-right: .2em;
+    img{
+      display: block;
+      height: 1em;
+      //.absolute(_, _, -.1em, 0);
+      margin: 0!important;
+    }
+  }
+
+  .sign-help{
+    .inline-block();
+    .relative();
+    img{
+      display: block;
+      margin: 0 0 -2px .3em;
+    }
+    .help{
+      display: none;
+      .absolute(1.5em, 0, _, _);
+      width: 200px;
+      border: 1px solid #ccc;
+      .border-radius(5px);
+      padding: .5em 1em;
+      background-color: #f6f6f6;
+      font-size: 14px;
+      text-align: center;
+      //font-style: normal;
+    }
+    &:hover{
+      .help{
+        display: block;
+      }
+    }
+  }
+}
+
+// 表格
+.using-tablelist(){
+  .tablelist{
+    width: 100%;
+    tr{
+      th, td{
+        padding: 10px 0;
+        line-height: 1;
+        text-align: center;
+      }
+    }
+
+    .v1(){
+      border: 1px solid #eee;
+      tr{
+        th{
+          border-bottom: 1px solid #eee;
+          background-color: #f9f9f9;
+        }
+      }
+    }
+  }
+}
+
+// 模块盒子
+.using-modulebox(){
+  .modulebox{
+
+    //订单列表页【标题-内容】模块
+    .v1(){
+      border: 1px solid #eee;
+      padding: 20px;
+      .title{
+        margin: -20px -20px 20px;
+        border-bottom: 1px solid #eee;
+        padding: .75em 1em;
+        background-color: #f6f6f6;
+        font-size: 18px;
+      }
+    }
+
+    //主页【标题-内容】模块
+    .v2(){
+      background-color: #fff;
+      .title{
+        .relative();
+        margin-left: -20px;
+        padding: .75em 1em;
+        background-color: #db4759;
+        font-size: 28px;
+        color: #fff;
+        .x1{
+          .triangle(top-right, 20px, #851117);
+          .absolute(_, _, -20px, 20px);
+        }
+      }
+      &.red{
+        .title{
+          background-color: #db4759;
+          .x1{
+            .triangle(top-right, 20px, #851117);
+          }
+        }
+      }
+      &.orange{
+        .title{
+          background-color: #e89b57;
+          .x1{
+            .triangle(top-right, 20px, #b6661f);
+          }
+        }
+      }
+    }
+
+    //详情页【内容】
+    .v3(){
+      .relative();
+      min-height: 82px;
+      margin-bottom: 20px;
+      border-bottom: 1px solid #eee;
+      padding-bottom: 20px;
+      .title {
+        .absolute(0, _, _, 0);
+        .size(82px, 82px);
+        .border-radius(5px);
+        background-color: #56cad0;
+        img {
+          display: block;
+        }
+      }
+      .content {
+        margin-left: 110px;
+        line-height: 2;
+        h3 {
+          padding-top: 10px;
+          font-size: 16px;
+          font-weight: bold;
+        }
+        p {
+          margin-left: 20px;
+        }
+        img {
+          display: block;
+          margin: .5em auto;
+        }
+      }
+    }
+  }
+}
+
+// 表单模块
+.using-form(){
+  // 表单样式
+
+  @input-font-size: 14px;
+  @input-line-height: 30px;
+
+  .input-label{
+    line-height: @input-line-height;
+  }
+
+  .input-num, .input-date{
+    display:inline-block;
+    font-size: 0;
+    vertical-align: top;
+    line-height: @input-line-height;
+  }
+
+  .input-text, .input-btn{
+    margin: 0;
+    border: 1px solid #ddd;
+    padding: 0 5px;
+    line-height: @input-line-height - 2px;
+    font-size: @input-font-size;
+    /*vertical-align: middle;*/
+    vertical-align: top;
+    _display: inline-block;
+    _zoom: 1;
+  }
+
+  .input-text{
+    height: @input-line-height - 2px;
+    /*_height: 30px;*/ /* ie5加这个高度才能对齐 */
+    font-size: @input-font-size;
+    text-align: left;
+  }
+
+  .input-btn{
+    width: 28px;
+    height: @input-line-height;
+    *margin: 1px 0;
+    border-radius: 0;
+    font-weight:bold;
+    color:#888;
+    background-color:#f5f5f5;
+    cursor: pointer;
+    text-align: center;
+  }
+  .input-btn:hover{
+    background-color:#e5e5e5;
+  }
+
+  /* 数量文本框 */
+  .input-num .input-text{
+    width: 42px;
+    border-left: 0;
+    border-right: 0;
+    text-align: center;
+  }
+  .input-num .input-btn{
+
+  }
+
+  /* 日期文本框 */
+  .input-date{
+    position: relative;
+
+    .input-text{
+      width: 90px;
+      width: 120px \0;
+      *width: 120px;
+      padding-right: 33px;
+      padding-right: 0 \0;
+      *padding-right: 0;
+    }
+
+    .input-btn{
+      height: 28px;
+      position: absolute;
+      top: 50%;
+      right: 1px;
+      margin-top: -@input-line-height / 2 + 1px;
+      border-top: 0;
+      border-right: 0;
+      border-bottom: 0;
+    }
+  }
+}
+
+// acme.js辅助模块
+.using-js(){
+  // 浮动效果，暂时配合acme.js里面的fixbar使用（me-js-fixed是旧名字）
+  .js-fixed, .me-js-fixed{
+    .fixed();
+    z-index: 200;
+  }
+  // 本想用在手机端显示【弹出层】时取消body滚动条的，但没效果，暂时没用。
+  .js-noscroll{
+    overflow: hidden;
+  }
+  // 超链接hover效果样式，在pc页面就是hover效果，在微信是长按时的效果
+  .js-hyperlink{
+    outline: none;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -webkit-tap-highlight-color: rgba(255, 255, 255, 0);
+    &:hover{
+      .background-color(rgba(0, 0, 0, .1));
+      .opacity(80);
+    }
+    &.btn{
+      -webkit-user-select: auto;
+      -moz-user-select: auto;
+      &:hover{
+        background-color: -1;
+        .opacity(100);
+      }
+      img {
+        -webkit-user-select: auto;
+        -moz-user-select: auto;
+        pointer-events: auto;
+      }
+    }
+    img {
+      -webkit-user-select: none;
+      -moz-user-select: none;
+      pointer-events: none;
+    }
+  }
+
+
+
+
+  .js-mask{
+    .fixed(0, _, _, 0);
+    display: none;
+    .size(100%, 100%);
+    .background-color(rgba(0,0,0,0.6));
+    z-index: 9999;
+    text-align: center;
+    vertical-align: middle;
+    > *{
+      text-align: initial;
+    }
+
+    .js-mask-x, .js-mask-before{
+      display: inline-block;
+      width: 0px;
+      height: 100%;
+      vertical-align: middle;
+    }
+  }
+
+  // 有些不想破坏原来的display属性的，可以通过增加这个类来控制隐藏显示
+  .js-hide{
+    display: none !important;
+  }
+
+  .js-relative{
+    position: relative !important;
+  }
+
+  .js-inline-block{
+    .inline-block();
+  }
+
+}

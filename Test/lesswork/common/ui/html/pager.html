@@ -1,0 +1,63 @@
+<div class="page_box">
+    <div class="padding20">
+        <div class="pager-wrap">
+            <div class="pager">
+                <span class="current">总共<em class="current-page" ms-text="pager.data.total_count"></em>个页面</span>
+                <ul class="pages">
+                    <li class="pgNext" ms-class-1="pgEmpty: pager.data.page_no <= 1">
+                        <a href="javascript:;" ms-on-click="setQuery({page_no: 1})">第一页</a>
+                    </li>
+                    <li class="pgNext" ms-class-1="pgEmpty: pager.data.page_no <= 1">
+                        <a href="javascript:;" ms-on-click="setQuery({page_no: parseInt(pager.data.page_no) - 1})">上一页</a>
+                    </li>
+                    <!--<li class="page-number" ms-repeat="new Array(5)" ms-class-1="pgCurrent: $index - 1 == pager.data.page_no"><a href="javascript:;" ms-on-click="#/information/list/{{$index - 1}}" ms-text="$index - 1"></a></li>-->
+
+                    <!--#FillPage1 当页码为最后两页时，前面补满至5个页码-->
+                    <li class="page-number" ms-if="pager.data.page_no > 4 && pager.data.page_no > (pager.data.totalCount || pager.data.total_count) - 1">
+                        <a href="javascript:;" ms-on-click="setQuery({page_no: parseInt(pager.data.page_no) - 4})" ms-text="parseInt(pager.data.page_no) - 4"></a>
+                    </li>
+                    <li class="page-number" ms-if="pager.data.page_no > 3 && pager.data.page_no > (pager.data.totalCount || pager.data.total_count) - 2">
+                        <a href="javascript:;" ms-on-click="setQuery({page_no: parseInt(pager.data.page_no) - 3})" ms-text="parseInt(pager.data.page_no) - 3"></a>
+                    </li>
+                    <!--##FillPage1-->
+
+                    <li class="page-number" ms-if="pager.data.page_no > 2">
+                        <a href="javascript:;" ms-on-click="setQuery({page_no: parseInt(pager.data.page_no) - 2})" ms-text="parseInt(pager.data.page_no) - 2"></a>
+                    </li>
+                    <li class="page-number" ms-if="pager.data.page_no > 1">
+                        <a href="javascript:;" ms-on-click="setQuery({page_no: parseInt(pager.data.page_no) - 1})" ms-text="parseInt(pager.data.page_no) - 1"></a>
+                    </li>
+
+                    <!--#PageNow 当前页-->
+                    <li class="page-number pgCurrent"><a href="javascript:;" ms-text="pager.data.page_no"></a>
+                    <!--##PageNow-->
+
+                    </li>
+                    <li class="page-number" ms-if="pager.data.page_no < (pager.data.totalCount || pager.data.total_count)">
+                        <a href="javascript:;" ms-on-click="setQuery({page_no: parseInt(pager.data.page_no) + 1})" ms-text="parseInt(pager.data.page_no) + 1"></a>
+                    </li>
+                    <li class="page-number" ms-if="pager.data.page_no < (pager.data.totalCount || pager.data.total_count) - 1">
+                        <a href="javascript:;" ms-on-click="setQuery({page_no: parseInt(pager.data.page_no) + 2})" ms-text="parseInt(pager.data.page_no) + 2"></a>
+                    </li>
+
+                    <!--#FillPage2 当页码为开头两页时，后面补满至5个页码-->
+                    <li class="page-number" ms-if="pager.data.page_no < 3 && pager.data.page_no < (pager.data.totalCount || pager.data.total_count) - 2">
+                        <a href="javascript:;" ms-on-click="setQuery({page_no: parseInt(pager.data.page_no) + 3})" ms-text="parseInt(pager.data.page_no) + 3"></a>
+                    </li>
+                    <li class="page-number" ms-if="pager.data.page_no < 2 && pager.data.page_no < (pager.data.totalCount || pager.data.total_count) - 3">
+                        <a href="javascript:;" ms-on-click="setQuery({page_no: parseInt(pager.data.page_no) + 4})" ms-text="parseInt(pager.data.page_no) + 4"></a>
+                    </li>
+                    <!--##FillPage2-->
+
+
+                    <li class="pgNext" ms-class-1="pgEmpty: pager.data.page_no == pager.data.total_count">
+                        <a href="javascript:;" ms-on-click="setQuery({page_no: parseInt(pager.data.page_no) + 1})">下一页</a>
+                    </li>
+                    <li class="pgNext" ms-class-1="pgEmpty: pager.data.page_no == pager.data.total_count">
+                        <a href="javascript:;" ms-on-click="setQuery({page_no: pager.data.total_count})">最后一页</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </div>
+</div>

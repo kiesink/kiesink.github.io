@@ -1,0 +1,229 @@
+/**
+ * Created by xyz on 2015/3/30.
+ */
+html,
+body,
+div,
+span,
+applet,
+object,
+iframe,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+blockquote,
+pre,
+a,
+abbr,
+acronym,
+address,
+big,
+cite,
+code,
+del,
+dfn,
+em,
+img,
+ins,
+kbd,
+q,
+s,
+samp,
+small,
+strike,
+strong,
+sub,
+sup,
+tt,
+var,
+dl,
+dt,
+dd,
+ol,
+ul,
+li,
+fieldset,
+form,
+label,
+legend,
+table,
+caption,
+tbody,
+tfoot,
+thead,
+tr,
+th,
+td {
+  padding: 0;
+  margin: 0;
+  border: 0;
+  outline: 0;
+  font-weight: inherit;
+  font-style: inherit;
+  font-family: inherit;
+  font-size: 100%;
+  vertical-align: baseline;
+}
+body {
+  line-height: 1;
+}
+ol,
+ul {
+  list-style: none;
+}
+table {
+  border-collapse: separate;
+  border-spacing: 0;
+  vertical-align: middle;
+}
+caption,
+th,
+td {
+  text-align: left;
+  font-weight: normal;
+  vertical-align: middle;
+}
+a img {
+  border: none;
+}
+article,
+aside,
+details,
+figcaption,
+figure,
+footer,
+header,
+hgroup,
+menu,
+nav,
+section,
+summary,
+main {
+  display: block;
+  padding: 0;
+  margin: 0;
+  border: 0;
+  outline: 0;
+  font-weight: inherit;
+  font-style: inherit;
+  font-family: inherit;
+  font-size: 100%;
+  vertical-align: baseline;
+}
+audio,
+canvas,
+video {
+  display: inline-block;
+}
+audio:not([controls]),
+[hidden] {
+  display: none;
+}
+html {
+  height: 100%;
+  font-family: "Microsoft YaHei";
+  font-size: 62.5%;
+}
+body {
+  font-size: 1.4rem;
+  background-color: #f5f5f5;
+  color: #666666;
+  min-height: 100%;
+}
+input {
+  padding: 0;
+}
+img {
+  display: block;
+  max-width: 100%;
+}
+a {
+  color: #666666;
+  text-decoration: none;
+}
+a img {
+  border: 0;
+}
+a.link,
+a:visited {
+  color: #666666;
+}
+a,
+input,
+button,
+select,
+textarea {
+  -webkit-tap-highlight-color: rgba(255, 255, 255, 0);
+}
+.header {
+  height: 4.5rem;
+  line-height: 4.5rem;
+}
+.header-wrapin {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 4.5rem;
+  background-color: #3dc05b;
+  color: #ffffff;
+  z-index: 200;
+}
+.header-wrapin h1 {
+  font-size: 1.8rem;
+  text-align: center;
+}
+.header-wrapin h1 b {
+  margin-left: .2em;
+  font-size: 1.2rem;
+  font-weight: normal;
+}
+.header-wrapin a {
+  display: inline-block;
+  height: 4.5rem;
+  padding: 0 .7em;
+  color: #ffffff;
+}
+.header-wrapin a:first-child {
+  padding-left: 10px;
+}
+.header-wrapin a:last-child {
+  padding-right: 10px;
+}
+.header-wrapin .back-wrap {
+  position: absolute;
+  top: 0;
+  left: 10px;
+  margin-left: -10px;
+}
+.header-wrapin .back-wrap .sign {
+  margin-right: .2em;
+}
+.header-wrapin .toolbar {
+  position: absolute;
+  top: 0;
+  right: 10px;
+  margin-right: -10px;
+}
+.header-wrapin .sign {
+  font-size: 1.5em;
+}
+html {
+  background-color: #c0c0c0;
+}
+body {
+  max-width: 640px;
+  margin-right: auto;
+  margin-left: auto;
+}
+.header-wrapin,
+.footer-wrapin,
+.js-mask,
+.date-fixbar {
+  left: initial;
+  max-width: 640px;
+}

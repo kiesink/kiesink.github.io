@@ -1,0 +1,137 @@
+/**
+ * Created by xyz on 2015/3/30.
+ */
+@import "wap";
+.global-reset();
+// 定义变量
+@mg-lr:   10px;     //控制页面两边的距离(body两边的距离)
+@mg-tb:   10px;     //控制页面上下两个模块间的距离
+
+@pd-lr:   10px;     //控制模块内左右边距
+@pd-tb:   10px;     //控制模块内上下边距
+
+@color:     #666;   //字体色(浅色背景时)
+@color-1:   #888;   //较浅字体色
+
+@color-w:   #fff;   //字体色(深色背景时)
+
+@m-color:   #3dc05b;//主色
+@hl-color:  #ff6666;//高亮色
+@s-color:   #f8b551;//辅色
+@bg-color:  #f5f5f5;//背景色
+@bd-color:  #ccc;   //边框色
+
+@root-fsz:  62.5%;  //根字号
+
+@min-fsz:   1rem;   //最小字号  10号
+@small-fsz: 1.2rem; //较小字号  12号
+@fsz:   1.4rem;     //正常字号  14号 正文字号
+@big-fsz:   1.6rem; //较大字号  16号 通常用作标题
+@max-fsz:   1.8rem; //最大字号  18号
+
+// 设定公共样式
+html{
+  height: 100%;
+  font-family: "Microsoft YaHei"; //
+  font-size: @root-fsz;
+}
+body{
+  font-size: @fsz;
+  background-color: @bg-color;
+  color: @color;
+  min-height: 100%;
+}
+input{
+  padding: 0;
+}
+img {
+  display: block;
+  max-width: 100%;
+}
+a{
+  color: @color;
+  text-decoration: none;
+  img{
+    border: 0;
+  }
+  &.link, &:visited{
+    color: @color;
+  }
+}
+// 为超链接增加样式，使人感觉在点击
+a{
+  //.js-hyperlink;
+}
+a, input, button, select, textarea {
+  -webkit-tap-highlight-color: rgba(255, 255, 255, 0);
+}
+
+// 页头
+.header{
+  height: @max-fsz * 2.5;
+  line-height: @max-fsz * 2.5;
+}
+.header-wrapin {
+  .fixed(0, _, _, 0);
+  width: 100%;
+  height: @max-fsz * 2.5;
+  background-color: @m-color;
+  color: @color-w;
+  z-index: 200;
+  h1 {
+    font-size: @max-fsz;
+    text-align: center;
+    b{
+      margin-left: .2em;
+      font-size: @small-fsz;
+      font-weight: normal;
+    }
+  }
+  a {
+    .inline-block();
+    height: @max-fsz * 2.5;
+    padding: 0 .7em;
+    color: @color-w;
+    &:first-child {
+      padding-left: @mg-lr;
+    }
+    &:last-child {
+      padding-right: @mg-lr;
+    }
+  }
+  .back-wrap {
+    .absolute(0, _, _, @mg-lr);
+    margin-left: -@mg-lr;
+    .sign {
+      margin-right: .2em;
+    }
+  }
+  .toolbar {
+    .absolute(0, @mg-lr, _, _);
+    margin-right: -@mg-lr;
+  }
+  .sign {
+    font-size: 1.5em;
+  }
+}
+
+
+
+// 这里写个方法。限制页面宽度，使页面在大屏显示下能不会拉伸过宽
+// 参数：【限制最大宽度, 页面背景色[默认#c0c0c0]】
+.limit(@max-width, @background-color: #c0c0c0){
+  html{
+    background-color: @background-color;
+  }
+  body{
+    max-width: @max-width;
+    .margin(_, auto);
+  }
+  .header-wrapin, .footer-wrapin, .js-mask, .date-fixbar{
+    left: initial;
+    max-width: @max-width;
+  }
+}
+
+//
+.limit(640px);

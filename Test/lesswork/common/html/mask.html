@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0,minimum-scale=1.0, user-scalable=no" name="viewport" />
+    <title>mask</title>
+    <link rel="stylesheet" href="http://img.yooyoimg.com/p/common/css/mask.css"/>
+		<style>
+			body{
+				font-size: 100%;
+			}
+			.js-inline-block{
+				max-width: 80%;
+			}
+		</style>
+		<script type="text/javascript" src="http://img2.yooyoimg.com/s/jquery-1.8.3/jquery-1.8.3.js"></script>
+		<script>
+		// 显示
+		function show(){
+			$('.js-mask').show();
+		}
+		// 隐藏
+		function hide(){
+			$('.js-mask').hide();
+		}
+		
+		$(document).delegate('.js-mask', {
+		  'click': function(e){
+				if(e.target === $(this)[0]){
+					$('.js-mask').hide();
+				}
+			}
+		});
+		</script>
+</head>
+<body>
+  <!--遮罩层-->
+    <div class="wrapper">
+        <a class="btn red" href="javascript:show();">显示遮罩层</a>
+       
+    </div>
+		<div class="js-mask">
+			<b class="js-mask-before"></b>
+			<div class="row js-inline-block" style="background-color: #fff;">
+				<div class="tonglan_1"><a href="javascript:void(0)"><h3>标题区 </h3></a></div>
+				<div class="row" style="display:inline-block;">
+						<p>这个div随便给个背景色，display：inline-block时为垂直居中。</p>
+				</div>
+				<div class="wrapper combin-8">
+						<ul>
+								<li><a class="btn pink" href="javascript:hide();">选择</a></li>
+								<li><a class="btn gray" href="javascript:hide();">取消</a></li>
+						</ul>
+				</div>
+			</div>
+		</div>
+
+</body>
+</html>

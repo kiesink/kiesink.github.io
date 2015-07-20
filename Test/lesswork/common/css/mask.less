@@ -1,0 +1,163 @@
+@import "wap";
+// 重置样式
+.global-reset();
+
+.wrapper{
+ padding:10px;
+  &.combin-8{
+    ul{
+      .me-split(2);
+    }
+    li{
+      text-align: center;
+    }
+  }
+}
+
+.using-btn();
+
+// 定义变量
+@mg-lr:   10px;     //控制页面两边的距离(body两边的距离)
+@mg-tb:   10px;     //控制页面上下两个模块间的距离
+
+@pd-lr:   10px;     //控制模块内左右边距
+@pd-tb:   10px;     //控制模块内上下边距
+
+@color:     #666;   //字体色(浅色背景时)
+@color-1:   #888;   //较浅字体色
+
+@color-w:   #fff;   //字体色(深色背景时)
+
+@m-color:   #3dc05b;//主色
+@hl-color:  #ff6666;//高亮色
+@s-color:   #f8b551;//辅色
+@bg-color:  #f5f5f5;//背景色
+@bd-color:  #e5e5e5;   //边框色
+
+@root-fsz:  62.5%;  //根字号
+
+@min-fsz:   1rem;   //最小字号  10号
+@small-fsz: 1.2rem; //较小字号  12号
+@fsz:   1.4rem;     //正常字号  14号 正文字号
+@big-fsz:   1.6rem; //较大字号  16号 通常用作标题
+@max-fsz:   1.8rem; //最大字号  18号
+
+html{
+  height: 100%;
+  font-family: "Microsoft YaHei"; //
+  font-size: @root-fsz;
+}
+body{
+  font-size: @fsz;
+  background-color: @bg-color;
+  color: @color;
+  min-height: 100%;
+}
+input{
+  padding: 0;
+}
+img {
+  display: block;
+  max-width: 100%;
+}
+a{
+  color: @color;
+  text-decoration: none;
+  img{
+    border: 0;
+  }
+  &.link, &:visited{
+    color: @color;
+  }
+}
+// 行，两行之间带分隔线
+.row{
+  .clearfix;
+  padding: @pd-tb @pd-lr;
+  + .row{
+    border-top: 1px solid @bd-color;
+  }
+  .a-expand{
+    .clearfix;
+    .me-expand(@pd-tb @pd-lr);
+  }
+}
+
+//遮罩层样式
+.js-mask {
+  position: fixed;
+  top: 0;
+  left: 0;
+  display: none;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.6);
+  z-index: 9999;
+  text-align: center;
+  vertical-align: middle;
+}
+.js-mask > * {
+  text-align: initial;
+}
+.js-mask .js-mask-x,
+.js-mask .js-mask-before {
+  display: inline-block;
+  height: 100%;
+  vertical-align: middle;
+}
+.js-mask > * {
+  display: inline-block;
+  text-align: initial;
+}
+.js-hide {
+  display: none !important;
+}
+.js-relative {
+  position: relative !important;
+}
+.js-inline-block {
+  display: inline-block;
+  margin:0 1em;
+  p{
+    line-height:1.5em;
+  }
+}
+
+// 制作按钮
+.btn{
+  .border-radius(.3em);
+  .padding(_, 2.5em);
+  font-size: @fsz;
+
+  &.red{
+    .btn.make(#fff, #ff6666, #ec2e2e);
+  }
+  &.green{
+    .btn.make(#fff, #66cc99, #4eb682);
+  }
+  &.orange{
+    .btn.make(#fff, #f8b551, #d58918);
+  }
+  &.gray{
+    .btn.make(#fff, #bbb, #999);
+  }
+  &.pink{
+    .btn.make(#fff,#da4d69,#c1243e);
+  }
+
+  &.small{
+    .padding(_, 1em);
+  }
+  &.big{
+    .btn.full;
+    .border-radius(2em);
+    padding: .625em;
+    font-size: @max-fsz;
+  }
+}
+
+//弹窗内 标题
+.tonglan_1{ height:30px; border-bottom:2px solid #588bbd; background:#659ed7}
+.tonglan_1 a{width:auto; height:30px; overflow:hidden; display:block;}
+.tonglan_1 a h3{ height:30px; line-height:30px; padding-left:10px; color:#fff; float:left}
+//.tonglan_1 a p{ height:40px; line-height:40px; padding-left:30px; padding-right:10px; color:#fff; float:right; background:url(../images/ico_car.gif) no-repeat left;}

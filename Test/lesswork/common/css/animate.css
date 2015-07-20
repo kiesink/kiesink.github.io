@@ -1,0 +1,142 @@
+/**
+ * Created by xyz on 2015/3/16.
+ */
+.anm {
+  -webkit-animation-duration: 1s;
+  animation-duration: 1s;
+  -webkit-animation-fill-mode: both;
+  animation-fill-mode: both;
+}
+/*永久运动*/
+.anm-infinite {
+  -webkit-animation-iteration-count: infinite;
+  animation-iteration-count: infinite;
+}
+/*运动停止*/
+.anm-stop {
+  -webkit-animation-iteration-count: 0;
+  animation-iteration-count: 0;
+}
+/*运动暂停*/
+.anm-paused {
+  -webkit-animation-play-state: paused;
+  animation-play-state: paused;
+}
+/*运动进行*/
+.anm-start {
+  -webkit-animation-play-state: running;
+  animation-play-state: running;
+}
+/*运动暂停 移入进行*/
+.anm-hoverStart {
+  -webkit-animation-play-state: paused;
+  animation-play-state: paused;
+}
+.anm-hoverStart:hover {
+  -webkit-animation-play-state: running;
+  animation-play-state: running;
+}
+/*运动进行 移入暂停*/
+.anm-hoverPaused {
+  -webkit-animation-play-state: running;
+  animation-play-state: running;
+}
+.anm-hoverPaused:hover {
+  -webkit-animation-play-state: paused;
+  animation-play-state: paused;
+}
+.anm-hoverInfinite {
+  -webkit-animation-iteration-count: 0;
+  animation-iteration-count: 0;
+}
+.anm-hoverInfinite:hover {
+  -webkit-animation-iteration-count: infinite;
+  animation-iteration-count: infinite;
+}
+.anm-hoverStop {
+  -webkit-animation-iteration-count: infinite;
+  animation-iteration-count: infinite;
+}
+.anm-hoverStop:hover {
+  -webkit-animation-iteration-count: 0;
+  animation-iteration-count: 0;
+}
+/*运动次数*/
+.anm-count2 {
+  -webkit-animation-iteration-count: 2;
+  animation-iteration-count: 2;
+}
+.anm-count3 {
+  -webkit-animation-iteration-count: 3;
+  animation-iteration-count: 3;
+}
+.anm-count4 {
+  -webkit-animation-iteration-count: 4;
+  animation-iteration-count: 4;
+}
+.anm-count5 {
+  -webkit-animation-iteration-count: 5;
+  animation-iteration-count: 5;
+}
+.anm-count7 {
+  -webkit-animation-iteration-count: 7;
+  animation-iteration-count: 7;
+}
+.anm-count10 {
+  -webkit-animation-iteration-count: 10;
+  animation-iteration-count: 10;
+}
+/*时间周期*/
+.anm-time100 {
+  -webkit-animation-duration: 0.1s;
+  animation-duration: 0.1s;
+}
+.anm-time200 {
+  -webkit-animation-duration: 0.2s;
+  animation-duration: 0.2s;
+}
+.anm-time500 {
+  -webkit-animation-duration: 0.5s;
+  animation-duration: 0.5s;
+}
+.anm-time1000 {
+  -webkit-animation-duration: 1s;
+  animation-duration: 1s;
+}
+.anm-time1200 {
+  -webkit-animation-duration: 1.2s;
+  animation-duration: 1.2s;
+}
+.anm-time1500 {
+  -webkit-animation-duration: 1.5s;
+  animation-duration: 1.5s;
+}
+.anm-time1750 {
+  -webkit-animation-duration: 1.75s;
+  animation-duration: 1.75s;
+}
+.anm-time2000 {
+  -webkit-animation-duration: 2s;
+  animation-duration: 2s;
+}
+/*延迟时间*/
+.anm-delay500 {
+  -webkit-animation-delay: 0.5s;
+  animation-delay: 0.5s;
+}
+.anm-delay1000 {
+  -webkit-animation-delay: 1s;
+  animation-delay: 1s;
+}
+.anm-delay2000 {
+  -webkit-animation-delay: 2s;
+  animation-delay: 2s;
+}
+.anm-delay2500 {
+  -webkit-animation-delay: 2.5s;
+  animation-delay: 2.5s;
+}
+.anm-delay5000 {
+  -webkit-animation-delay: 5s;
+  animation-delay: 5s;
+}

@@ -1,0 +1,382 @@
+@import "acme/all";
+
+@support-old-ie: false;
+
+// 按钮
+.using-btn(){
+
+  .btn{
+    .inline-block();
+    margin-bottom:.1em;
+    .border-radius(5px);
+    padding: .4em 1.2em;
+    line-height: 1.5em;
+    text-align: center;
+    text-decoration: none;
+    &.full{
+      display: block;
+    }
+    &.angle{
+      .border-radius(0);
+    }
+
+    // 由于各个项目按钮颜色不一，所以颜色不定义在这里
+    // 在project.less里先调用.using-btn()导入按钮类，再用make方法制作按钮
+    // 参数：【字体色, 背景色, hover色, 阴影色(不设置则和hover同色)】
+    // 例：
+    //    .btn{
+    //      &.red{
+    //        .btn.make(#fff, #0ff, #0ee, #fda);
+    //      }
+    //    }
+    .make(@color, @background-color, @hover-color, @shadow-color: @hover-color){
+      box-shadow: 0 .1em 0 @shadow-color;
+      background-color: @background-color;
+      color: @color;
+      &:hover{
+        background-color: @hover-color;
+      }
+    }
+  }
+}
+
+// 选项卡
+.using-tab(){
+  .tab{
+    ul {
+      overflow: hidden;
+      li{
+        float: left;
+        width:33.33%;
+        text-align: center;
+        &.on{
+          font-weight: bold;
+        }
+        a{
+          display: block;
+        }
+      }
+    }
+
+    .v1(){
+      ul{
+        border-bottom: 1px solid #dfe2e5;
+        height: 3em;
+        li{
+          margin: .8em 0 .8em -1px;
+          border-left:1px solid #dfe2e5;
+          &.on{
+            //color: #619cd6;
+          }
+          a{
+            margin: -.8em 0;
+            padding: 1em 0;
+          }
+        }
+      }
+    }
+    .v2(){
+      ul{
+        border-bottom: 2px solid #619cd6;
+        background-color: #e6f2fd;
+        color: #666;
+        li{
+          margin-left: -1px;
+          border-left:1px solid #dfe2e5;
+          line-height: 3.2em;
+          &.on{
+            background-color: #619cd6;
+            a{
+              color: #fff;
+            }
+          }
+        }
+      }
+    }
+    .v3(@padding: 1em, @color: #666){
+      ul{
+        background-color: #fff;
+        li{
+          margin: (@padding * .8) 0;
+          &.on, &:hover {
+            font-weight: normal;
+            a {
+              border-bottom: 1.5px solid @color;
+              color: @color;
+            }
+          }
+          a{
+            margin: -(@padding * .8) 0;
+            border-bottom: 1.5px solid #ccc;
+            padding: @padding 0;
+          }
+        }
+      }
+    }
+  }
+
+}
+
+.using-list(){
+  .list{
+    .v1(){
+      dl{
+        .clearfix();
+        dt, dd{
+          float: left;
+        }
+      }
+    }
+  }
+}
+
+
+// 表单模块
+.using-form(){
+  // 表单样式
+
+  @input-font-size: 14px;
+  @input-line-height: 30px;
+  @input-color: #333;
+
+  .input-wrapper, .input-checkbox{
+    font-size: @input-font-size;
+    b{
+      font-weight: normal;
+    }
+  }
+
+  .input-wrapper{
+    @padding-tb: 10px;
+    .relative();
+    display: block;
+    overflow: hidden;
+    border: 1px solid #ccc;
+    .border-radius(5px);
+    padding: @padding-tb 8px @padding-tb 78px;
+    line-height: 1.5;
+    background-color: #fff;
+    b{
+      .absolute(@padding-tb, _, _, 0);
+      overflow: hidden;
+      width: 4em;
+      border-right: 1px solid #ccc;
+      padding: 0 8px;
+    }
+    input{
+      display: block;
+      height: 1.5em;
+      border: 0;
+      padding: 0;
+      font-size: 14px;
+    }
+  }
+
+  .input-select{
+    .relative();
+    .inline-block();
+    overflow: hidden;
+    min-width:3em;
+    height: 1.5em;
+    line-height: 1.5;
+    vertical-align: top;
+    &:after{
+      content: '﹀';
+      .absolute(3px, 0, _, _);
+      .inline-block();
+      .size(@input-font-size, @input-font-size);
+    }
+  }
+  .input-select-option{
+    .absolute(0, _, _, 0);
+    .inline-block();
+    font-size: @input-font-size;
+    text-align:left;
+  }
+
+  .input-select-mask{
+    .fixed(0, _, _, 0);
+    display: none;
+    .size(100%, 100%);
+    .background-color(rgba(0,0,0,0.6));
+    z-index: 9999;
+  }
+  .input-select-mask-main{
+    width: 80%;
+    max-height: 80%;
+    overflow-y: auto;
+    .margin(_, auto);
+  }
+  .input-select-mask-main-select{
+    border-bottom: 1px solid #ccc;
+    padding: 1em;
+    background-color: #fcfcfc;
+    text-align: center;
+    .opacity(100);
+  }
+
+  // 表单样式
+
+  @input-font-size: 14px;
+  @input-line-height: 30px;
+
+  .input-label{
+    line-height: @input-line-height;
+  }
+
+  .input-num, .input-date{
+    display:inline-block;
+    font-size: 0;
+    vertical-align: top;
+    line-height: @input-line-height;
+  }
+
+  .input-text, .input-btn{
+    margin: 0;
+    border: 1px solid #ddd;
+    padding: 0 5px;
+    line-height: @input-line-height - 2px;
+    font-size: @input-font-size;
+    /*vertical-align: middle;*/
+    vertical-align: top;
+    _display: inline-block;
+    _zoom: 1;
+  }
+
+  .input-text{
+    height: @input-line-height - 2px;
+    /*_height: 30px;*/ /* ie5加这个高度才能对齐 */
+    font-size: @input-font-size;
+    text-align: left;
+  }
+
+  .input-btn{
+    width: 28px;
+    height: @input-line-height;
+    *margin: 1px 0;
+    border-radius: 0;
+    font-weight:bold;
+    color:#888;
+    background-color:#f5f5f5;
+    cursor: pointer;
+    text-align: center;
+  }
+  .input-btn:hover{
+    background-color:#e5e5e5;
+  }
+
+  /* 数量文本框 */
+  .input-num .input-text{
+    width: 42px;
+    border-left: 0;
+    border-right: 0;
+    text-align: center;
+  }
+  .input-num .input-btn{
+
+  }
+
+  /* 日期文本框 */
+  .input-date{
+    position: relative;
+
+    .input-text{
+      width: 90px;
+      width: 120px \0;
+      *width: 120px;
+      padding-right: 33px;
+      padding-right: 0 \0;
+      *padding-right: 0;
+    }
+
+    .input-btn{
+      height: 28px;
+      position: absolute;
+      top: 50%;
+      right: 1px;
+      margin-top: -@input-line-height / 2 + 1px;
+      border-top: 0;
+      border-right: 0;
+      border-bottom: 0;
+    }
+  }
+}
+
+// acme.js辅助模块
+.using-js(){
+  // 浮动效果，暂时配合acme.js里面的fixbar使用（me-js-fixed是旧名字）
+  .js-fixed, .me-js-fixed{
+    .fixed();
+    z-index: 200;
+  }
+  // 本想用在手机端显示【弹出层】时取消body滚动条的，但没效果，暂时没用。
+  .js-noscroll{
+    overflow: hidden;
+  }
+  // 超链接hover效果样式，在pc页面就是hover效果，在微信是长按时的效果
+  .js-hyperlink{
+    outline: none;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -webkit-tap-highlight-color: rgba(255, 255, 255, 0);
+    &:hover{
+      .background-color(rgba(0, 0, 0, .1));
+      .opacity(80);
+    }
+    &.btn{
+      -webkit-user-select: auto;
+      -moz-user-select: auto;
+      &:hover{
+        background-color: -1;
+        .opacity(100);
+      }
+      img {
+        -webkit-user-select: auto;
+        -moz-user-select: auto;
+        pointer-events: auto;
+      }
+    }
+    img {
+      -webkit-user-select: none;
+      -moz-user-select: none;
+      pointer-events: none;
+    }
+  }
+
+
+
+
+  .js-mask{
+    .fixed(0, _, _, 0);
+    display: none;
+    .size(100%, 100%);
+    .background-color(rgba(0,0,0,0.6));
+    z-index: 9999;
+    text-align: center;
+    vertical-align: middle;
+    > *{
+      text-align: initial;
+    }
+
+    .js-mask-x, .js-mask-before{
+      display: inline-block;
+      width: 0px;
+      height: 100%;
+      vertical-align: middle;
+    }
+  }
+
+  // 有些不想破坏原来的display属性的，可以通过增加这个类来控制隐藏显示
+  .js-hide{
+    display: none !important;
+  }
+
+  .js-relative{
+    position: relative !important;
+  }
+
+  .js-inline-block{
+    .inline-block();
+  }
+
+}
