@@ -1,0 +1,654 @@
+/**
+ * Created by xyz on 2015/5/11.
+ */
+@import "../../common/css/web";
+@import "editinfo.css";
+@import "classes.css";
+
+// 定义变量
+@mg-lr:   10px;     //控制页面两边的距离(body两边的距离)
+@mg-tb:   10px;     //控制页面上下两个模块间的距离
+
+@pd-lr:   10px;     //控制模块内左右边距
+@pd-tb:   10px;     //控制模块内上下边距
+
+@base-fsz:  10px;  //根字号
+
+@min-fsz:   @base-fsz * 1.2; //最小字号
+@small-fsz: @base-fsz * 1.4; //较小字号
+@fsz:       @base-fsz * 1.6; //正常字号 正文字号
+@big-fsz:   @base-fsz * 1.8; //较大字号 通常用作标题
+@max-fsz:   @base-fsz * 2.0; //最大字号
+
+@green: #00ba62;
+@green1: #01ac5b;
+@green-1: #08d69e;
+@blue: #30bff5;
+@blue1: #1daae0;
+@yellow: #f2e24f;
+@red: #f86456;
+@red1: #e85446;
+@red2: #f5384e;
+
+.using-btn();
+.using-js();
+
+// 制作按钮
+.btn{
+  .border-radius(.3em);
+  .padding(_, 2.5em);
+  font-size: @fsz;
+
+  &.red{
+    .btn.make(#fff, @red2, #F71C36);
+  }
+  &.white{
+    .btn.make(@red2, #fff, #eee);
+  }
+
+  &.small{
+    .padding(_, 1em);
+  }
+  &.big{
+    .btn.full;
+    .border-radius(2em);
+    padding: .625em;
+    font-size: @max-fsz;
+  }
+}
+
+
+// 重置样式
+.global-reset();
+
+html{
+  font-family: "microsoft yahei";
+  color: #000;
+}
+
+body{
+  width: 100%;
+  min-width: 1200px;
+}
+
+a{
+  text-decoration: none;
+  color: #000;
+}
+
+img{
+  display: block;
+  max-width: 100%;
+}
+
+// 行
+.row{
+  .clearfix;
+}
+
+// 左中右分列
+.col-left{
+  float: left;
+}
+.col-right{
+  float: right;
+}
+.col-center{
+  overflow: hidden;
+}
+
+.split-list{
+  .clearfix();
+  .split-item{
+    position: relative;
+    float: left;
+  }
+  .repeat(@from, @to, @step) when (@from <= @to){
+    &.v@{from}{
+      .split-item{
+        width: 100% / @from;
+      }
+    }
+    .repeat(@from + @step, @to, @step);
+  }
+  .repeat(1, 10, 1);
+}
+
+.css-clear{
+  .clearfix;
+}
+.css-fl{
+  float: left;
+}
+.css-fr{
+  float: right;
+}
+.css-posr{
+  position: relative;
+}
+.css-posa{
+  position: absolute;
+}
+.css-posf{
+  position: fixed;
+}
+
+.fsz-min{
+  font-size: @min-fsz;
+}
+.fsz-small{
+  font-size: @small-fsz;
+}
+.fsz{
+  font-size: @fsz;
+}
+.fsz-big{
+  font-size: @big-fsz;
+}
+.fsz-max{
+  font-size: @max-fsz;
+}
+
+// 背景色
+.bgc-green{
+  background-color: @green;
+}
+.bgc-green1{
+  background-color: @green1;
+}
+.bgc-green-1{
+  background-color: @green-1;
+}
+.bgc-blue{
+  background-color: @blue;
+}
+.bgc-blue1{
+  background-color: @blue1;
+}
+.bgc-yellow{
+  background-color: @yellow;
+}
+.bgc-red{
+  background-color: @red;
+}
+.bgc-red1{
+  background-color: @red1;
+}
+.bgc-red2{
+  background-color: @red2;
+}
+.bgc-orange{
+  background-color: #F9A94E;
+}
+.bgc-aphla(){
+  .repeat(@from, @to, @step) when (@from <= @to){
+    .bgc-aphla-@{from}{
+      background-color: rgba(0, 0, 0, @from / 100);
+      *background: url("../images/bgc-aphla-@{from}.png") repeat;
+    }
+    .repeat(@from + @step, @to, @step);
+  }
+  .repeat(5, 95, 5);
+}
+.bgc-aphla();
+
+.placeholder{
+  .repeat(@from, @to, @step) when (@from <= @to){
+    &.h-@{from}{
+      height: unit(@from, px);
+    }
+    .repeat(@from + @step, @to, @step);
+  }
+  .repeat(5, 255, 5);
+}
+.fsz-small{
+  .btn{
+    margin-top: 5px;
+  }
+}
+// 模块
+.m{
+  min-width: 1200px;
+  //height: 100px;
+  .m-wrapin{
+    .clearfix();
+    position: relative;
+    width: 1200px;
+    margin: 0 auto;
+  }
+  // 模块主体
+  .main{
+    .clearfix();
+    position: relative;
+    width: 1000px;
+  }
+
+
+}
+
+// 头部
+.m-header{
+  padding: @pd-tb 0;
+  a{
+    .inline-block();
+  }
+  .col-left{
+    margin-left: 30px;
+  }
+  .btn-wrap{
+    margin-top: 8px;
+    a{
+      padding: 0 .8em;
+      vertical-align: middle;
+    }
+    .icon-login, .icon-register{
+      .inline-block();
+      width: 16px;
+      height: 16px;
+      margin-bottom: -2px;
+      padding-right: .2em;
+
+    }
+    .icon-login{
+      background: url("../images/activity-02-22.png") no-repeat;
+    }
+    .icon-register{
+      background: url("../images/activity-02-21.png") no-repeat;
+    }
+  }
+}
+
+// 焦点图
+.m-banner{
+//  height: 516px;
+  //background: url('../images/activity-02-02.png') no-repeat center;
+  .linkbox {
+    position: relative;
+    width: 1200px;
+    height: 0;
+    margin: 0 auto;
+    overflow: visible;
+    z-index: 500;
+    .link {
+      position: absolute;
+      width: 180px;
+      height: 140px;
+      top: 0;
+      right: 10px;
+      z-index: 500;
+    }
+  }
+}
+
+// 导航栏
+.m-nav{
+  line-height: 60px;
+  font-size: @big-fsz;
+  ul{
+    .clearfix;
+  }
+  li{
+    float: left;
+    width: 100% / 7;
+    text-align: center;
+  }
+  a{
+    display: block;
+    background-color: #fff;
+    &.on, &:hover{
+      background-color: transparent;
+//      .bgc-aphla-15();
+      color: #fff;
+    }
+  }
+  .col-left{
+    margin-right: @pd-lr * 2;
+    background-color: #fff;
+    color: #777;
+  }
+  .col-center{
+    table{
+      width: 100%;
+      td{
+        width: 1%;
+        text-align: center;
+      }
+    }
+  }
+}
+
+// 广告栏
+.m-zz{
+  //padding: @pd-tb * 3;
+}
+
+// FAQ
+.m-faq{
+  font-size: @big-fsz;
+  line-height: 1.5;
+  .ask{
+    color: #2b715e;
+  }
+  .answer{
+    margin-bottom: 1em;
+    color: #fff;
+  }
+}
+
+// 二维码
+.m-qrcode{
+  .split-item{
+    width: 490px;
+    height: 350px;
+    font-size: 18px;
+    color: #fff;
+    line-height: 1.5;
+  }
+
+  .wx-logo, .app-logo{
+    position: absolute;
+    top: 70px;
+    left: 50px;
+  }
+  .wx-main, .app-main{
+    position: absolute;
+    top: 230px;
+    left: 50px;
+    width: 150px;
+    text-align: center;
+  }
+  .wx-qrcode, .app-qrcode{
+    position: absolute;
+    top: 70px;
+    right: 70px;
+  }
+}
+
+.m-fixbar{
+  //.absolute(0, -160px, _, _);
+  height: 0;
+  text-align: center;
+  z-index: 9999;
+  .m-wrapin{
+    z-index: 9999;
+  }
+  .fixbar-main{
+    position: absolute;
+    width: 144px;
+    top: 30px;
+    right: 15px;
+  }
+  ul{
+  }
+  li{
+    height: 40px;
+    margin-bottom: 1px;
+    line-height: 40px;
+    background: url("../images/bgc-aphla-35.png") repeat;
+    &.on a{
+//      font-weight: bold;
+      color: rgba(255, 255, 255, .5);
+    }
+  }
+  a{
+    display: block;
+    width: 100%;
+    height: 100%;
+    color: #fff;
+  }
+  .anchor-top{
+    background: url("../images/bgc-aphla-35.png") repeat;
+    a{
+      padding: 10px 0;
+    }
+    img{
+      margin: 0 auto;
+    }
+  }
+}
+
+.unit-title{
+  padding: 1em 0;
+  line-height: 1.2;
+  &.center{
+    text-align: center;
+  }
+  &.v1{
+    font-size: @fsz * 2.5;
+    color: #fff;
+    font-weight: bold;
+  }
+}
+
+// 图文模式 - 左图右文
+.unit-imgtext {
+  .relative();
+  .css-clear;
+  background-color: #fff;
+  dd{
+    overflow: hidden;
+    img{
+      max-width: none;
+    }
+  }
+  .imginfo{
+    .absolute(_, _, 0, 0);
+    width: 100%;
+    .background-color(rgba(0, 0, 0, .4));
+  }
+
+  &.v1 {
+    height: 300px;
+    margin: 0 20px 20px;
+    dd, dt{
+      position: relative;
+      height: 100%;
+    }
+    dd {
+      float: left;
+      width: 70%;
+    }
+    dt {
+      float: right;
+      width: 30%;
+    }
+    .style-1{
+      background: url('../images/activity-02-09.png') repeat-y right;
+
+    }
+    .tips-1{
+      top: 0;
+      left: 40px;
+    }
+  }
+
+  &.v2{
+    margin: 0 20px 20px 0;
+    dd{
+      overflow: hidden;
+      height: 250px;
+    }
+    .tips-1{
+      top: 0;
+      right: 25px;
+    }
+  }
+}
+
+// 提示样式1
+.tips-1{
+  position: absolute;
+  display: block;
+  height: 86px;
+  padding: 8px 5px;
+  background: url("../images/activity-02-20.png") no-repeat;
+  background-size: 100% 84px;
+  text-align: center;
+  color: #fff;
+  font-size: @fsz;
+  line-height: 1.5;
+  vertical-align: bottom;
+}
+
+// 带背景色字眼
+.tag{
+  .border-radius(.35em);
+  padding: .2em .8em;
+  color: #fff;
+  vertical-align: .2em;
+}
+
+// 特殊字眼颜色
+
+// 着重词，红色
+.wd-focus{
+  color: @red2;
+  font-style: normal;
+//  margin-left: 10px;
+}
+
+.market_price{
+  color: #999;
+  del{
+    text-decoration: line-through;
+  }
+}
+.product-title{
+  padding-bottom: 20px;
+  .bgc-aphla-15;
+}
+.product-single{
+  .wrapin{
+    margin: 22px;
+  }
+  .title{
+    overflow:hidden;
+    height: @max-fsz * 2;
+    line-height: @max-fsz * 2;
+    font-size: @max-fsz;
+    font-weight: bold;
+  }
+  .subtitle{
+    overflow: hidden;
+    height: @fsz * 1.5;
+    margin-bottom: 15px;
+    font-size: @fsz;
+    line-height: @fsz * 1.5;
+    color: #999;
+  }
+  .date{
+    overflow: hidden;
+    height: @fsz * 3;
+    font-size: @fsz;
+    line-height: @fsz * 1.5;
+  }
+
+  .btn-wrap{
+    .absolute(_, _, 0, 0);
+    .size(100%, 70px);
+    .bgc-red2;
+    line-height: 70px;
+    text-align: center;
+  }
+  .buy-tips{
+    margin-left: @pd-lr * 2;
+    color: #fff;
+  }
+  .arrow-btn{
+    .absolute(_, _, 10px, 0);
+    .size(102%, 50px);
+    .bgc-red2;
+    line-height: 50px;
+    .border-radius(0 3px 3px 0);
+  }
+  .arrow-x1{
+    position: absolute;
+    left: -25px;
+    display: inline-block;
+    width: 0;
+    height: 0;
+    border: 25px solid #f5384e;
+    border-left: none;
+    border-top-color: transparent;
+    border-bottom-color: transparent;
+  }
+}
+
+
+
+// 焦点图
+.slideBox {
+  min-width: 1200px;
+  position: relative;
+  height: 450px;
+  overflow: hidden;
+}
+.slideBox .bd {
+  position: relative;
+  z-index: 0;
+}
+.slideBox .bd ul {
+  width: 100% !important;
+}
+.slideBox .bd li {
+  width: 100% !important;
+  height: 450px;
+  overflow: hidden;
+  text-align: center;
+}
+.slideBox .bd li a {
+  display: block;
+  height: 450px;
+}
+.slideBox .hd {
+  width: 1200px;
+  left: 50%;
+  margin-left: -600px;
+  height: 16px;
+  position: absolute;
+  z-index: 1;
+  bottom: 15px;
+  overflow: hidden;
+}
+.slideBox .hd ul {zoom:1; margin-left: 45%;}
+.slideBox .hd ul li { overflow: hidden; float:left; margin-right:.5em; text-indent: -9999px;  width:16px; height:16px; line-height:16px; text-align:center; .border-radius(8px); background:url("../images/bgc-aphla-25.png") repeat; cursor:pointer; }
+.slideBox .hd ul .on {.background-color(rgba(0, 0, 0, .8));}
+
+// 微信模块
+.juan_box{
+  width: 1000px;
+  height: 163px;
+  margin: 20px 0;
+  background: url(../images/banner_120.gif) no-repeat;
+  overflow: hidden;
+  position: relative;
+  .juan_1{
+    font-size: 28px;
+    font-weight: bolder;
+    margin-bottom: 5px;
+    width: 160px;
+
+    position: absolute;
+    left: 18px;
+    top: 40px;
+    color: #fff;
+  }
+  .juan_2{
+    width: 550px;
+    height: auto;
+    line-height: 28px;
+    color: #ab7e05;
+    font-size: 18px;
+    position: absolute;
+    left: 270px;
+    top: 10px;
+  }
+  .juan_3{
+    position: absolute;
+    right: 22px;
+    top: 22px;
+    img{
+      vertical-align: middle;
+    }
+  }
+}

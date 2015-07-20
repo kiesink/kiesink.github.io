@@ -1,0 +1,121 @@
+@import "../../common/css/acme/all";
+@import "editinfo.css";
+
+
+/*运用eat 库重置*/
+// 重置样式
+.global-reset();
+
+/* 排版 */
+fieldset {
+  //border: 1px solid #c0c0c0;
+  margin: 25px auto;
+  width: 1210px;
+  .clearfix();
+}
+
+legend {
+  margin: 10px 0 10px;
+  border: 0; /* 1 */
+  padding: 0;
+  white-space: normal; /* 2 */
+  *margin-left: -7px; /* 3 */
+  font-size: 20px;
+  .clearfix();
+}
+
+fieldset > *:nth-child(n + 2){
+  //margin-right: 10px;
+  margin-bottom: 10px;
+}
+
+/* /排版 */
+a{
+  color: @f-color;
+  text-decoration: none;
+  img{
+    border: 0;
+  }
+  &:link, &:visited{
+    color: @fn-color;
+  }
+  &:hover{
+    color:@s-color;
+  }
+}
+/*颜色*/
+@m-color:#00bb61;//主色
+@s-color:#c52b1e;//辅色
+@f-color:#f5384e;//辅色
+@f-color2:#fff;
+@f-color3:#888888;
+@f-color4:#666666;
+
+
+@b-color:#f5f5f5;//背景色
+@b-color1:#fff;//背景色
+@b-color2:#f5f5f5;//背景色
+@d-color:#dee1e7;//边框色
+@d-color2:@f-color2;//边框色
+@fn-color:@f-color3;//字体颜色
+@fn-color2:@f-color4;//字体颜色
+/*字号值*/
+@font:10px;
+@font1:@font*1.2;//12
+@font2:@font*1.4;//14
+@font3:@font*1.6;//16
+@font4:@font*1.8;//18
+@font5:@font*2;//20
+@font6:@font*2.4;//24
+/*行高值*/
+@line:10px;
+@line3:@line*1.6;//16
+@line4:@line*1.8;//18
+@line5:@line*2;//20
+@line6:@line*2.4;//24
+
+/*行高 start*/
+.line3{line-height:@line3;}//16
+.line4{line-height:@line4;}//18
+.line5{line-height:@line5;}//20
+.line6{line-height:@line6;}//24
+.lh150{line-height:150%;}
+.lh180{line-height:180%;}
+.lh200{line-height:200%;}
+/*行高 end*/
+/*排版宽度值*/
+@w-max:1200px;
+@w-conten:980px;
+@w-sidebar:210px;
+@w-100pc:100%;//这个百分比变量只能模块最外围用，若想其他地方用，建议写独立样式
+
+/*边距值*/
+@edg:10px;
+@edg1:@edg*1.5;//15
+@edg2:@edg*2;//20
+@edg3:@edg*2.5;//25
+
+/*字体*/
+@family:"Microsoft YaHei";
+
+/*文字排版*/
+.fb{font-weight:bold;}
+.fn{font-weight:normal;}
+.t1{text-indent:1em;}
+.t2{text-indent:2em;}
+.unl{text-decoration:underline;}
+.no_unl{text-decoration:none;}
+
+/*定位 start*/
+.tl{text-align:left;}
+.tc,.tc tr td,.tc tr th{text-align:center;}
+.tr{text-align:right;}
+.bc{margin-left:auto;margin-right:auto;}
+.fl{float:left;display:inline;}
+.fr{float:right;display:inline;}
+.vm{vertical-align:middle;}/*解决IE7及更早浏览器下当li中出现2个或以上的浮动时，li之间产生的空白间隙的BUG,还可以加top | middle | bottom ,或者图片需要居中，注意配合display使用*/
+.pr{position:relative;}
+.pa{position:absolute;}
+.zoom{zoom:1;}/*解决IE6及更早浏览器下当li内部元素是定义了display:block的内联元素时底部产生空白的问题*/
+.hide{visibility:hidden;}
+.none{display:none;}

@@ -1,0 +1,492 @@
+@import "base";
+@import "fonts-icon.css";
+img{
+  width: 100%;
+}
+.bg-color-01{
+  background-color: @s-color;
+}
+.using-btn();
+// 按钮
+.using-btn(){
+
+  .btn{
+    .inline-block();
+    margin-bottom:.1em;
+    .border-radius(5px);
+    padding: .4em 1.2em;
+    line-height: 1.5em;
+    text-align: center;
+    text-decoration: none;
+    &.full{
+      display: block;
+    }
+    &.angle{
+      .border-radius(0);
+    }
+
+    // 由于各个项目按钮颜色不一，所以颜色不定义在这里
+    // 在project.less里先调用.using-btn()导入按钮类，再用make方法制作按钮
+    // 参数：【字体色, 背景色, hover色, 阴影色(不设置则和hover同色)】
+    // 例：
+    //    .btn{
+    //      &.red{
+    //        .btn.make(#fff, #0ff, #0ee, #fda);
+    //      }
+    //    }
+    .make(@color, @background-color, @hover-color, @shadow-color: @hover-color){
+      box-shadow: 0 .1em 0 @shadow-color;
+      background-color: @background-color;
+      color: @color;
+      &:hover{
+        background-color: @hover-color;
+      }
+    }
+  }
+}
+// 制作按钮
+.btn{
+  .border-radius(.3em);
+  .padding(_, 2.5em);
+  font-size: @font1;
+  &.red{
+    .btn.make(#fff, @f-color, #ec2e2e);
+  }
+  &.green{
+    .btn.make(#fff, #66cc99, #4eb682);
+  }
+  &.orange{
+    .btn.make(#fff, #f8b551, #d58918);
+  }
+  &.gray{
+    .btn.make(#fff, #bbb, #999);
+  }
+
+  &.small{
+    .padding(_, 1em);
+  }
+  &.big{
+    .border-radius(2em);
+    padding: .625em;
+    font-size: @font1;
+  }
+}
+// 字体图标公共类名
+.sign{
+  display: inline-block;
+  min-width: 1em;
+  font-size: inherit;
+  text-rendering: auto;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  transform: translate(0, 0);
+  vertical-align: middle;
+  text-align: center;
+}
+
+body{
+  background-color: @b-color2;
+}
+.susp-perch{
+  padding-bottom: 2.5em;
+}
+
+.header{
+  position: relative;
+  h1{
+    height: 40px;
+    line-height: 40px;
+    text-align: center;
+    font-size: 1.2em;
+    margin: 0 50px;
+    overflow: hidden;
+    ul{
+      width: 200%;
+      .clearfix();
+      li{
+        float: left;
+        min-width: 50%;
+      }
+    }
+  }
+  .btn-back{
+    position: absolute;
+    top: 0;
+    left: 0;
+    display: block;
+    width: 40px;
+    height: 40px;
+    line-height: 40px;
+    text-align: center;
+    &:after{
+      content: '';
+      .inline-block();
+      width: 10px;
+      height: 10px;
+      border: 2px solid @m-color;
+      border-right: none;
+      border-bottom: none;
+      .transform(rotate(-45deg));
+    }
+  }
+}
+
+//广告栏
+.banner{
+    overflow: hidden;
+  a{
+    display: block;
+  }
+  img{
+    display: block;
+
+  }
+}
+.banner-hd{
+  height: @line5;
+}
+//标题
+.tiltle{
+  .clearfix();
+  background: @m-color;
+  padding:@edg @edg2;
+  font-family: @family;
+//  overflow: hidden;
+  line-height: 1.2;
+  color: @f-color2;
+  &.bg{
+    background: @m-color url('../images/wap-title-bg.png') no-repeat right top;
+    background-size: auto 100%;
+  }
+  .more{
+    float: right;
+    position: relative;
+    height: @font3 * 1.5;
+    font-size: @font3;
+    ul{
+      overflow: hidden;
+      height: @font3 * 1.5;
+      text-align: center;
+      background-color: @m-color;
+      line-height: 1.5;
+      border: 1px solid @m-color;
+      z-index: 9998;
+      li{
+        a{
+          display: block;
+          padding: 0 15px 0 15px;
+          &.on {
+            padding: 0 25px 0 5px;
+          }
+          span{
+            color: #fff;
+          }
+        }
+      }
+    }
+    &.onshow {
+      &:after{
+        bottom: 3px;
+        .rotate(225deg);
+      }
+      ul {
+        position: absolute;
+        overflow: visible;
+        height: initial;
+        //border: 1px solid #019850;
+      }
+    }
+  }
+  .more:after{
+    content: "";
+    width: 8px;
+    height: 8px;
+    position: absolute;
+    right: 10px;
+    bottom: 8px;
+    display:block;
+    border: 1px solid #fff;
+    border-left-style: none;
+    border-top-style: none;
+    .rotate(45deg);
+    z-index: 9999;
+  }
+  .name{
+    float: left;
+    font-size: @line4;
+  }
+}
+//信息栏目
+.info-colun{
+  &.navigator{
+    font-size: @font1;
+    height: 3em;
+    padding-bottom: 5px;
+  }
+  .spot{
+    display: table;
+    background-color: @b-color;
+    padding-bottom: 5px;
+    background-color: #fff;
+    width: 100%;
+    z-index: 600;
+    &.fixed{
+      position: fixed;
+      top: 0;
+      left: 0;
+    }
+    li{
+      display: table-cell;
+      text-align: center;
+      vertical-align: middle;
+      overflow: hidden;
+      &.on:after{
+        content: '';
+        margin: -2.5px auto;
+        display: block;
+        color: #fff;
+        background-color: #fff;
+        width: 5px;
+        height: 5px;
+        .transform(rotate(-45deg));
+      }
+      &:nth-child(n+1){
+        background-color: #0088D4;
+      }
+      &:nth-child(n+2){
+        background-color: #02ABD6;
+      }
+      &:nth-child(n+3){
+        background-color: #01D59B;
+      }
+      &:nth-child(n+4){
+        background-color: #F1CD21;
+      }
+      &:nth-child(n+5){
+        background-color: #F6B94E;
+      }
+
+      &.v1{
+        width: 100%;
+      }
+      &.v2{
+        width: 100% / 2;
+      }
+      &.v3{
+        width: 100% / 3;
+      }
+      &.v4{
+        width: 100% / 4;
+      }
+      &.v5{
+        width: 100% / 5;
+      }
+
+      a{
+        display: block;
+        padding: 0 .5em;
+        height: 3em;
+        line-height: 3;
+        span{
+          color: #fff;
+
+        }
+      }
+
+    }
+  }
+}
+.edit-colun,.prod-colun{
+  margin: @edg @edg;
+
+}
+.edit-colun{
+  padding:  @edg @edg;
+  background-color: @b-color1;
+}
+//产品栏目
+.product-colun{
+  background-color: @b-color1;
+  .border-radius(.5em);
+  .img{
+    position: relative;
+
+    img{
+      //height:9em;
+      display: block;
+    }
+    .img-tips{
+      position: absolute;
+      top: 0;
+      right: 2em;
+      width: 4.5em;
+      height: 4.5em;
+      padding: .5em 0;
+      background: url('../images/wap-tips-1.png') no-repeat;
+      background-size: 100%;
+      text-align: center;
+      font-size: 10px;
+      line-height: 1.3;
+      color: #fff;
+      p:first-child{
+        font-size: 1.3em;
+      }
+    }
+    .img-info{
+      position: absolute;
+      width: 100%;
+      bottom: 0;
+      height: @line*3;
+      line-height: @line*3;
+      background:rgba(0,0,0,.4) ;
+      span{
+        padding: 0 @edg;
+        color: @f-color2;
+      }
+
+    }
+  }
+  .describe{
+    .clearfix();
+    padding: 5px @edg;
+    .btn{
+      float: right;
+    }
+  }
+}
+
+.price {
+  em{
+    font-size: @font2;
+  }
+  ins {
+    display: inline-block;
+    font-size: @font5;
+    vertical-align: -0.1em;
+    color: @f-color;
+    text-decoration: none;
+  }
+  ins:before {
+    content: "¥";
+    font-size: .8em;
+  }
+}
+.favorable {
+  background: none repeat scroll 0 0 #3dc05b;
+  border-radius: 3px;
+  color: #ffffff;
+  display: inline-block;
+  padding: 0 0.5em;
+  height: 1.5em;
+  line-height: 1.5em;
+  vertical-align: middle;
+  font-size: @font1;
+}
+//产品列表
+.product-list{
+  .clearfix();
+  overflow: hidden;
+  .product-mod{
+    position: relative;
+    width: 48%;
+    float: left;
+    display: inline;
+    margin-left: 4%;
+    background-color: @b-color1;
+    margin-bottom: 5px;
+    .border-radius(.3em);
+    .img {
+      .img-tips {
+        position: absolute;
+        top: 0;
+        right: 2em;
+        width: 4.5em;
+        height: 4.5em;
+        padding: .5em 0;
+        background: url('../images/wap-tips-1.png') no-repeat;
+        background-size: 100%;
+        text-align: center;
+        font-size: 10px;
+        line-height: 1.3;
+        color: #fff;
+        p:first-child {
+          font-size: 1.3em;
+        }
+      }
+    }
+    .sub-title{
+      padding: 5px 10px 0;
+      span{
+        width: 100%;
+        display: block;
+        white-space: nowrap;
+        text-overflow: ellipsis;
+        overflow: hidden;
+      }
+    }
+    .describe{
+      padding: 3px 10px 8px;
+      .favorable{
+        margin-top: .4em;
+      }
+    }
+
+  }
+  .product-mod:nth-child(2n+1){
+    margin-left: 0;
+  }
+}
+//登录悬浮框
+.suspend{
+  position: fixed;
+  bottom: 5px;
+  z-index: 998;
+  .suspend-warp{
+    margin-left:@edg ;
+    .border-radius(.2em);
+    background-color: #7a7a7a;
+    overflow: hidden;
+    color: @f-color2;
+    a{
+      padding: 8px 5px ;
+      color: @f-color2;
+      display: inline-block;
+      em{
+        font-size:@font5 ;
+        float: left;
+      }
+      font{
+        display: inline-block;
+        line-height: 20px;
+      }
+    }
+  }
+}
+#offset-map{
+  position: fixed;
+  bottom: 5px;
+  right: 10px;
+  z-index: 999;
+  background-color: #7a7a7a;
+  padding: 8px;
+  .border-radius(.3em);
+  span{
+    font-size: @font6;
+    color: @f-color2;
+    cursor: pointer;
+
+  }
+}
+
+
+
+// 焦点图效果
+.slideBox{ position:relative; overflow:hidden; margin:0;  max-width:560px;/* 设置焦点图最大宽度 */ }
+.slideBox .hd{ position:absolute; height:28px; line-height:28px; bottom:0; right:0; z-index:1; }
+.slideBox .hd li{ display:inline-block; width:5px; height:5px; -webkit-border-radius:5px; -moz-border-radius:5px; border-radius:5px; background:#333; text-indent:-9999px; overflow:hidden; margin:0 6px;   }
+.slideBox .hd li.on{ background:#fff;  }
+.slideBox .bd{ position:relative; z-index:0; }
+.slideBox .bd li{ position:relative; text-align:center;  }
+.slideBox .bd li img{ background:url(../images/loading.gif) center center no-repeat;  vertical-align:top; width:100%;/* 图片宽度100%，达到自适应效果 */}
+.slideBox .bd li a{ -webkit-tap-highlight-color:rgba(0,0,0,0);  }  /* 去掉链接触摸高亮 */
+.slideBox .bd li .tit{ display:block; width:100%;  position:absolute; bottom:0; text-indent:10px; height:28px; line-height:28px; background:url(../images/focusBg.png) repeat-x; color:#fff;  text-align:left;  }

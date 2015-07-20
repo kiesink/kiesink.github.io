@@ -1,0 +1,92 @@
+/**
+ * Created by xyz on 2015/6/5.
+ */
+//classes里面应用下面标签，暂时用作editinfo下面的样式微调。
+.classes{
+
+  .setter(@class, @attr, @value){
+    .@{class}{
+      @{attr}: @value;
+    }
+  }
+
+  .repeater(@class, @attr, @from: 1, @to: @from, @step: 1, @unit: px) when (@from <= @to){
+    .@{class}-@{from}{
+      @{attr}: unit(@from, @unit);
+    }
+    .repeater(@class, @attr, @from + @step, @to, @step, @unit);
+  }
+
+  // position
+  .pos-s { position: static; }
+  .pos-a { position: absolute; }
+  .pos-r { position: relative; }
+  .pos-f { position: fixed; }
+
+  // top right bottom left
+  // ...
+
+  // float
+//  .setter(@class: f-l, @attr: float, @value: left);
+//  .setter(@class: f-r, @attr: float, @value: right);
+  .fl-n { float: none; }
+  .fl-l { float: left; }
+  .fl-r { float: right; }
+
+  // width [0..19] [20..100, 5]
+  .repeater(@class: w, @attr: width, @from: 0, @to: 19, @step: 1);
+  .repeater(@class: w, @attr: width, @from: 20, @to: 100, @step: 5);
+
+  // height [0..19] [20..100, 5]
+  .repeater(@class: h, @attr: height, @from: 0, @to: 19, @step: 1);
+  .repeater(@class: h, @attr: height, @from: 20, @to: 100, @step: 5);
+
+  // margin [0..19] [20..100, 5]
+  .repeater(@class: mg, @attr: margin, @from: 0, @to: 19, @step: 1);
+  .repeater(@class: mg, @attr: margin, @from: 20, @to: 100, @step: 5);
+  .repeater(@class: mgt, @attr: margin-top, @from: 0, @to: 19, @step: 1);
+  .repeater(@class: mgt, @attr: margin-top, @from: 20, @to: 100, @step: 5);
+  .repeater(@class: mgr, @attr: margin-right, @from: 0, @to: 19, @step: 1);
+  .repeater(@class: mgr, @attr: margin-right, @from: 20, @to: 100, @step: 5);
+  .repeater(@class: mgb, @attr: margin-bottom, @from: 0, @to: 19, @step: 1);
+  .repeater(@class: mgb, @attr: margin-bottom, @from: 20, @to: 100, @step: 5);
+  .repeater(@class: mgl, @attr: margin-left, @from: 0, @to: 19, @step: 1);
+  .repeater(@class: mgl, @attr: margin-left, @from: 20, @to: 100, @step: 5);
+
+  // padding [0..19] [20..100, 5]
+  .repeater(@class: pd, @attr: padding, @from: 0, @to: 19, @step: 1);
+  .repeater(@class: pd, @attr: padding, @from: 20, @to: 100, @step: 5);
+  .repeater(@class: pdt, @attr: padding-top, @from: 0, @to: 19, @step: 1);
+  .repeater(@class: pdt, @attr: padding-top, @from: 20, @to: 100, @step: 5);
+  .repeater(@class: pdr, @attr: padding-right, @from: 0, @to: 19, @step: 1);
+  .repeater(@class: pdr, @attr: padding-right, @from: 20, @to: 100, @step: 5);
+  .repeater(@class: pdb, @attr: padding-bottom, @from: 0, @to: 19, @step: 1);
+  .repeater(@class: pdb, @attr: padding-bottom, @from: 20, @to: 100, @step: 5);
+  .repeater(@class: pdl, @attr: padding-left, @from: 0, @to: 19, @step: 1);
+  .repeater(@class: pdl, @attr: padding-left, @from: 20, @to: 100, @step: 5);
+
+  // line-height [10..72, 2]
+  .repeater(@class: lh, @attr: line-height, @from: 10, @to: 72, @step: 2);
+
+  // font-size [10..72, 2]
+  .repeater(@class: fsz, @attr: font-size, @from: 10, @to: 72, @step: 2);
+
+  // font-weight
+  .fw-n { font-weight: normal; }
+  .fw-b { font-weight: bold; }
+  .fw-br { font-weight: bolder; }
+  .fw-lr { font-weight: lighter; }
+
+  // color
+  .c-333 { color: #333; }
+  .c-666 { color: #666; }
+  .c-999 { color: #999; }
+  .c-ccc { color: #ccc; }
+  .c-fff { color: #fff; }
+
+  // text-decoration
+  .td-n { text-decoration: none; }
+  .td-u { text-decoration: underline; }
+  .td-o { text-decoration: overline; }
+  .td-l { text-decoration: line-through; }
+}
