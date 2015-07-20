@@ -1,0 +1,18 @@
+<div class="header">
+    <div class="header-wrapin">
+        <h1><span ms-text="title"></span><i class="note" ms-text="titleinfo" ms-if="typeof titleinfo !== 'undefined'"></i></h1>
+        <div class="back-wrap">
+            <a href="javascript:;" ms-if="sign.back || true"><i class="sign sign-back">&#x12011;</i><span ms-text="sign.backinfo" ms-if="sign.backinfo"></span></a>
+        </div>
+        <div class="toolbar" ms-if="typeof sign === 'object'">
+            <a href="javascript:;" ms-if="sign.search || false"><i class="sign sign-search">&#x12015;</i></a>
+            <a href="javascript:;" ms-if="sign.vip || false"><i class="sign sign-vip">&#x12025;</i></a>
+            <a href="javascript:;" ms-if="sign.fav || false"><i class="sign sign-fav">&#x12017;</i></a>
+            <a href="javascript:;" ms-if="sign.share || false"><i class="sign sign-share">&#x12018;</i></a>
+            <a href="javascript:;" ms-if="sign.edit || false"><i class="sign sign-edit">&#x12033;</i></a>
+            <a href="javascript:;" ms-if="sign.tel || false"><i class="sign sign-tel">&#x12131;</i></a>
+            <a href="javascript:;" ms-if="sign.publish || false">发布</a>
+            <a href="javascript:;" ms-if="sign.finish || false">完成</a>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,306 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0,minimum-scale=1.0, user-scalable=no"
+          name="viewport"/>
+    <title>05.1_酒店单订_酒店列表页</title>
+    <script src="../js/avalon.js" data-main="../js/p-hotel"></script>
+    <link rel="stylesheet" href="../css/project.css"/>
+</head>
+<body ms-controller="BookHotelCtrl">
+<div class="header">
+    <div class="header-wrapin">
+        <h1><span>自助游</span></h1>
+
+        <div class="back-wrap">
+            <a href="javascript:;"><i class="sign sign-back">&#x12011;</i><span>返回</span></a>
+        </div>
+        <div class="toolbar">
+            <a href="javascript:;" class="cur-address"><i class="sign">&#x12012;</i><span>广州</span></a>
+        </div>
+    </div>
+</div>
+<div class="wrapfill">
+    <label class="input-search">
+        <div class="input-search-wrapin">
+            <input type="text" class="" placeholder="输入关键字搜索，如城市、线路名称">
+        </div>
+        <a class="sign sign-search js-hyperlink" href="javascript:;">𒀕</a>
+    </label>
+</div>
+<!--导航图标-start-->
+<div class="containt-tohead">
+
+    <div class="wrapper"><div class="navi clearfix">
+        <ul>
+            <li>
+                <a href="javascript:;">
+                    <dl class="s-eat">
+                        <dt class="sign sign-87">&#x12041</dt>
+                        <dt class="sign sign-97">&#x12061</dt>
+                        <dd>吃</dd>
+                    </dl>
+                </a>
+            </li>
+            <li>
+                <a href="javascript:;">
+                    <dl class="s-live">
+                        <dt class="sign sign-88">&#x12042</dt>
+                        <dt class="sign sign-98">&#x12062</dt>
+                        <dd>住</dd>
+                    </dl>
+                </a>
+            </li>
+            <li>
+                <a href="javascript:;">
+                    <dl class="s-tour">
+                        <dt class="sign sign-89">&#x12043</dt>
+                        <dt class="sign sign-99">&#x12063</dt>
+                        <dd>游</dd>
+                    </dl>
+                </a>
+            </li>
+            <li>
+                <a href="javascript:;">
+                    <dl class="s-enter">
+                        <dt class="sign sign-90">&#x12044</dt>
+                        <dt class="sign sign-100">&#x12064</dt>
+                        <dd>娱</dd>
+                    </dl>
+                </a>
+            </li>
+            <li>
+                <a href="javascript:;" class="s-shop">
+                    <dl>
+                        <dt class="sign sign-91">&#x12045</dt>
+                        <dt class="sign sign-101">&#x12065</dt>
+                        <dd>购</dd>
+                    </dl>
+                </a>
+            </li>
+        </ul>
+    </div></div>
+    <div class="wrapper combin-12">
+        <div class="tab collapse-tt">
+            <ul>
+                <li class="collapse" me-collapse="#c1.sort">
+                    <a href="javascript:;">
+                        <span>排序1</span>
+                        <i class="sign sign-expand">&#x12008;</i>
+                        <i class="sign sign-collapse">&#x12010;</i>
+                    </a>
+                </li>
+                <li class="collapse" me-collapse="#c2.sort">
+                    <a href="javascript:;">
+                        <span>排序2</span>
+                        <i class="sign sign-expand">&#x12008;</i>
+                        <i class="sign sign-collapse">&#x12010;</i>
+                    </a>
+                </li>
+                <li class="collapse" me-collapse="#c3.sort">
+                    <a href="javascript:;">
+                        <span>排序3</span>
+                        <i class="sign sign-expand">&#x12008;</i>
+                        <i class="sign sign-collapse">&#x12010;</i>
+                    </a>
+                </li>
+            </ul>
+        </div>
+        <div class="collapse-ct">
+            <div class="cts" me-collapse="c1.sort">
+                <div class="row"><a href="javascript:;" class="a-expand" me-collapse="#hide.sort#">111</a></div>
+                <div class="row"><a href="javascript:;" class="a-expand" me-collapse="#hide.sort#">111</a></div>
+                <div class="row"><a href="javascript:;" class="a-expand" me-collapse="#hide.sort#">111</a></div>
+            </div>
+            <div class="cts" me-collapse="c2.sort">
+                <div class="row"><a href="javascript:;" class="a-expand" me-collapse="#hide.sort#">222</a></div>
+                <div class="row"><a href="javascript:;" class="a-expand" me-collapse="#hide.sort#">22</a></div>
+                <div class="row"><a href="javascript:;" class="a-expand" me-collapse="#hide.sort#">22</a></div>
+            </div>
+            <div class="cts" me-collapse="c3.sort">
+                <div class="row"><a href="javascript:;" class="a-expand" me-collapse="#hide.sort#">33</a></div>
+                <div class="row"><a href="javascript:;" class="a-expand" me-collapse="#hide.sort#">33</a></div>
+                <div class="row"><a href="javascript:;" class="a-expand" me-collapse="#hide.sort#">33</a></div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!--导航图标-end-->
+<div class="wrapper">
+    <div class="products-list">
+        <h2 class="title">
+            <a class="a-expand" href="javascript:;">
+                <i class="sign sign-flag">&#x12098;</i>
+                <i class="sign sign-into">&#x12009;</i>
+                <span class="tt">新城客栈（中山店）</span>
+                <span class="note">大床房  双人房  </span>
+            </a>
+        </h2>
+        <div class="product-wrap product-list-row3">
+            <a href="javascript:;">
+                <div class="img-wrap">
+                    <img src="../images/bigimg3.jpg" alt=""/>
+                </div>
+                <ul>
+                    <li class="list-title"><span
+                            class="item-name fn-max01">桂林酒店桂林酒店桂林酒店桂林酒店桂林酒店桂林酒店桂林酒店桂林酒店桂林酒店桂林酒店</span></li>
+                    <li class="info "><p>豪华江景房</p></li>
+                    <li class="price-wrap">
+                        <ins>999</ins>
+                    </li>
+                </ul>
+            </a>
+            <div class="shopping">
+                <div class="shopping-wrap"><a class="btn red" href="javascript:;" me-mask="#pay"><span class="sign shop-ico">&#x12019;</span></a>
+                </div>
+            </div>
+        </div>
+        <div class="product-wrap product-list-row3">
+            <a href="javascript:;">
+                <div class="img-wrap">
+                    <img src="../images/bigimg3.jpg" alt=""/>
+                </div>
+                <ul>
+                    <li class="list-title"><span
+                            class="item-name fn-max01">桂林酒店桂林酒店桂林酒店桂林酒店桂林酒店桂林酒店桂林酒店桂林酒店桂林酒店桂林酒店</span></li>
+                    <li class="info "><p>豪华江景房</p></li>
+                    <li class="price-wrap">
+                        <ins>999</ins>
+                    </li>
+                </ul>
+            </a>
+            <div class="shopping">
+                <div class="shopping-wrap"><a class="btn red" href="javascript:;" me-mask="#pay"><span class="sign shop-ico">&#x12019;</span></a>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!--标题居中展开列表-start-->
+    <h2 class="tit-cen row">
+        <a class="a-expand" href="javascript:;">
+            展开查看更多
+            <i class="sign">&#x12010;</i>
+        </a>
+    </h2>
+    <!--标题居中展开列表-end-->
+</div>
+<div class="wrapper">
+    <div class="products-list">
+        <h2 class="title">
+            <a class="a-expand" href="javascript:;">
+                <i class="sign sign-flag">&#x12098;</i>
+                <i class="sign sign-into">&#x12009;</i>
+                <span class="tt">新城客栈（中山店）</span>
+                <span class="note">大床房  双人房  </span>
+            </a>
+        </h2>
+        <div class="product-wrap product-list-row3">
+            <a href="javascript:;">
+                <div class="img-wrap">
+                    <img src="../images/bigimg3.jpg" alt=""/>
+                </div>
+                <ul>
+                    <li class="list-title"><span
+                            class="item-name fn-max01">桂林酒店桂林酒店桂林酒店桂林酒店桂林酒店桂林酒店桂林酒店桂林酒店桂林酒店桂林酒店</span></li>
+                    <li class="info "><p>豪华江景房</p></li>
+                    <li class="price-wrap">
+                        <ins>999</ins>
+                    </li>
+                </ul>
+            </a>
+            <div class="shopping">
+                <div class="shopping-wrap"><a class="btn red" href="javascript:;" me-mask="#pay"><span class="sign shop-ico">&#x12019;</span></a>
+                </div>
+            </div>
+        </div>
+        <div class="product-wrap product-list-row3">
+            <a href="javascript:;">
+                <div class="img-wrap">
+                    <img src="../images/bigimg3.jpg" alt=""/>
+                </div>
+                <ul>
+                    <li class="list-title"><span
+                            class="item-name fn-max01">桂林酒店桂林酒店桂林酒店桂林酒店桂林酒店桂林酒店桂林酒店桂林酒店桂林酒店桂林酒店</span></li>
+                    <li class="info "><p>豪华江景房</p></li>
+                    <li class="price-wrap">
+                        <ins>999</ins>
+                    </li>
+                </ul>
+            </a>
+            <div class="shopping">
+                <div class="shopping-wrap"><a class="btn red" href="javascript:;" me-mask="#pay"><span class="sign shop-ico">&#x12019;</span></a>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!--标题居中展开列表-start-->
+    <h2 class="tit-cen row">
+        <a class="a-expand" href="javascript:;">
+            展开查看更多
+            <i class="sign">&#x12010;</i>
+        </a>
+    </h2>
+    <!--标题居中展开列表-end-->
+</div>
+<div class="carttips-wrap">
+    <div class="body-limit carttips">
+        <div class="row">
+            <div class="col-right">
+                <a class="btn orange" href="javascript:;">结算</a>
+            </div>
+            <div class="col-center">
+                <i class="sign">&#x12040;</i>
+                <span>（3）总计：¥360 已省¥80</span>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="wrapper win-pay" me-mask="pay">
+    <div class="row">
+        <div class="col-left">订购数量</div>
+        <div class="col-center">
+            <span class="input-num">
+                <button class="input-btn btn-minus"><i class="sign">&#x12002;</i></button>
+                <input type="text" class="input-text" value="0"/>
+                <button class="input-btn btn-plus"><i class="sign">&#x12001;</i></button>
+            </span>
+        </div>
+    </div>
+    <div class="row">
+        <a class="a-expand btn-date" href="javascript:;">
+            <div class="col-left">使用日期</div>
+            <div class="col-center">
+                <input type="text" value="" readonly class="date_picker">
+                <i class="note">点击修改</i>
+            </div>
+        </a>
+    </div>
+    <div class="row">
+        <div class="col-left">入住人姓名</div>
+        <div class="col-center">
+            <label class="input-wrapper">
+                <div>
+                    <input type="text" placeholder="请输入姓名"/>
+                </div>
+            </label>
+        </div>
+    </div>
+    <div class="row">
+        <ul>
+            <li>
+                <div class="btn-wrap">
+                    <a class="btn orange" href="javascript:;" me-mask="#hide#">确定</a>
+                </div>
+            </li>
+            <li>
+                <div class="btn-wrap">
+                    <a class="btn gray" href="javascript:;" me-mask="#hide#">取消</a>
+                </div>
+            </li>
+        </ul>
+    </div>
+</div>
+</body>
+</html>

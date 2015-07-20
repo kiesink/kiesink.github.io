@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0,minimum-scale=1.0, user-scalable=no" name="viewport"/>
+    <link rel="stylesheet" href="../css/business.css"/>
+    <title>券号验证记录</title>
+</head>
+<body class="bg-white">
+<div class="header-sub">
+    <div class="header-wrapin">
+        <div class="back-wrap">
+            <a href="#"><i class="sign sign-back">&#x12011;</i></a>
+        </div>
+        <div class="hd-sub-center">
+            <ul class="hd-nav">
+                <!--<li><a href="javascript:;" class="hd-nav-on-r">券号记录</a></li>-->
+                <!--<li><a href="javascript:;">会员记录</a></li>-->
+                <li class="hd-nav-on-r">券号记录</li>
+                <li>会员记录</li>
+            </ul>
+        </div>
+        <div class="hd-sub-right">
+            <a href="#"><i class="sign sign-search">&#x12015;</i></a>
+        </div>
+    </div>
+</div>
+<!--搜索框-start-->
+<form>
+    <div id="index-search-colmn" class="wrapper">
+        <label class="input-search">
+            <em href="javascript:;" class="sign sign-search">&#x12015;</em>
+            <div class="input-search-wrapin">
+                <input type="text" placeholder="请输入10位优游券" class="">
+            </div>
+
+        </label>
+        <a href="javascript:;" class="cancel">取消</a>
+    </div>
+</form>
+<!--搜索框-end-->
+<!--<legend>组合-12</legend>-->
+<div class="wrapper combin-12 half">
+    <div class="tab collapse-tt">
+        <ul>
+            <li class="collapse" me-collapse="#c1.sort">
+                <a href="javascript:;">
+                    <i class="sign sign-set">&#x12178;</i>
+                    <span>全部套餐</span>
+                    <i class="sign sign-expand">&#x12008;</i>
+                    <i class="sign sign-collapse">&#x12010;</i>
+                </a>
+            </li>
+            <li class="collapse" me-collapse="#c2.sort">
+                <a href="javascript:;">
+                    <i class="sign sign-store">&#x12179;</i>
+                    <span>全部分店</span>
+                    <i class="sign sign-expand">&#x12008;</i>
+                    <i class="sign sign-collapse">&#x12010;</i>
+                </a>
+            </li>
+        </ul>
+    </div>
+    <div class="collapse-ct">
+        <div class="cts" me-collapse="c1.sort">
+            <div class="row"><a class="a-expand" href="javascript:;" me-collapse="#hide.sort#">不限</a></div>
+            <div class="row"><a class="a-expand" href="javascript:;" me-collapse="#hide.sort#">星步飞自助餐周五至周日单人晚餐</a></div>
+            <div class="row"><a class="a-expand" href="javascript:;" me-collapse="#hide.sort#">星步飞自助餐周五至周日单人晚餐</a></div>
+        </div>
+        <!--<div class="cts" me-collapse="c2.sort">-->
+        <!--<div class="row"><a class="a-expand" href="javascript:;" me-collapse="#hide.sort#">广州</a></div>-->
+        <!--<div class="row"><a class="a-expand" href="javascript:;" me-collapse="#hide.sort#">中山</a></div>-->
+        <!--</div>-->
+        <div class="cts" me-collapse="c2.sort">
+            <div class="row"><a class="a-expand" href="javascript:;" me-collapse="#hide.sort#" >广州</a></div>
+            <div class="row"><a class="a-expand" href="javascript:;" me-collapse="#hide.sort#">中山</a></div>
+        </div>
+    </div>
+</div>
+
+<!--日期插件-->
+<div class="datepicker-wraper">
+    <div id="selectDate1"></div>
+</div>
+
+<div class="wrapper">
+    <span class="focus">2015年5月15日 </span>
+    <span>当天验证<i class="focus"> 3</i>份</span>
+</div>
+<!--表格start-->
+<div class="table-wrap">
+    <table cellpadding="0" cellspacing="0" class="table-record">
+        <colgroup>
+            <col width="30%">
+            <col width="30%">
+            <col width="15%">
+            <col width="25%">
+        </colgroup>
+        <thead>
+        <tr>
+            <th> 消费时间</th>
+            <th> 套餐名称</th>
+            <th> 人数</th>
+            <th> 应付金额</th>
+        </tr>
+        </thead>
+        <tbody >
+        <tr >
+            <td>
+                <p>2015-04-03 </p>
+                <p>11：11</p>
+            </td>
+            <td class="remind">温泉门票</td>
+            <td>3</td>
+            <td class="price-normal">300</td>
+        </tr>
+
+        <tr >
+            <td>
+                <p>2015-04-03 </p>
+                <p>11：11</p>
+            </td>
+            <td class="remind">温泉门票</td>
+            <td>3</td>
+            <td class="price-normal">300</td>
+        </tr>
+
+        </tbody>
+    </table>
+</div>
+<!--表格end-->
+<script src="../../common/js/jquery-1.11.1.js"></script>
+<script type="text/javascript" src="../js/business/hammer.min.js"></script>
+<script src="../js/avalon.js?a=3" data-main="../js/p-tmpl-qi"></script>
+<script type="text/javascript">
+    /*日期组件效果逻辑*/
+    require(['datepicker'], function(){
+        var datepicker = $("#selectDate1").data('date');
+        var el = document.querySelector("#selectDate1");
+        var mc = new Hammer(el);
+        mc.get('swipe').set({ direction: Hammer.DIRECTION_VERTICAL});
+        mc.on("swipeup",function(ev){
+            datepicker.next();
+        });
+        mc.on("swipedown",function(ev){
+            datepicker.pre();
+        });
+    });
+</script>
+</body>
+</html>

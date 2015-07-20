@@ -1,0 +1,19 @@
+@import "base";
+
+.preview-tt{ padding: @pd-tb * 1.5;
+  b{ margin-bottom:@pd-tb; font-size: @max-fsz; color: @m-color; font-weight: normal; display: block}
+}
+
+.preview-list{ padding: @pd-tb*1.5 @pd-tb*1.5 @pd-tb; border-bottom: 1px solid #dddddd; background: #fff;
+  dl{position: relative;
+    a{ height: auto; overflow: hidden;
+      dt{ margin-bottom:@mg-tb ; color:@m-color; font-size: @fsz * 1.1}
+      dd{ margin-bottom:@mg-tb ;
+        span{color: @hl-color}
+      }
+      i{ width:30px; height:30px; line-height: 30px; text-align:right; position: absolute; top: 20px; right: -5px;
+        span{ color:@m-color; font-size:@fsz*1.6; }
+      }
+    }
+  }
+}

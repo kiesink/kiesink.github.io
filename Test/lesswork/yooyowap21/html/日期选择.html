@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0,minimum-scale=1.0, user-scalable=no" name="viewport" />
+    <title>日期选择</title>
+    <link rel="stylesheet" href="../css/project.css"/>
+    <script src="../js/avalon.js" data-main="../js/p-date"></script>
+</head>
+<body class="p-date" ms-controller="Ctrl">
+<div ms-include-src="'header.html'" data-include-replace="true"></div>
+<div class="wrapper">
+    <div id="selectDate1"></div>
+</div>
+<div class="date-fixbar body-limit">
+    <div class="wrapper combin-7">
+        <div class="col-right">
+            <a class="btn red" href="javascript:;">确认日期</a>
+        </div>
+        <div class="col-center">
+            已选日期：<span ms-text="date"></span>
+        </div>
+    </div>
+</div>
+<a class="btn red" href="javascript:;" ms-click="setData">setData</a>
+<!--<div ms-include-src="'footer.html'" data-include-replace="true"></div>-->
+</body>
+</html>

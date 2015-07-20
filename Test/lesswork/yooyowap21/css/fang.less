@@ -1,0 +1,298 @@
+@import "base";
+
+.scenicList_Box{margin-bottom: @mg-tb;
+    dl{ width: 100%; height: auto; overflow: hidden;
+
+      dt{ width: 100%; height: auto; position: relative;  overflow: hidden;
+        &.bor{.border-radius(5px 5px 0 0);}
+        & .list_tt{
+          width: 100%;
+          display: block;
+          height: auto;
+          position: absolute;
+          left: 0;
+          bottom: 0px;
+          box-shadow: inset 0 -50px 20px rgba(0, 0, 0, 0.55);
+          min-height: 33px;
+          line-height: 1.1rem;
+          padding: 10px 15px;
+          margin-left: -15px;
+          .route{
+            position: relative;
+            padding: 0 10px;
+            margin-top: 20px;
+            span{
+              display: inline-block;
+              margin-right: .5em;
+              em{
+                background-color: #fff;
+                border-radius: 1em;
+                overflow: hidden;
+                margin-right: .3em;
+                display: inline-block;
+                width: 21px;
+                height: 21px;
+                float: left;
+
+                font{
+                  padding-top: 1px;
+                  &.sign{
+                    color:@m-color ;
+                    font-size: 1.5em;
+                  }
+                }
+
+              }
+              strong{
+                display: inline-block;
+                line-height: 21px;
+                color: @color-w;
+              }
+            }
+          }
+          p{  line-height: 1.2rem;padding-left: 10px;  margin-top: 1em;}
+          span{ line-height:1.6rem;  font-size: @fsz; color: #fff; display: block;.ellipsis;}
+          del{ color: #ccc; display: block; font-size: @min-fsz;margin-top:0.2rem;}
+        }
+        i{width: 40px; height: 40px; border-radius: 50%; background-color:rgba(0, 0, 0, 0.6); position: absolute; left: 0; bottom: 0px;}
+
+      }
+      dt .praise{ width: 40px; height: 40px; color: #fff;  font-size: @small-fsz;  text-align: center; border-radius: 50%; background-color:rgba(0, 0, 0, 0.6); position: absolute; top:10px; right: 10px;
+        em{ width:40px; padding-top: 3px; font-size: @max-fsz; display: block;}
+
+      }
+      dd{
+        background:#fff;overflow: hidden; padding: 5px 10px 10px;  .border-radius(0 0 5px 5px);
+        & .d1{
+          background: #f5f5f5; border-radius: 5px; padding:@pd-tb @pd-lr;
+          b{
+            color: @m-color; font-size: @fsz; padding-right: 4px;
+          }
+          span{ border-left: 1px solid #b4b4b4; color: @color; padding-left: 4px; font-size: @fsz}
+
+        }
+        & .d2{ padding-top:8px; font-size: @small-fsz;
+          span{ font-size: @max-fsz*1.1; margin-right: 2px;}
+
+          p{ background:@m-color;
+            margin-left:.5em;
+            font-size:@min-fsz;
+            color:@color-w;
+            padding:.2em .5em 0;
+            border-radius:3px;
+            line-height:1.5em;
+            float: right;
+            margin-top: .2em;
+
+          }
+          small{color: @color-1; font-size: @small-fsz; display: inline-block; padding-top: 5px; margin-right: 5px;}
+        }
+        & .d3{ padding-top: 8px;color: #888888; display: none;
+          em{font-size: 1.9rem; line-height: 1.9rem; float: left;  padding-right:2px; display: inline-block}
+          span{ font-size: @fsz; line-height: 1.9rem; display: inline-block; float: left; }
+        }
+
+        & .fl{ float:left}
+        & .fr{ float:right}
+      }
+  }
+}
+
+
+.selectDate_box{ width: auto; height: auto; background: #fff; overflow: hidden; }
+
+.selectDate_tt{ width: 100%; height:auto; padding: @pd-tb 0; border-bottom: 1px solid @bd-color; overflow: hidden; position: relative;
+ ul{ width:100%; height:30px; overflow: hidden; position: relative;
+   li{text-align: center; position: absolute;
+     &.pre{ width: 14.25%; text-align: center; position: absolute; top: 0; left: 5px; z-index: 55;
+      a{ width:26px; height: 26px; line-height:26px; border-radius: 50%; background: @m-color; color: #fff;  font-weight: bolder;}
+     }
+     &.next{width: 14.25%; text-align: center;  position: absolute; top: 0; right: 5px;
+       a{ width:26px; height: 26px; line-height:26px; border-radius: 50%; background: @m-color; color: #fff;  font-weight: bolder;}
+     }
+     &.selectYear{ width: 100%; line-height: 30px;  font-size: @big-fsz;
+       a{ height: 30px; line-height:30px; padding: 0 10px; color:@m-color;}
+     }
+   }
+ }
+}
+
+.selectDate_seventDate{
+  width: 100%; height: 40px;
+   border-bottom: 1px solid @bd-color; overflow: hidden;
+  span{ width: 14.25%; height:40px; line-height: 40px; font-size: @big-fsz;  text-align:center; float: left;}
+}
+
+.selectDay{
+  ul{
+    li{width: 14.25%; height: 46px; float: left; margin-left: -1px; border-right: 1px solid #e6e6e6; border-bottom: 1px solid #e6e6e6; text-align: center;
+      p{ font-size: @big-fsz; padding-top: 5px; padding-bottom: 2px;
+
+      }
+      span{ color: @hl-color; font-size: @small-fsz;}
+    }
+    li:nth-child(7n){
+      width: 14.5%;
+      border-right: none;
+    }
+    a{ width: 100%; height: 46px; display: block; overflow: hidden;
+         }
+    .disable{ width: 100%; height: 46px; display: block; overflow: hidden; color: #ddd; font-size: inherit;
+         }
+    li.cur{background:@m-color;
+      p,span{ color: #fff;}
+    }
+    a.selected{background: @hl-color;
+      p,span{ color: #fff;}
+    }
+    .datepicker-info:before{ content: '¥'; }
+  }
+}
+
+.open_year_box{
+  .relative();
+  display: none;
+  height: 0;
+  ul{
+    .absolute(0, _, _, _);
+    overflow-y: auto;
+    width: 100%;
+    height: 260px;
+    background-color: #fff;
+    z-index: 60;
+    li{ width: 100%; height: 40px; border-bottom: 1px solid #cbcbcb;
+      a{width:100%; line-height: 40px; font-size:@big-fsz; text-align: center; display: block}
+
+    }
+  }
+}
+
+.edi-text-1{ border: none; background: none; padding: 4px 5px; text-align:right;}
+.edi-text-2{ border: 1px solid @bd-color; padding: 4px 10px 4px 5px; background: none; text-align:right;}
+
+
+.navi2{
+  dt{ color: #3dc05b;
+    &.sign-on-1{color: #f3bf58}
+    &.sign-on-2{color: #fa8b8b}
+    &.sign-on-3{color: #76d3dc}
+    &.sign-on-4{color: #7bafef}
+    &.sign-on-5{color: #f27fc0}
+  }
+}
+
+.special-navigate{
+  ul{
+    li{ width: 49.5%; height: auto; padding: 8px 0px; float: left;
+      & .a_left{ float: left}
+      & a{ width: auto; height:40px; overflow: hidden; display: block}
+      & p{ color: #636363; font-size: @big-fsz; }
+      & span{color: #888888; font-size: @small-fsz;}
+      & i{ height: 40px; float: right; display: inline;}
+    }
+    li:nth-child(1){ border-bottom: 1px solid #cbcbcb;
+      & a{ margin-right: 8px;  display: block; background-size:auto  100%;}
+    }
+    li:nth-child(2){ border-bottom: 1px solid #cbcbcb; border-left: 1px solid #cbcbcb;
+      & a{padding-left: 8px;  display: block; background-size:auto  100%;}
+    }
+    li:nth-child(3){ border-right: 1px solid #cbcbcb;
+      & a{ margin-right: 8px;  display: block; background-size:auto  100%;}
+    }
+    li:nth-child(4){
+      & a{padding-left: 8px; display: block; background-size:auto  100%;}
+    }
+  }
+}
+
+/* 加载更多动画 */
+.loading_box{ width:180px; height:auto; margin:0 auto; padding: 8px 0; position:relative; display: block; overflow:hidden;}
+.loading_radius{width:8px;height:8px;background:#2ac364; position:absolute;
+  border-radius:10px;
+  -moz-border-radius:10px;      /* Gecko browsers */
+  -webkit-border-radius:10px;   /* Webkit browsers */
+}
+.loading_1{margin-left:25px; background:none;
+  animation:loading_1 3s infinite;
+  -moz-animation:loading_1 3s infinite;
+  -webkit-animation:loading_1 3s infinite;
+  -o-animation:loading_1 3s infinite;
+}
+.loading_2{margin-left:50px; background:none;
+  animation:loading_1 3s infinite;
+  -moz-animation:loading_1 3s infinite;
+  -webkit-animation:loading_1 3s infinite;
+  -o-animation:loading_1 3s infinite;
+  animation-delay:0.3s;
+  -moz-animation-delay:0.3s;
+  -webkit-animation-delay:0.3s;
+  -o-animation-delay:0.3s;
+}
+.loading_3{margin-left:75px; background:none;
+  animation:loading_1 3s infinite;
+  -moz-animation:loading_1 3s infinite;
+  -webkit-animation:loading_1 3s infinite;
+  -o-animation:loading_1 3s infinite;
+  animation-delay:0.6s;
+  -moz-animation-delay:0.6s;
+  -webkit-animation-delay:0.6s;
+  -o-animation-delay:0.6s;
+}
+.loading_4{margin-left:100px; background:none;
+  animation:loading_1 3s infinite;
+  -moz-animation:loading_1 3s infinite;
+  -webkit-animation:loading_1 3s infinite;
+  -o-animation:loading_1 3s infinite;
+  animation-delay:0.9s;
+  -moz-animation-delay:0.9s;
+  -webkit-animation-delay:0.9s;
+  -o-animation-delay:0.9s;
+}
+
+@keyframes loading_1{
+  0%   {left:50px; background:none;}
+  30%   {left:50px; background:none;}
+  50%   {left:25px; background:#2ac364;}
+  60%   {left:26px; background:#2ac364;}
+  70%  {left:25px; background:#2ac364;}
+  80%  {left:26px; background:#2ac364;}
+  100% {left:0px; background:none;}
+}
+@-moz-keyframes loading_1 /* Firefox */
+{
+  0%   {left:50px; background:none;}
+  30%   {left:50px; background:none;}
+  50%   {left:25px; background:#2ac364;}
+  60%   {left:26px; background:#2ac364;}
+  70%  {left:25px; background:#2ac364;}
+  80%  {left:26px; background:#2ac364;}
+  100% {left:0px; background:none;}
+}
+
+@-webkit-keyframes loading_1 /* Safari Chrome */
+{
+  0%   {left:50px; background:none;}
+  30%   {left:50px; background:none;}
+  50%   {left:25px; background:#2ac364;}
+  60%   {left:26px; background:#2ac364;}
+  70%  {left:25px; background:#2ac364;}
+  80%  {left:26px; background:#2ac364;}
+  100% {left:0px; background:none;}
+}
+
+@-o-keyframes loading_1 /* Opera */
+{
+  0%   {left:50px; background:none;}
+  30%   {left:50px; background:none;}
+  50%   {left:25px; background:#2ac364;}
+  60%   {left:26px; background:#2ac364;}
+  70%  {left:25px; background:#2ac364;}
+  80%  {left:26px; background:#2ac364;}
+  100% {left:0px; background:none;}
+}
+/* /加载更多动画 */
+
+/*弹出层样式*/
+.pop_box{ width:80%; height:52px; background:#fff; display:none; z-index:600; border-radius:5px; overflow:hidden; position:relative;}
+.pop_box .close{width:25px;height:25px; line-height:25px; text-align:center; cursor:pointer;position: absolute;top:15px;right:1px; font-size:1.2em; overflow: hidden; }
+.pop_loading_box{ width:100%; height:auto; padding:10px 0;  text-align:center;}

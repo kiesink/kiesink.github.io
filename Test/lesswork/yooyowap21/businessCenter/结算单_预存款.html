@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0,minimum-scale=1.0, user-scalable=no" name="viewport"/>
+    <script src="../js/avalon.js" data-main="../js/p-tmpl-qi"></script>
+    <link rel="stylesheet" href="../css/business.css"/>
+    <title>结算单_预存款</title>
+</head>
+<body class="bg-white">
+<div class="header">
+    <div class="header-wrapin">
+        <h1><span>结算单</span></h1>
+        <div class="toolbar">
+        <!--<a href="#"><i class="sign sign-back">&#x12011;</i><span>返回</span></a>-->
+            <a href="#"><span>充值记录</span></a>
+        </div>
+    </div>
+</div>
+
+<!--搜索框-start-->
+<form>
+    <div id="index-search-colmn" class="wrapper">
+        <label class="input-search">
+            <em href="javascript:;" class="sign sign-search">&#x12015;</em>
+            <div class="input-search-wrapin">
+                <input type="text" placeholder="请输入10位优游券" class="">
+            </div>
+
+        </label>
+        <a href="javascript:;" class="cancel">取消</a>
+</div>
+</form>
+<!--搜索框-end-->
+
+<!--<legend>组合-12</legend>-->
+<div class="wrapper combin-12 half">
+    <div class="tab collapse-tt">
+        <ul>
+            <li class="collapse" me-collapse="#c1.sort">
+                <a href="javascript:;">
+                    <i class="sign sign-set">&#x12178;</i>
+                    <span>全部套餐</span>
+                    <i class="sign sign-expand">&#x12008;</i>
+                    <i class="sign sign-collapse">&#x12010;</i>
+                </a>
+            </li>
+            <li class="collapse" me-collapse="#c2.sort">
+                <a href="javascript:;">
+                    <i class="sign sign-store">&#x12179;</i>
+                    <span>全部分店</span>
+                    <i class="sign sign-expand">&#x12008;</i>
+                    <i class="sign sign-collapse">&#x12010;</i>
+                </a>
+            </li>
+        </ul>
+    </div>
+    <div class="collapse-ct">
+        <div class="cts" me-collapse="c1.sort">
+            <div class="row"><a class="a-expand" href="javascript:;" me-collapse="#hide.sort#">不限</a></div>
+            <div class="row"><a class="a-expand" href="javascript:;" me-collapse="#hide.sort#">星步飞自助餐周五至周日单人晚餐</a></div>
+            <div class="row"><a class="a-expand" href="javascript:;" me-collapse="#hide.sort#">星步飞自助餐周五至周日单人晚餐</a></div>
+        </div>
+        <!--<div class="cts" me-collapse="c2.sort">-->
+            <!--<div class="row"><a class="a-expand" href="javascript:;" me-collapse="#hide.sort#">广州</a></div>-->
+            <!--<div class="row"><a class="a-expand" href="javascript:;" me-collapse="#hide.sort#">中山</a></div>-->
+        <!--</div>-->
+        <div class="cts" me-collapse="c2.sort">
+            <div class="row"><a class="a-expand" href="javascript:;" me-collapse="#hide.sort#" >广州</a></div>
+            <div class="row"><a class="a-expand" href="javascript:;" me-collapse="#hide.sort#">中山</a></div>
+        </div>
+    </div>
+</div>
+<!--日期选择-->
+<div class=" datepicker-wraper">
+    <div id="selectDate1"></div>
+</div>
+<div class="wrapper clearfix record-box">
+    <dl>
+        <dt>共计消费</dt>
+        <dd class="price-normal">2600</dd>
+    </dl>
+</div>
+
+<!--表格--start-->
+<div class="table-wrap">
+    <table cellpadding="0" cellspacing="0" class="table-record">
+        <!--<colgroup>-->
+        <!--<col width="30%">-->
+        <!--<col width="30%">-->
+        <!--<col width="15%">-->
+        <!--<col width="25%">-->
+        <!--</colgroup>-->
+        <thead>
+        <tr>
+            <th> 消费日期</th>
+            <th> 消费金额</th>
+            <th> 操作</th>
+        </tr>
+        </thead>
+        <tbody >
+        <tr >
+            <td>2015-04-03(周五)</td>
+            <td class="price-normal">800</td>
+            <td>
+                <a href="javascript:;">查看明细</a>
+            </td>
+        </tr>
+        <tr >
+            <td>2015-04-03(周五)</td>
+            <td class="price-normal">800</td>
+            <td>
+                <a href="javascript:;">查看明细</a>
+            </td>
+        </tr>
+        </tbody>
+    </table>
+
+</div>
+<!--表格--end-->
+</body>
+</html>

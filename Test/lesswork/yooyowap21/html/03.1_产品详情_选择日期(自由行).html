@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0,minimum-scale=1.0, user-scalable=no" name="viewport" charset="UTF-8" />
+    <link rel="stylesheet" type="text/css" href="../css/project.css">
+    <script src="../js/avalon.js" data-main="../js/p-product"></script>
+    <title>3.1_产品详情_选择日期(跟团游)</title>
+</head>
+<body ms-controller="GroupCtrl">
+<div class="header">
+    <div class="header-wrapin">
+        <h1><span>价格日历</span></h1>
+        <div class="back-wrap">
+            <a href="#"><i class="sign sign-back">&#x12011;</i><span>返回</span></a>
+        </div>
+    </div>
+</div>
+
+
+
+<div class="wrapper">
+    <div class="info-column row-02">
+        <div class="info">
+            <div class="info-content col-left" style="color: #3dc05b;">成人</div>
+            <span class="input-num col-right">
+                <button class="input-btn btn-minus"><i class="sign">&#x12002;</i></button>
+                <input type="text" class="input-text" value="0"/>
+                <button class="input-btn btn-plus"><i class="sign">&#x12001;</i></button>
+            </span>
+        </div>
+    </div>
+    <div class="info-column" style="border-bottom: none">
+        <p>成人价<i class="price">1550</i> 起</p>
+        <p class="notes">单房差：200元/人（成人为单数时需补足双人间房费）</p>
+    </div>
+ </div>
+
+<div class="wrapper">
+    <div id="selectDate1"></div>
+</div>
+
+<div class="wrapper combin-7">
+    <div class="col-right">
+        <a class="btn red" href="javascript:;">确认日期</a>
+    </div>
+    <div class="col-center multiline">
+        2成人<br>
+        <i class="notes">已选团期：<span ms-text="date"></span></i>
+    </div>
+</div>
+
+</body>
+</html>

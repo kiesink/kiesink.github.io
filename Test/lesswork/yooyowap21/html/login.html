@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0,minimum-scale=1.0, user-scalable=no" name="viewport"/>
+    <title>登录</title>
+    <script src="../js/avalon.js" data-main="../js/p-tmpl"></script>
+    <link rel="stylesheet" href="../css/project.css"/>
+</head>
+<body>
+<div class="p-index">
+    <div class="header">
+        <div class="header-wrapin">
+            <h1><span>登录</span></h1>
+            <div class="back-wrap">
+                <a href="#"><i class="sign sign-back">&#x12011;</i><span>返回</span></a>
+            </div>
+        </div>
+    </div>
+    <div class="wrapper">
+
+        <div class="tab">
+            <ul>
+                <li class="on" me-tab="#tab1"><a href="javascript:;">快速登录</a></li>
+                <li me-tab="#tab2"><a href="javascript:;">账号登录</a></li>
+            </ul>
+        </div>
+
+        <div class="form" me-tab="tab1">
+            <label class="input-wrap">
+                <i class="sign sign-card">&#x12070;</i>
+                <!--<div>-->
+                    <!--<input type="text" placeholder="优游自驾卡">-->
+                <!--</div>-->
+                    <div class="sel-wrap">
+                        <select class="y-form">
+                            <option value='自驾卡1'>优游自驾卡</option>
+                            <option value='自驾卡2'>自驾卡2</option>
+                            <option value='自驾卡3'>自驾卡3</option>
+                        </select>
+                    </div>
+                <i class="sign sign-collapse">&#x12010;</i>
+            </label>
+
+            <label class="input-wrap">
+                <i class="sign">&#x12029;</i>
+                <div>
+                    <input type="text" placeholder="请输入手机号码">
+                </div>
+            </label>
+
+
+            <label class="input-wrap">
+                <i class="sign">&#x12030;</i>
+                <div>
+                    <input type="text" placeholder="请输入验证码">
+                </div>
+                <a href="javascript:;">获取验证码</a>
+            </label>
+        </div>
+
+        <div class="form" me-tab="tab2">
+            <label class="input-wrap">
+                <i class="sign sign-card">&#x12070;</i>
+                <!--<div>-->
+                <!--<input type="text" placeholder="优游自驾卡">-->
+                <!--</div>-->
+                <div class="sel-wrap">
+                    <select class="y-form">
+                        <option value='自驾卡1'>优游自驾卡</option>
+                        <option value='自驾卡2'>自驾卡2</option>
+                        <option value='自驾卡3'>自驾卡3</option>
+                    </select>
+                </div>
+                <i class="sign sign-collapse">&#x12010;</i>
+            </label>
+            
+            <label class="input-wrap">
+                <i class="sign">&#x12016;</i>
+                <div>
+                    <input type="text" placeholder="请输入帐号">
+                </div>
+            </label>
+
+            <label class="input-wrap">
+                <i class="sign">&#x12032;</i>
+                <div>
+                    <input type="text" placeholder="请输入密码">
+                </div>
+            </label>
+        </div>
+
+        <div class="btn-wrap">
+            <a class="btn orange btn-login" href="javascript:;">登录</a>
+            <a class="btn-join" href="javascript:;">加入VIP会员</a>
+        </div>
+    </div>
+</div>
+
+<script src="../js/avalon.js"></script>
+<script>
+    require(['acme'], function(){});
+</script>
+</body>
+</html>

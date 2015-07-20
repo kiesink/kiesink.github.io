@@ -1,0 +1,602 @@
+@import "../../common/css/wap";
+@import "editinfo.css";
+//@import "../fonts/font-class.css";
+// 重置样式
+.global-reset();
+
+//重置表格边线
+table {border-collapse: collapse;}
+
+/* 排版 */
+fieldset {
+  //border: 1px solid #c0c0c0;
+  margin: 25px 2px;
+  padding: 6px 10px 4px;
+}
+
+legend {
+  margin: 20px 0 10px;
+  border: 0; /* 1 */
+  padding: 0;
+  white-space: normal; /* 2 */
+  *margin-left: -7px; /* 3 */
+  font-size: 1.5rem;
+}
+
+fieldset > *:nth-child(n + 2){
+  //margin-right: 10px;
+  margin-bottom: 10px;
+}
+
+/* /排版 */
+
+//需要用到的模块先在这里准备好。
+.using-btn();
+.using-tab();
+.using-form();
+.using-js();
+
+// 定义变量
+@mg-lr:   10px;     //控制页面两边的距离(body两边的距离)
+@mg-tb:   10px;     //控制页面上下两个模块间的距离
+
+@pd-lr:   10px;     //控制模块内左右边距
+@pd-tb:   10px;     //控制模块内上下边距
+
+@color:     #666;   //字体色(浅色背景时)
+@color-1:   #888;   //较浅字体色
+
+@color-w:   #fff;   //字体色(深色背景时)
+
+@m-color:   #3dc05b;//主色
+@hl-color:  #ff6666;//高亮色
+@s-color:   #f8b551;//辅色
+@bg-color:  #f5f5f5;//背景色
+@bd-color:  #e5e5e5;   //边框色
+
+@root-fsz:  62.5%;  //根字号
+
+@min-fsz:   1rem;   //最小字号  10号
+@small-fsz: 1.2rem; //较小字号  12号
+@fsz:   1.4rem;     //正常字号  14号 正文字号
+@big-fsz:   1.6rem; //较大字号  16号 通常用作标题
+@max-fsz:   1.8rem; //最大字号  18号
+
+// 制作按钮
+.btn{
+  .border-radius(.3em);
+  .padding(_, 2.5em);
+  font-size: @fsz;
+  
+  &.red{
+    .btn.make(#fff, #ff6666, #ec2e2e);
+  }
+  &.green{
+    .btn.make(#fff, #66cc99, #4eb682);
+  }
+  &.orange{
+    .btn.make(#fff, #f8b551, #d58918);
+  }
+  &.gray{
+    .btn.make(#fff, #bbb, #999);
+  }
+
+  &.small{
+    .padding(_, 1em);
+  }
+  &.big{
+    .btn.full;
+    padding: .625em;
+    font-size: @max-fsz;
+  }
+  &.big-sradius{
+    .btn.full;
+    padding: .625em;
+    font-size: @max-fsz;
+  }
+}
+
+.input-num{
+  .input-btn{
+    border-color: #f5f5f5;
+    .border-radius(0);
+    i {
+      color: @m-color;
+      font-weight: bold;
+    }
+  }
+  .input-text{
+    width: 24px;
+    height: 26px;
+    border-color: #f5f5f5;
+    border-width: 2px 0;
+    .border-radius(0);
+  }
+}
+
+// 设定公共样式
+html{
+  height: 100%;
+  font-family: "Microsoft YaHei"; //
+  font-size: @root-fsz;
+}
+body{
+  font-size: @fsz;
+  background-color: @bg-color;
+  color: @color;
+  min-height: 100%;
+}
+input{
+  padding: 0;
+}
+img {
+  display: block;
+  max-width: 100%;
+}
+a{
+  color: @color;
+  text-decoration: none;
+  img{
+    border: 0;
+  }
+  &.link, &:visited{
+    color: @color;
+  }
+}
+// 为超链接增加样式，使人感觉在点击
+a{
+  //.js-hyperlink;
+}
+a, input, button, select, textarea {
+  -webkit-tap-highlight-color: rgba(255, 255, 255, 0);
+}
+// 定义字体图标公共标签
+@font-face {
+  font-family: 'x';
+  src: url('../fonts/x.woff?v=1.0') format('woff'), url('../fonts/x.ttf?v=1.0') format('truetype');
+  font-weight: normal;
+  font-style: normal;
+}
+
+// 字体图标公共类名
+.sign{
+  display: inline-block;
+  min-width: 1em;
+  font: normal normal normal 14px/1 x;
+  font-size: inherit;
+  text-rendering: auto;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  transform: translate(0, 0);
+  vertical-align: middle;
+  text-align: center;
+}
+
+// 页头
+.header{
+  height: @max-fsz * 2.03;
+  line-height: @max-fsz * 2.03;
+  &.dnl{
+    height:@max-fsz * 2.03+5.8rem;
+    .header-wrapin{
+      top:6.3rem;
+    }
+  }
+}
+.header-wrapin {
+  .fixed(0, _, _, 0);
+  width: 100%;
+  height: @max-fsz * 2.03;
+  background-color: @m-color;
+  color: @color-w;
+  z-index: 200;
+  h1 {
+    font-size: @max-fsz;
+    text-align: center;
+    b{
+      margin-left: .2em;
+      font-size: @small-fsz;
+      font-weight: normal;
+    }
+  }
+  a {
+    .inline-block();
+    height: @max-fsz * 2.03;
+    padding: 0 .7em;
+    color: @color-w;
+    &:first-child {
+      padding-left: @mg-lr;
+    }
+    &:last-child {
+      padding-right: @mg-lr;
+    }
+  }
+  .back-wrap {
+    .absolute(0, _, _, @mg-lr);
+    margin-left: -@mg-lr;
+    .sign {
+      margin-right: .2em;
+    }
+  }
+  .toolbar {
+    .absolute(0, @mg-lr, _, _);
+    margin-right: -@mg-lr;
+  }
+  .sign {
+    font-size: 1.5em;
+  }
+}
+
+// 页脚导航
+.footer{
+  height: @fsz * 4;
+  line-height: 1;
+}
+.footer-wrapin{
+  .fixed(_, _, 0, 0);
+  width: 100%;
+  border-top:1px solid #ebebeb;
+  background-color:#fff;
+  z-index: 200;
+  ul{
+    .me-split(4);
+  }
+  a {
+    .inline-block();
+    width: 100%;
+    padding: 8px 0;
+    text-align: center;
+    font-size: @small-fsz;
+    .sign:nth-child(2) {
+      display: none;
+    }
+    &.on {
+      color: @m-color;
+      .sign:nth-child(1) {
+        display: none;
+      }
+      .sign:nth-child(2) {
+        display: block;
+      }
+    }
+    &.update:after {
+      content: '•';
+      .absolute(-.3em, _, _, 50%);
+      margin-left: .6em;
+      font-size: 1.6em;
+      color: red;
+    }
+  }
+  .sign{
+    display: block;
+    margin-bottom: .2em;
+    font-size: @fsz * 1.5;
+  }
+  &.footer-3{
+    ul{
+      .me-split(3);
+    }
+  }
+}
+
+
+
+
+
+
+// 这里写个方法。限制页面宽度，使页面在大屏显示下能不会拉伸过宽
+// 参数：【限制最大宽度, 页面背景色[默认#c0c0c0]】
+.limit(@max-width, @background-color: #c0c0c0){
+  html{
+    background-color: @background-color;
+  }
+  body{
+    max-width: @max-width;
+    .margin(_, auto);
+  }
+  .header-wrapin, .footer-wrapin, .js-mask, .date-fixbar, .date_mask{
+    left: initial;
+    max-width: @max-width;
+  }
+  .body-limit{
+    left: initial!important;
+    max-width: @max-width;
+    .margin(_, 0);
+    .padding(_, 0);
+  }
+}
+
+//
+.limit(100%);
+
+// 选项卡
+.tab{
+  font-size: @big-fsz;
+  .tab.v3(.8em, @m-color);
+}
+
+// 搜索框
+.input-search{
+  .relative();
+  .inline-block();
+  overflow: hidden;
+  border: 1px solid @bd-color;
+  .border-radius(5px);
+  background-color: #fff;
+  font-size: @fsz * 1.5;
+  line-height: 1;
+  .input-search-wrapin{
+    display: block;
+    margin: 0 (@fsz * 2) 0 .5em;
+  }
+  input[type=text]{
+    width: 100%;
+    height: @fsz * 1.5;
+    padding: (@fsz * .5) 0;
+    line-height: @fsz * 1.5;
+    border: 0;
+    outline: none;
+    font-size: @fsz;
+  }
+  .sign{
+    .absolute(0, 0, _, _);
+    width: @fsz * 2.5;
+    height: @fsz * 2.5;
+    padding: 0 !important;
+    line-height: @fsz * 2.5;
+    font-size: @fsz * 1.5;
+    color: @color;
+  }
+}
+
+// 行，两行之间带分隔线
+.row{
+  .clearfix;
+  padding: @pd-tb @pd-lr;
+  + .row{
+    border-top: 1px solid @bd-color;
+  }
+  .a-expand{
+    .clearfix;
+    .me-expand(@pd-tb @pd-lr);
+  }
+}
+
+// 左右分列
+.col-left{
+  float: left;
+}
+.col-right{
+  float: right;
+}
+.col-center{
+  overflow: hidden;
+}
+
+.title{
+  border-bottom: 1px solid @bd-color;
+  padding: 12px @pd-lr;
+  font-size: @big-fsz;
+  .remark{
+    margin-left: 0;
+    font-size: @min-fsz;
+    color: @color-1;
+  }
+  .area, .date{
+    margin-left: 10px;
+    color: @color;
+  }
+  a {
+    .me-expand(12px @pd-lr);
+    &.on{
+      .sign-expand{
+        display: block;
+      }
+      .sign-collapse{
+        display: none;
+      }
+    }
+  }
+  .sign-wrap{
+    .inline-block();
+    min-width: 1.5em;
+  }
+  .sign{
+    margin-left: -@pd-lr;
+    font-size: 1.5em;
+    //font-weight: bold;
+  }
+  .sign-into, .sign-expand, .sign-collapse{
+    float: right;
+    color: @m-color;
+  }
+
+
+  &.green{
+    &, a{
+      color: @m-color;
+    }
+  }
+
+  &.collapse{
+    border-bottom: 0;
+    &.on{
+      border-bottom: 1px solid @bd-color;
+    }
+  }
+}
+
+// 折叠类标签
+.collapse{
+  .sign-expand{
+    display: inline-block;
+  }
+  .sign-collapse{
+    display: none;
+  }
+  &.on{
+    .sign-expand{
+      display: none;
+    }
+    .sign-collapse{
+      display: inline-block;
+    }
+  }
+}
+
+// 内容块，固定格式。
+.content{
+  padding: @pd-tb @pd-lr;
+  font-size: @fsz;
+  line-height: 1.6;
+  ul{
+    margin-bottom: 2.1em;
+  }
+  ul li, p{
+    margin-bottom: .5em;
+  }
+  p{  }
+}
+
+
+
+// 特殊标识
+// 价钱
+.price{
+  color: @hl-color;
+  font-style: normal;
+  font-size: @max-fsz;
+  font-family: arial, sans-serif;
+  &:before{
+    content: '¥';
+    font-size: .6em;
+  }
+}
+// 提醒词语，绿色
+.remind{
+  color: @m-color;
+  font-style: normal;
+}
+// 备注，副标(带括号,一般用作较短的语句)
+.note{
+  font-size: .8em;
+  font-style: normal;
+  .opacity(80);
+  &:before{
+    content: '(';
+  }
+  &:after{
+    content: ')';
+  }
+}
+// (不带括号,一般用作较长的语句，就像对标题的补充说明)
+.notes{
+  font-size: .8em;
+  font-style: normal;
+  .opacity(80);
+}
+
+// 删除线
+.delete{
+  &, *, *:before, *:after{
+    font-size: @small-fsz;
+    color: @color-1;
+    text-decoration: line-through;
+    font-family: inherit;
+  }
+}
+// 着重词，红色
+.focus{
+  color: @hl-color;
+  font-style: normal;
+}
+
+.bold{
+  font-weight: bold;
+}
+
+
+
+//
+.wrapper{
+  .clearfix;
+  margin-bottom: @mg-lr !important;
+  //border: solid @bd-color;
+  //border-width: 1px 0;
+  padding: @pd-tb @pd-lr;
+  background-color: #fff;
+}
+
+.clearfix{
+  .clearfix;
+}
+//超出出现省略号
+.ellipsis{
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+
+.anm {
+  -webkit-animation-duration: 1s;
+  animation-duration: 1s;
+  -webkit-animation-fill-mode: both;
+  animation-fill-mode: both;
+}
+/*时间周期*/
+.anm-time100 {
+  -webkit-animation-duration: 0.1s;
+  animation-duration: 0.1s;
+}
+.anm-time200 {
+  -webkit-animation-duration: 0.2s;
+  animation-duration: 0.2s;
+}
+.anm-time500 {
+  -webkit-animation-duration: 0.5s;
+  animation-duration: 0.5s;
+}
+.anm-time1000 {
+  -webkit-animation-duration: 1s;
+  animation-duration: 1s;
+}
+.anm-time1200 {
+  -webkit-animation-duration: 1.2s;
+  animation-duration: 1.2s;
+}
+.anm-time1500 {
+  -webkit-animation-duration: 1.5s;
+  animation-duration: 1.5s;
+}
+.anm-time1750 {
+  -webkit-animation-duration: 1.75s;
+  animation-duration: 1.75s;
+}
+.anm-time2000 {
+  -webkit-animation-duration: 2s;
+  animation-duration: 2s;
+}
+
+@-webkit-keyframes ac-feedback {
+  from{
+    background-color: #ccc;
+    .opacity(80);
+  }
+}
+
+@keyframes ac-feedback {
+  from{
+    background-color: #ccc;
+    .opacity(80);
+  }
+}
+
+.ac-feedback {
+  -webkit-animation-name: ac-feedback;
+  animation-name: ac-feedback;
+  -webkit-transform-origin: center bottom;
+  -ms-transform-origin: center bottom;
+  transform-origin: center bottom;
+}
+.clear_plr{padding-left: 0px;padding-right: 0px;}

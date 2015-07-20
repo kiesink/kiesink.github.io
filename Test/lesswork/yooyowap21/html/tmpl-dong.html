@@ -1,0 +1,462 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0,minimum-scale=1.0, user-scalable=no" name="viewport" />
+    <title>模板页</title>
+    <link rel="stylesheet" href="../css/project.css"/>
+    <script src="../js/avalon.js" data-main="../js/p-tmpl"></script>
+</head>
+<body class="p-tmpl" ms-controller="Ctrl">
+    <!--<div ms-include-src="'header.html'" data-include-replace="true"></div>-->
+    <div class="header">
+        <div class="header-wrapin">
+            <h1><span>标题</span><i class="note">118</i></h1>
+            <div class="back-wrap">
+                <a href="javascript:;"><i class="sign sign-back">&#x12011;</i><span>返回</span></a>
+            </div>
+            <div class="toolbar">
+                <a href="javascript:;"><i class="sign sign-search">&#x12015;</i></a>
+                <a href="javascript:;"><i class="sign sign-vip">&#x12025;</i></a>
+                <!--<a href="javascript:;"><i class="sign sign-fav">&#x12017;</i></a>-->
+                <!--<a href="javascript:;"><i class="sign sign-share">&#x12018;</i></a>-->
+                <!--<a href="javascript:;"><i class="sign sign-edit">&#x12033;</i></a>-->
+                <!--<a href="javascript:;">发布</a>-->
+                <!--<a href="javascript:;">完成</a>-->
+            </div>
+        </div>
+    </div>
+    <fieldset>
+        <legend>按钮 .btn [.red .green .orange .gray .big]</legend>
+        <a class="btn red" href="javascript:;">红色按钮</a>
+        <a class="btn green" href="javascript:;">绿色按钮</a>
+        <a class="btn orange" href="javascript:;">橙色按钮</a>
+        <a class="btn gray" href="javascript:;">灰色按钮</a>
+        <a class="btn orange big" href="javascript:;">大橙色按钮</a>
+        <a class="btn red big" href="javascript:;">大红色按钮</a>
+        <a class="btn green big" href="javascript:;">大绿色按钮</a>
+        <a class="btn gray big" href="javascript:;">大灰色按钮</a>
+    </fieldset>
+    <fieldset>
+        <legend>选项卡 .tab</legend>
+        <div class="tab">
+            <ul>
+                <li><a href="javascript:;">概要</a></li>
+                <li><a href="javascript:;">详情</a></li>
+                <li><a href="javascript:;">费用须知</a></li>
+            </ul>
+        </div>
+    </fieldset>
+
+    <fieldset>
+        <legend>表单</legend>
+        <div class="wrapper">
+            <label class="input-search">
+                <div class="input-search-wrapin">
+                    <input type="text" placeholder="请输入城市" class="">
+                </div>
+                <a href="javascript:;" class="sign sign-search">&#x12015;</a>
+            </label>
+
+            <span class="input-num">
+                <button class="input-btn btn-minus"><i class="sign">&#x12002;</i></button>
+                <input type="text" class="input-text" value="0"/>
+                <button class="input-btn btn-plus"><i class="sign">&#x12001;</i></button>
+            </span>
+
+            <!--<a href="javascript:;" id="openmask"/>点击弹出遮罩层</a>-->
+            <!--<div class="mask"></div>-->
+        </div>
+    </fieldset>
+    <fieldset>
+        <legend>标题 .title [.collapse .green]</legend>
+        <div class="wrapper">
+        <h2 class="title">
+            <a class="a-expand" href="javascript:;">
+                <i class="sign sign-flag">&#x12097;</i>
+                <i class="sign sign-into">&#x12009;</i>
+                <span class="tt">预定须知</span>
+                <span class="note">信息</span>
+                <span class="area">地区</span>
+                <span class="date">时间</span>
+            </a>
+        </h2>
+        <h2 class="title collapse">
+            <a class="a-expand" href="javascript:;">
+                <i class="sign sign-flag">&#x12097;</i>
+                <i class="sign sign-expand">&#x12008;</i>
+                <i class="sign sign-collapse">&#x12010;</i>
+                <span class="tt">第一天</span>
+                <span class="area">桂林</span>
+                <span class="date">2015-2-19</span>
+            </a>
+        </h2>
+        <h2 class="title collapse green on" me-collapse="#c1">
+            <a class="a-expand" href="javascript:;">
+                <i class="sign sign-flag">&#x12097;</i>
+                <i class="sign sign-expand">&#x12008;</i>
+                <i class="sign sign-collapse">&#x12010;</i>
+                <span class="tt">第一天</span>
+                <span class="area">桂林</span>
+                <span class="date">2015-2-19</span>
+            </a>
+        </h2>
+            <div me-collapse="c1">11</div>
+        </div>
+    </fieldset>
+    <fieldset>
+        <legend>内容 .content</legend>
+        <div class="content">
+            <ul>
+                <li>ul li 没有首行缩进，如：</li>
+                <li>无论在中国还是美国，发卡方变更服务内容涉嫌消费欺诈和虚假广告；</li>
+                <li>消费者有权申请裁定其无效；而不管是“合并重组”还是“破产清算”，消费者都应该得到补偿；</li>
+            </ul>
+            <p>p 标签有首行缩进，如：</p>
+            <p>无论在中国还是美国，而不管是“合并重组”还是“破产清算”，是办卡的前置法律条件：</p>
+            <p>无论在中国还是美国，披露预付卡条款并获得消费者前置法律条件：</p>
+        </div>
+    </fieldset>
+
+    <fieldset>
+        <legend>模块外层</legend>
+        <div class="wrapper">
+            测试文本
+        </div>
+    </fieldset>
+
+
+    <fieldset>
+        <legend>特殊标记 [.price .remind]</legend>
+        <p style="font-size: 14px;">这是价钱<i class="price">123</i>、关键词<i class="remind">优游</i>、标题备注或其他辅助小字<i class="note">辅助</i>的样式。</p>
+    </fieldset>
+
+
+
+    <fieldset>
+        <legend>组合-1 .combin-1</legend>
+        <div class="wrapper combin-1">
+            <h2 class="title green">
+                <a href="javascript:;">
+                    <i class="sign sign-flag">&#x12097;</i>
+                    <span class="tt">预定须知</span>
+                </a>
+            </h2>
+            <div class="row">
+                <div class="col-center">
+                    <p>桂林+漓江+阳朔+龙脊梯田5日</p>
+                    <p>文艺之旅·加游古东瀑布 全景升级</p>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-center">
+                    <p>桂林+漓江+阳朔+龙脊梯田5日</p>
+                    <p>桂林+漓江+阳朔+龙脊梯田5日</p>
+                    <p>桂林+漓江+阳朔+龙脊梯田5日</p>
+                </div>
+            </div>
+        </div>
+        <legend>组合-2 .combin-2</legend>
+        <div class="wrapper combin-2">
+            <div class="tab">
+                <ul>
+                    <li class="on" me-tab="#tab1"><a href="javascript:;">概要</a></li>
+                    <li me-tab="#tab2"><a href="javascript:;">详情</a></li>
+                    <li me-tab="#tab3"><a href="javascript:;">费用须知</a></li>
+                </ul>
+            </div>
+            <div class="tab-1" me-tab="tab1">
+                <div class="row">
+                    <div class="col-left">
+                        <img src="../images/cpxq-01.png" alt=""/>
+                    </div>
+                    <div class="col-center">
+                        <div class="tt">优游推荐</div>
+                        <p>桂林+漓江+阳朔+龙脊梯田5日</p>
+                        <p>文艺之旅·加游古东瀑布 全景升级</p>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-right">
+                        <a class="btn red" href="javascript:;">开始预订</a>
+                    </div>
+                    <div class="col-center">
+                        <p>出发日期：2015-02-05</p>
+                        <p><i class="price">1550</i> 起/人</p>
+                        <p class="delete">原价<i class="price">3200</i> /人</p>
+                    </div>
+                </div>
+            </div>
+            <div class="tab-2" me-tab="tab2"></div>
+            <div class="tab-3" me-tab="tab3">
+                <h2 class="title collapse on" me-collapse="#c1.info">
+                    <a href="javascript:;">
+                        <i class="sign sign-flag">&#x12097;</i>
+                        <i class="sign sign-expand">&#x12008;</i>
+                        <i class="sign sign-collapse">&#x12010;</i>
+                        <span>
+                            费用说明
+                        </span>
+                    </a>
+                </h2>
+                <div class="content" me-collapse="c1.info">
+                    123<br/>456
+                </div>
+                <h2 class="title collapse" me-collapse="#c2.info">
+                    <a href="javascript:;">
+                        <i class="sign sign-flag">&#x12013;</i>
+                        <i class="sign sign-expand">&#x12008;</i>
+                        <i class="sign sign-collapse">&#x12010;</i>
+                        <span>
+                            温馨提示
+                        </span>
+                    </a>
+                </h2>
+                <div class="content" me-collapse="c2.info">
+                    123<br/>456
+                </div>
+                <h2 class="title collapse" me-collapse="#c3.info">
+                    <a href="javascript:;">
+                        <i class="sign sign-flag">&#x12016;</i>
+                        <i class="sign sign-expand">&#x12008;</i>
+                        <i class="sign sign-collapse">&#x12010;</i>
+                        <span>
+                            预定须知
+                        </span>
+                    </a>
+                </h2>
+                <div class="content" me-collapse="c3.info">
+                    123<br/>456
+                </div>
+                <h2 class="title collapse" me-collapse="#c4.info">
+                    <a href="javascript:;">
+                        <i class="sign sign-flag">&#x12015;</i>
+                        <i class="sign sign-expand">&#x12008;</i>
+                        <i class="sign sign-collapse">&#x12010;</i>
+                        <span>
+                            安全须知
+                        </span>
+                    </a>
+                </h2>
+                <div class="content" me-collapse="c4.info">
+                    123<br/>456
+                </div>
+            </div>
+        </div>
+        <legend>组合-3 .combin-3</legend>
+        <div class="wrapper combin-3">
+            <div class="col-left"><span class="tips" href="javascript:;">限时优惠</span></div>
+            <div class="col-center">
+                <h3>2015新春钜惠：2成人<i class="focus">-500</i>元/单；6成人<i class="focus">-2000</i>元/单</h3>
+                <p class="notes">节后错峰享立减，限时不限量！可与其他优惠叠加使用</p>
+            </div>
+        </div>
+        <legend>组合-4 .combin-4</legend>
+        <div class="wrapper combin-4">
+            <h2 class="title green">附加产品</h2>
+            <div class="row">
+                <a class="a-expand" href="javascript:;">
+                    <div class="col-left">保险</div>
+                    <div class="col-right">
+                        <i class="price">50</i><br/>
+                        <i class="notes">2份</i>
+                    </div>
+                    <div class="col-center">
+                        <p>平安境内长线保险</p>
+                        <p>经典型3-4天</p>
+                    </div>
+                </a>
+            </div>
+            <div class="row">
+                <a class="a-expand" href="javascript:;">
+                    <div class="col-left">用车</div>
+                    <div class="col-right">
+                        <i class="price">50</i><br/>
+                    </div>
+                    <div class="col-center">
+                        <p>专车接送</p>
+                        <p class="note">机场至市区内,可坐4人含儿童09:00-22:00</p>
+                    </div>
+                </a>
+            </div>
+        </div>
+        <legend>组合-5 .combin-5</legend>
+        <div class="wrapper combin-5">
+            <h2 class="title green">景区门票</h2>
+            <div class="row">
+                <h3>靖江王府.独秀峰</h3>
+                <div class="notes">
+                    <div class="col-right">
+                        2份
+                    </div>
+                    <div class="col-center">门票日期：2015-2-5</div>
+                </div>
+            </div>
+        </div>
+        <legend>组合-6 .combin-6</legend>
+        <div class="wrapper combin-6">
+            <!--<img src="../images/msjs-01.jpg" alt=""/>-->
+            <div class="col-right">
+                <i class="price">235</i>
+            </div>
+            <div class="col-center">
+                <h3>豪华海景房</h3>
+                <p class="notes">大床/双床 可住2人</p>
+            </div>
+        </div>
+        <legend>组合-7 .combin-7</legend>
+        <div class="wrapper combin-7">
+            <div class="col-right">
+                <a class="btn red" href="javascript:;">下一步</a>
+            </div>
+            <div class="col-center">
+                订单总额<i class="price">235</i>
+            </div>
+        </div>
+        <div class="wrapper combin-7">
+            <div class="col-right">
+                <a class="btn red" href="javascript:;">确认日期</a>
+            </div>
+            <div class="col-center multiline">
+                2成人<br>
+                <i class="notes">已选团期：2015-02-15</i>
+            </div>
+        </div>
+        <legend>组合-8 .combin-8</legend>
+        <div class="wrapper combin-8">
+            <ul>
+                <li><a class="btn orange" href="javascript:;">电话查询</a></li>
+                <li><a class="btn red" href="javascript:;">立即订购</a></li>
+            </ul>
+        </div>
+        <legend>组合-9 .combin-9</legend>
+        <div class="wrapper combin-9">
+            <a class="btn orange btn-pay" href="javascript:;">立即支付</a>
+        </div>
+        <legend>组合-10 .combin-10</legend>
+        <div class="wrapper combin-10">
+            <h2 class="title">当前定位</h2>
+            <div class="row">
+                <a href="javascript:;">广州</a>
+                <a href="javascript:;">广州</a>
+                <a href="javascript:;">广州</a>
+                <a href="javascript:;">广州</a>
+            </div>
+        </div>
+        <legend>组合-11 .combin-11</legend>
+        <div class="wrapper combin-11">
+            <h2 class="title">热门地区圈</h2>
+            <div class="row">
+                <ul>
+                    <li>
+                        <a href="javascript:;">中山</a>
+                    </li>
+                    <li>
+                        <a href="javascript:;">广州</a>
+                    </li>
+                    <li>
+                        <a href="javascript:;">广西</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+        <legend>组合-12</legend>
+        <div class="wrapper combin-12">
+            <div class="tab collapse-tt">
+                <ul>
+                    <li class="collapse" me-collapse="#c1.sort">
+                        <a href="javascript:;">
+                            <span>排序1</span>
+                            <i class="sign sign-expand">&#x12008;</i>
+                            <i class="sign sign-collapse">&#x12010;</i>
+                        </a>
+                    </li>
+                    <li class="collapse" me-collapse="#c2.sort">
+                        <a href="javascript:;">
+                            <span>排序2</span>
+                            <i class="sign sign-expand">&#x12008;</i>
+                            <i class="sign sign-collapse">&#x12010;</i>
+                        </a>
+                    </li>
+                    <li class="collapse" me-collapse="#c3.sort">
+                        <a href="javascript:;">
+                            <span>排序3</span>
+                            <i class="sign sign-expand">&#x12008;</i>
+                            <i class="sign sign-collapse">&#x12010;</i>
+                        </a>
+                    </li>
+                </ul>
+            </div>
+            <div class="collapse-ct">
+                <div class="cts" me-collapse="c1.sort">
+                    <div class="row"><a class="a-expand" href="javascript:;" me-collapse="#hide.sort#">1111</a></div>
+                    <div class="row"><a class="a-expand" href="javascript:;" me-collapse="#hide.sort#">1111</a></div>
+                    <div class="row"><a class="a-expand" href="javascript:;" me-collapse="#hide.sort#">11111</a></div>
+                </div>
+                <div class="cts" me-collapse="c2.sort">
+                    <div class="row"><a class="a-expand" href="javascript:;" me-collapse="#hide.sort#">222</a></div>
+                    <div class="row"><a class="a-expand" href="javascript:;" me-collapse="#hide.sort#">2222</a></div>
+                    <div class="row"><a class="a-expand" href="javascript:;" me-collapse="#hide.sort#">22222</a></div>
+                </div>
+                <div class="cts" me-collapse="c3.sort">
+                    <div class="row"><a class="a-expand" href="javascript:;" me-collapse="#hide.sort#">333</a></div>
+                    <div class="row"><a class="a-expand" href="javascript:;" me-collapse="#hide.sort#">3333</a></div>
+                    <div class="row"><a class="a-expand" href="javascript:;" me-collapse="#hide.sort#">33333</a></div>
+                </div>
+            </div>
+        </div>
+    </fieldset>
+    <fieldset>
+        <legend>有表单那个页面那些行 [.form-list > .row]</legend>
+        <div class="wrapper form-list">
+            <h2 class="title green">旅客</h2>
+            <div class="row">
+                <div class="col-left">姓名</div>
+                <div class="col-center">所选证件上相同的中文姓名</div>
+            </div>
+            <div class="row">
+                <a href="javascript:;" class="a-expand">
+                    <div class="col-left">证件</div>
+                    <div class="col-right"><i class="sign sign-into">&#x12009;</i></div>
+                    <div class="col-center">护照</div>
+                </a>
+            </div>
+            <div class="row">
+                <a href="javascript:;" class="a-expand">
+                    <div class="col-left">手机</div>
+                    <div class="col-right"><i class="note">点击修改</i></div>
+                    <div class="col-center">13013243647</div>
+                </a>
+            </div>
+        </div>
+    </fieldset>
+
+    <fieldset>
+        <legend>遮罩层</legend>
+        <div class="wrapper">
+            <a class="btn red" href="javascript:;" me-mask="#m1">显示遮罩层</a>
+            <div class="row" me-mask="m1" style="background-color: #fff;">
+                这个div随便给个背景色，display：inline-block时为垂直居中。
+            </div>
+        </div>
+    </fieldset>
+    <!--返回顶部组件-->
+    <a id="offset-map" href="#">
+        <span class="sign sign-142">&#x12146</span>
+    </a>
+    <!--返回顶部组件-->
+
+    <!--<div class="footer">-->
+        <!--<div class="footer-wrapin">-->
+            <!--<ul>-->
+                <!--<li><a href="javascript:;"><i class="sign">&#x12005;</i><i class="sign">&#x12073;</i><em>首页</em></a></li>-->
+                <!--<li><a href="javascript:;"><i class="sign">&#x12071;</i><i class="sign">&#x12074;</i><em>DIY订购</em></a></li>-->
+                <!--<li><a class="" href="javascript:;"><i class="sign">&#x12072;</i><i class="sign">&#x12075;</i><em>抢购</em></a></li>-->
+                <!--<li><a class="on update" href="javascript:;"><i class="sign">&#x12014;</i><i class="sign">&#x12076;</i><em>省钱车</em></a></li>-->
+                <!--<li><a href="javascript:;"><i class="sign">&#x12006;</i><i class="sign">&#x12077;</i><em>我的</em></a></li>-->
+            <!--</ul>-->
+        <!--</div>-->
+    <!--</div>-->
+    <div ms-include-src="'footer.html'" data-include-replace="true"></div>
+</body>
+</html>

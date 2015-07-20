@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0,minimum-scale=1.0, user-scalable=no" name="viewport"/>
+    <link rel="stylesheet" href="../css/business.css"/>
+    <title>会员验证记录</title>
+</head>
+<body class="bg-white">
+<div class="header-sub">
+    <div class="header-wrapin">
+        <div class="back-wrap">
+            <a href="#"><i class="sign sign-back">&#x12011;</i></a>
+        </div>
+        <div class="hd-sub-center">
+            <ul class="hd-nav">
+                <li>券号记录</li>
+                <li class="hd-nav-on-r">会员记录</li>
+            </ul>
+        </div>
+        <div class="hd-sub-right">
+            <a href="#"><i class="sign sign-search">&#x12015;</i></a>
+        </div>
+    </div>
+</div>
+
+<div class="datepicker-wraper">
+    <div id="selectDate1"></div>
+    <div class="datepicker-sign" data-sign="down"><i class="sign sign-9">&#x12010;</i></div>
+    <div class="datepicker-tip animated hide"><span>7</span>月</div>
+    <div class="datepicker-mask hide"></div>
+</div>
+
+<div class="wrapper">
+    <span class="focus">2015年5月15日 </span>
+    <span>当天入园共<i class="focus"> 5</i> 人</span>
+</div>
+<!--表格start-->
+<div class="table-wrap">
+    <table cellpadding="0" cellspacing="0" class="table-record">
+        <colgroup>
+            <col width="30%">
+            <col width="30%">
+            <col width="15%">
+            <col width="25%">
+        </colgroup>
+        <thead>
+        <tr>
+            <th> 消费时间</th>
+            <th> 套餐名称</th>
+            <th> 人数</th>
+            <th> 应付金额</th>
+        </tr>
+        </thead>
+        <tbody >
+        <tr >
+            <td>
+                <p>2015-04-03 </p>
+                <p>11：11</p>
+            </td>
+            <td class="remind">温泉门票</td>
+            <td>3</td>
+            <td class="price-normal">300</td>
+        </tr>
+
+        <tr >
+            <td>
+                <p>2015-04-03 </p>
+                <p>11：11</p>
+            </td>
+            <td class="remind">温泉门票</td>
+            <td>3</td>
+            <td class="price-normal">300</td>
+        </tr>
+
+        </tbody>
+    </table>
+</div>
+
+<div class="load-mask" style="position: fixed; top: 0px; left: 0px; width: 100%; height: 100%; text-align: center; vertical-align: middle; z-index: 20000; display: none; background-color: rgba(0, 0, 0, 0.6);"><span style="display: inline-block;width: 0;height: 100%;vertical-align: middle;"></span><img style="display: inline-block;width: initial;vertical-align: middle;" src="http://img.yooyoimg.com/p/common/img/loading1.gif" alt=""></div>
+<!--表格end-->
+<script src="../js/avalon.js?a=6" data-main="../js/memberRecord.js"></script>
+<script type="text/javascript">
+require(["jquery","datepicker"],function($,DatePicker){
+     var datepicker = $("#selectDate1").data('date');
+        datepicker.bindForWeek('selectDate1', {}, 'price',new Date("2015-06-16"));
+        datepicker.clickEventHandle(function(day){
+            alert(day);
+            $(".load-mask").show();
+        });
+});
+</script>
+</body>
+</html>

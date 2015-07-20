@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0,minimum-scale=1.0, user-scalable=no" name="viewport"/>
+    <link rel="stylesheet" href="../css/business.css"/>
+    <title>验证优游券</title>
+</head>
+<body class="bg-grey"   ms-controller="Ctrl">
+<!--头部-->
+<div class="header-sub">
+    <div class="header-wrapin">
+        <div class="back-wrap">
+            <a href="#"><i class="sign sign-back">&#x12011;</i></a>
+        </div>
+        <div class="hd-sub-center">
+            <ul class="hd-nav">
+                <li class="hd-nav-on-l">优游券</li>
+                <li>会员验证</li>
+            </ul>
+        </div>
+        <div class="hd-sub-right">
+            <a>验证记录</a>
+        </div>
+    </div>
+</div>
+<!--数字按钮-->
+<div class="yz-input">
+    <span>请输入10位优游券号</span>
+    <i class="sign sign-176">&#x12180</i>
+</div>
+<div class="yz-num">
+    <div><span>1</span></div>
+    <div><span>2</span></div>
+    <div><span>3</span></div>
+    <div><span>4</span></div>
+    <div><span>5</span></div>
+    <div><span>6</span></div>
+    <div><span>7</span></div>
+    <div><span>8</span></div>
+    <div><span>9</span></div>
+    <div><span>0</span></div>
+    <div><span class="btn-unclick">验证</span></div>
+</div>
+<!--弹出层-验证失败-->
+<div class="mask" style="display: none">
+    <div class="yz-fail">
+        <p class="c-red">该优游券已消费</p>
+        <p>消费时间：2015-01-01 11:11</p>
+        <p>验证门店：多撒哒哒</p>
+    </div>
+</div>
+<!--弹出层-确认消费-->
+<div class="mask" style="display: none">
+    <div class="yz-confirm">
+         <div class="yz-confirm-hd">
+              <span>确认消费</span>
+         </div>
+         <div class="yz-confirm-body">
+             <p>优游券号：1234 5678 91</p>
+             <p>套餐名称：歌神ktv5小时欢唱套餐</p>
+             <p>结算价：¥199</p>
+             <p>数量：1份（共：5成人 2儿童）</p>
+             <div class="yz-btn-sec">
+                 <a href="" class="btn orange">消费</a>
+                 <a href="" class="btn gray">取消</a>
+             </div>
+         </div>
+    </div>
+</div>
+<!--弹出层-消费成功-->
+<div class="mask" style="display: none">
+    <div class="yz-success">
+         <i class="sign sign-37">&#x12038</i><span>消费成功！</span>
+    </div>
+</div>
+<div ms-include-src="'footer-3.html'" data-include-replace="true"></div>
+<script src="../js/avalon.js" data-main="../js/p-tmpl-qi"></script>
+<script>
+    require(["jquery"], function($){
+        //点击数字按钮
+        $(".yz-num>div").on("click",function(el){
+            var $target = $(el.currentTarget);
+            var objIndex =  $(".yz-num>div").index($target);
+            if(objIndex === 10){//判断是否是验证按钮，如果是返回
+                return false;
+            }
+            numBtnClickHandle(el);
+        });
+        //点击删除按钮
+        $(".yz-input>.sign").on("click",function(el){
+            closeBtnClickHandle(el);
+        });
+        /**
+         * 点击数字按钮事件句柄
+         */
+        function numBtnClickHandle(el){
+            var value = $(".yz-input>span").html(),
+                $target = $(el.currentTarget),
+                myRegex  = new RegExp(/^\d+$/);//验证数字
+            if(!myRegex.test(value)){
+                $(".yz-input>span").html($target.find("span").html()); //将按键值之间写入显示框
+                $(".yz-input").addClass("c-grey1");//将显示框字体颜色高亮显示
+            }else{
+                //超过10个不让输入
+                if(value.length === 10){
+                    return false;
+                }else{
+                    $(".yz-input>span").html(value + $target.find("span").html());
+                    //输入10个时，验证按钮高亮显示，表示可以验证了
+                    if(value.length === 9){
+                        $(".yz-num>div:last").find("span").removeClass("btn-unclick");
+                    }
+                }
+
+
+            }
+        }
+
+        /**
+         * 点击删除按钮事件句柄
+         */
+        function closeBtnClickHandle(el){
+            var value = $(".yz-input>span").html(),
+                    myRegex  = new RegExp(/^\d+$/);//验证数字
+            if(value !== ""){
+                if(myRegex.test(value)){
+                    if(value.length === 1){
+                        $(".yz-input>span").html("请输入10位优游券号");
+                        $(".yz-input").removeClass("c-grey1");
+                    }
+                    else{
+                        $(".yz-input>span").html(value.slice(0,value.length-1));
+                        if(value.length === 10){
+                            //将验证按钮变灰，表示不可点击
+                            $(".yz-num>div:last").find("span").addClass("btn-unclick");
+                        }
+                    }
+                }
+            }
+        }
+    });
+</script>
+</body>
+</html>

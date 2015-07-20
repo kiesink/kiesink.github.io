@@ -1,0 +1,283 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0,minimum-scale=1.0, user-scalable=no" name="viewport"/>
+    <title>限时抢购_抢购详细页</title>
+    <link rel="stylesheet" href="../css/project.css"/>
+    <script type="text/javascript" src="../../common/js/jquery-1.11.1.js"></script>
+    <script src="../js/avalon.js" data-main="../js/p-tmpl-qi"></script>
+    <script>
+        require(['date'], function(){
+            var date = new Common.DateInput($('.date_picker')[0]);
+            $('.btn-date').click(function(){
+                date.show();
+            })
+
+            // 设置数据，或者直接把date暴露到window。在别的地方调用date.setDate设置数据
+            date.setData({
+                20150424: '222',
+                20150425: '444',
+                20150426: '555'
+            });
+        });
+    </script>
+</head>
+<body>
+<div class="header">
+    <div class="header-wrapin">
+        <h1><span>限时抢购</span></h1>
+        <div class="back-wrap">
+            <a href="javascript:;"><i class="sign sign-back">&#x12011;</i></a>
+        </div>
+        <div class="toolbar">
+            <!--<a href="javascript:;"><i class="sign sign-search">&#x12015;</i></a>-->
+            <!--<a href="javascript:;"><i class="sign sign-vip">&#x12025;</i></a>-->
+            <a href="javascript:;"><i class="sign sign-fav">&#x12017;</i></a>
+        </div>
+    </div>
+</div>
+
+<!--线路列表3-->
+<div class="scenicList_Box">
+    <dl>
+        <dt>
+            <img src="../images/limited-sale.jpg" width="100%">
+        </dt>
+    </dl>
+    <div class="activities-special qi">
+        <div class="activitied-time">
+                <span class="countdown">
+                    <span id="countDownText">距离抢购开始还有</span>
+                    <i class="timer-hour">00</i><span>:</span>
+                    <i class="timer-minute">00</i><span>:</span>
+                    <i class="timer-second">00</i>
+                </span>
+        </div>
+    </div>
+
+    <div class="wrapper form-list">
+        <div class="limited-sale">
+            <h2 class="title green"> 广州长隆国际大马戏普通坐席票（10人团体票）</h2>
+            <!--<div class="row">-->
+            <!--<a href="javascript:;" class="clearfix">-->
+            <!--<div class="col-right"><i class="sign sign-into">&#x12009;</i></div>-->
+            <!--<div class="col-left">-->
+            <!--<p>VIP会员<i class="price">148 </i></p>-->
+            <!--<p>普通会员<i class="price">168 </i></p>-->
+            <!--</div>-->
+            <!--<div class="col-center">-->
+            <!--<p class="delete">原价￥168</p>-->
+            <!--</div>-->
+            <!--</a>-->
+            <!--</div>-->
+
+            <div class="row">
+                <a href="javascript:;" class="clearfix a-expand">
+                    <div class="col-right"><i class="sign sign-into">&#x12009;</i></div>
+                    <!--<div class="col-left">-->
+                    <!--<ul>-->
+                    <!--<li>VIP会员<i class="price">148 </i></li>-->
+                    <!--<li>普通会员<i class="price">168 </i></li>-->
+                    <!--</ul>-->
+
+                    <!--</div>-->
+                    <div class="col-center">
+                        <!--<ul>-->
+                        <!--<li><em>5折</em></li>-->
+                        <!--<li><p class="delete">原价￥168</p></li>-->
+                        <!--</ul>-->
+                        <ul class="clearfix">
+                            <li>VIP会员<i class="price">148 </i></li>
+                            <li>普通会员<i class="price price-s">168 </i></li>
+                        </ul>
+                        <ul class="clearfix">
+                            <li><em>5折</em></li>
+                            <li><p class="delete">原价￥168</p></li>
+                        </ul>
+
+                    </div>
+                </a>
+            </div>
+        </div>
+
+    </div>
+
+</div>
+
+<!--产品选择1-srart-->
+<div class="wrapper form-list">
+    <h2 class="title">产品选择</h2>
+    <div class="row radio-checked">
+        <span class="col-right radio-qi">
+            <input type="radio" id="product-1" class="regular-radio" name="radio-pro" >
+            <label for="product-1"></label>
+        </span>
+        <span class="checkbox-wrap">
+            <span>广州长隆国际大马戏普通坐席票</span>
+        </span>
+    </div>
+    <div class="row">
+        <span class="col-right radio-qi">
+            <input type="radio" id="product-2" class="regular-radio" name="radio-pro" >
+            <label for="product-2"></label>
+        </span>
+        <span class="checkbox-wrap">
+            <span>广州长隆国际大马戏普通坐席票<em class="notes-qi">（10人团体票）</em></span>
+        </span>
+    </div>
+    <div class="row">
+        <span class="col-right radio-qi">
+            <input type="radio" id="product-3" class="regular-radio" name="radio-pro" >
+            <label for="product-3"></label>
+        </span>
+        <span class="checkbox-wrap">
+            <span>广州长隆国际大马戏VIP坐席票</span>
+        </span>
+    </div>
+</div>
+<!--产品选择1-end-->
+
+<!--产品选择2-srart-->
+<div class="wrapper form-list">
+    <h2 class="title">产品选择</h2>
+    <!--<h2 class="title green collapse"  me-collapse="#c1.sort"><a href="javascrit:;"><i class="sign sign-expand">&#x12008;</i><i class="sign sign-collapse">&#x12010;</i>旅客2</a></h2>-->
+    <!--<div class="row title collapse"  me-collapse="#c1.sort">-->
+    <!--<a href="javascrit:;"><i class="sign sign-expand">&#x12008;</i><i class="sign sign-collapse">&#x12010;</i>旅客2</a>-->
+    <!--</div>-->
+    <div class="diy_select"   me-collapse="#c1.sort">
+        <!--<input type='hidden' name='' class="diy_select_input"/>-->
+        <div class="clearfix">
+            <div class="diy_select_txt">广州长隆国际大马戏普通坐席票</div>
+            <div class="diy_select_btn"><i class="sign sign-expand">&#x12008;</i><i class="sign sign-collapse">&#x12010;</i></div>
+        </div>
+
+        <ul class="diy_select_list" me-collapse="c1.sort">
+            <li  me-collapse="#hide.sort#"><a href="javascript:;">广州长隆国际大马戏普通坐席票</a></li>
+            <li me-collapse="#hide.sort#"><a href="javascript:;">广州长隆国际大马戏普通坐席票<em class="notes-qi">（10人团体票）</em></a></li>
+            <li me-collapse="#hide.sort#"><a href="javascript:;">广州长隆国际大马戏VIP坐席票</a></li>
+            <li me-collapse="#hide.sort#"><a href="javascript:;">广州长隆国际大马戏VIP坐席票</a></li>
+        </ul>
+    </div>
+    <!--<select>-->
+    <!--<option>广州长隆国际大马戏普通坐席票</option>-->
+    <!--<option>广州长隆国际大马戏普通坐席票<em class="notes-qi">（10人团体票）</em></option>-->
+    <!--<option>广州长隆国际大马戏VIP坐席票</option>-->
+    <!--</select>-->
+</div>
+<!--产品选择2-end-->
+
+
+<div class="wrapper form-list">
+    <div class="row">
+        <a href="javascript:;" class="a-expand btn-date">
+            <div class="col-left">使用日期</div>
+            <div class="col-right"><i class="sign sign-into">&#x12009;</i></div>
+            <div class="col-center">
+                <input type="text" value="2015-1-5" readonly class="date_picker">
+            </div>
+        </a>
+    </div>
+    <div class="row">
+        <div class="col-left">购买数量</div>
+        <div class="col-center">
+            <span class="input-num">
+                <button class="input-btn btn-minus"><i class="sign">&#x12002;</i></button>
+                <input type="text" class="input-text" value="0"/>
+                <button class="input-btn btn-plus"><i class="sign">&#x12001;</i></button>
+            </span>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-left">未激活状态加disable样式</div>
+        <div class="col-center">
+            <span class="input-num">
+                <button class="input-btn btn-minus"><i class="sign disable">&#x12002;</i></button>
+                <input type="text" class="input-text disable" value="0"/>
+                <button class="input-btn btn-plus"><i class="sign">&#x12001;</i></button>
+            </span>
+        </div>
+    </div>
+</div>
+
+
+<div class="wrapper reset-last">
+    <div class="info-column row-02">
+        <div class="info">
+            <span class="col-right event-wrap">
+                <span>13800138000</span>
+                <!--<a class="event-btn" href="javascript:void(0)" onclick="cg(this)">(点击修改)</a>-->
+            </span>
+            <div class="info-content">手机号</div>
+        </div>
+    </div>
+    <div class="info-column row-02">
+        <div class="info">
+            <span class="col-right event-wrap">
+                <span><input type="text" placeholder="请输入您的姓名" class="edi-text-1"></span>
+                <!--<a class="event-btn" href="javascript:void(0)" onclick="cg(this)">(点击修改)</a>-->
+            </span>
+            <div class="info-content norel">姓名</div>
+        </div>
+    </div>
+</div>
+
+<!--登录框-start-->
+<div class="wrapper">
+    <div class="login clearfix">
+        <form>
+            <div class="form-item">
+                <!--<em class="sign sign-28">&#x12029</em>-->
+                <span class="item-bd">优惠券</span>
+                <label><a href="#">使用</a></label>
+                <input type="text" placeholder="请输入号码" class="item-text1">
+            </div>
+        </form>
+        <p><em>优惠内容：订单总金额减#元</em></p>
+    </div>
+</div>
+<!--登录框-end-->
+
+<div class="total-02">
+    <div class="total-wrap">
+        <p>1、本活动产品有预订数量限制，提交订单后则占用其限额，支付失败请在"查看我的订单"中重新支付；</p>
+        <p>2、订单有效期为30分钟，超时作废，作废后释放限额可再次购买。</p>
+    </div>
+</div>
+
+<!--<legend>组合-8 .combin-8</legend>-->
+
+
+    <div class="wrapper row toprc-wrap">
+        <!--<div class="prc-detail-wrap">-->
+            <div class="prc-detail"  me-collapse="prc1.kkk">
+                <p><span>套餐金额 <i class="price">148 </i><i class="notes">x2</i></span></p>
+                <p><span>优惠金额 <i class="focus">-</i><i class="price">5 </i></span></p>
+            </div>
+        <!--</div>-->
+        <!--<div class="clearfix">-->
+                <div class="col-right">
+                    <!--灰色按钮只需要在a标签的class里面，把red，换成gray-->
+                    <a class="btn red" href="javascript:;">订购</a>
+                    <!--<a class="btn gray" href="javascript:;">即将开抢</a>-->
+                </div>
+                <div class="col-left"  me-collapse="#prc1.kkk">
+                    <span>总额 <i class="price">289 </i></span>
+                    <i class="sign sign-collapse">&#x12010;</i>
+                    <i class="sign sign-expand">&#x12008;</i>
+                </div>
+        <!--</div>-->
+    </div>
+
+<div class="fixed-wrap">
+    <div class="wrapper combin-8 qi">
+        <p class="notes">您尚未登陆，请选择下方登陆方式购买</p>
+        <ul>
+            <li><a class="btn orange" href="javascript:;" id="inquire-phone">免账号登录</a></li>
+            <li><a class="btn red" href="javascript:;">账号登陆</a></li>
+        </ul>
+    </div>
+</div>
+
+</body>
+</html>

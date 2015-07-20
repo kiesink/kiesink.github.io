@@ -1,0 +1,29 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta name="viewport" content="width=device-width,initial-scale=1.0,minimum-scale=1.0,maximum-scale=1.0,user-scalable=no">
+<title>...</title>
+<script type="text/javascript" src="http://img.yooyoimg.com/p/common/js/pop.js"></script>
+<style>
+
+/*弹出层样式*/
+.pop_box{ width:80%; height:52px; background:#fff; display:none; z-index:600; border-radius:5px; overflow:hidden; position:relative;}
+.pop_box .close{width:25px;height:25px; line-height:25px; text-align:center; cursor:pointer;position: absolute;top:15px;right:1px; font-size:1.2em; overflow: hidden; }
+.loading_box{ width:100%; height:auto; padding:10px 0;  text-align:center;}
+
+</style>
+
+</head>
+
+<body>
+<div class="btn_box"><a href="javascript:void(0)" id="open1">点击加载</a></div>
+
+<!--弹出层样式-->
+<div class="pop_box" id="pop_1">
+  <div class="pop_loading_box"><img src="http://img.yooyoimg.com/p/common/img/loading1.gif" alt=""/> </div>
+</div>
+<script type="text/javascript">BtPopShow("open1","pop_1");BtPopHide("colse1","pop_1")</script>
+
+</body>
+</html>

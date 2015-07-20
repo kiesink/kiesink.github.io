@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0,minimum-scale=1.0, user-scalable=no"
+          name="viewport"/>
+    <title>旅客信息</title>
+    <script src="../js/avalon.js" data-main="../js/p-tmpl"></script>
+    <link rel="stylesheet" href="../css/project.css"/>
+</head>
+<body>
+<div class="header">
+    <div class="header-wrapin">
+        <h1><span>旅客信息</span></h1>
+        <div class="back-wrap">
+            <a href="#"><i class="sign sign-back">&#x12011;</i><span>返回</span></a>
+        </div>
+
+    </div>
+</div>
+<!--左边带图标黑色文本-start-->
+<div class="tbox-3 clearfix">
+    <!--dt1 是绿色图标-->
+    <dl>
+        <dt class="sign sign-124 dt1">&#x12127</dt>
+        <dd>旅客信息请务必填写正确、完整，因游客原因填写错误产生的责任及费用，需游客承担</dd>
+    </dl>
+</div>
+<!--左边带图标黑色文本-end-->
+<div class="wrapper form-list">
+    <h2 class="title green">旅客1</h2>
+    <div class="row">
+        <div class="col-left">姓名</div>
+        <div class="col-center"><input type="text" placeholder="请输入您的姓名" class="edi-text-1"></div>
+    </div>
+    <div class="row gender-checkbox">
+        <div class="col-left">性别</div><span class="checkbox-wrap col-right"><span class="col-right">女</span><input type="radio" id="checkbox-1-1" class="regular-radio" name="radio" ><label for="checkbox-1-1"></label></span><span class="checkbox-wrap col-right"><span class="col-right">男</span><input type="radio" id="checkbox-1-2" class="regular-radio" name="radio" ><label for="checkbox-1-2"></label></span>
+    </div>
+    <div class="row">
+        <a href="javascript:;" class="a-expand btn-id">
+            <div class="col-left">证件</div>
+            <div class="col-right"><i class="sign sign-into">&#x12009;</i></div>
+           <!--<div class="col-center">护照</div>-->
+           <div class="col-center">
+                <div>
+                <select class="y-form">
+                    <option value='护照'>护照</option>
+                    <option value='身份证'>身份证</option>
+                    <option value='驾照'>驾照</option>
+                </select>
+                </div>
+            </div>
+        </a>
+    </div>
+    <!--<div class="row hide">
+        <div class="selectID">
+                <span class="checkbox-wrap col-right"><span class="col-right">护照</span>
+                    <input type="radio" id="checkB-1" class="regular-radio" name="radio2" >
+                    <label for="checkB-1"></label></span>
+                <span class="checkbox-wrap col-right"><span class="col-right">身份证</span>
+                    <input type="radio" id="checkB-2" class="regular-radio" name="radio2" >
+                    <label for="checkB-2"></label></span>
+                <span class="checkbox-wrap col-right"><span class="col-right">驾照</span>
+                    <input type="radio" id="checkB-3" class="regular-radio" name="radio2" >
+                    <label for="checkB-3"></label></span>
+        </div>
+    </div>-->
+
+
+
+    <div class="row">
+        <div class="col-left">证件号码</div>
+        <div class="col-center"><input type="text" placeholder="请填写证件号码" class="edi-text-1"></div>
+    </div>
+    <div class="row">
+        <a href="javascript:;" class="a-expand btn-date">
+            <div class="col-left">出生日期</div>
+            <div class="col-right"><i class="sign sign-into">&#x12009;</i></div>
+            <!--<div class="col-center">1970-01-01</div>-->
+            <div class="col-center">
+                <input type="text" value="2015-1-5" readonly class="date_picker">
+            </div>
+        </a>
+    </div>
+    <div class="row">
+        <div class="col-left">手机号码</div>
+        <div class="col-center"><input type="text" placeholder="请填写手机号码" class="edi-text-1"></div>
+    </div>
+    <div class="row">
+        <span class="checkbox-wrap col-left"><span class="col-right">勾选为联系人</span><input type="checkbox" id="checkbox-1-9" class="regular-checkbox"><label for="checkbox-1-9"></label></span>
+    </div>
+</div>
+<div class="wrapper form-list">
+    <h2 class="title green collapse"  me-collapse="#c1.sort"><a href="javascrit:;"><i class="sign sign-expand">&#x12008;</i><i class="sign sign-collapse">&#x12010;</i>旅客2</a></h2>
+    <div class="collapse-ct"  me-collapse="c1.sort"><div class="row">
+        <div class="col-left">姓名</div>
+        <div class="col-center"><input type="text" placeholder="请输入您的姓名" class="edi-text-1"></div>
+    </div>
+    <div class="row gender-checkbox">
+        <div class="col-left">性别</div><span class="checkbox-wrap col-right"><span class="col-right">女</span><input type="radio" id="checkbox-1-3" class="regular-radio" name="radio2" ><label for="checkbox-1-3"></label></span><span class="checkbox-wrap col-right"><span class="col-right">男</span><input type="radio" id="checkbox-1-4" class="regular-radio" name="radio2" ><label for="checkbox-1-4"></label></span>
+    </div>
+    <div class="row">
+        <a href="javascript:;" class="a-expand">
+            <div class="col-left">证件</div>
+            <div class="col-right"><i class="sign sign-into">&#x12009;</i></div>
+            <!--<div class="col-center">护照</div>-->
+            <div class="col-center">
+                <div>
+                    <select class="y-form">
+                        <option value='护照'>护照</option>
+                        <option value='身份证'>身份证</option>
+                        <option value='驾照'>驾照</option>
+                    </select>
+                </div>
+            </div>
+        </a>
+    </div>
+    <div class="row">
+        <div class="col-left">证件号码</div>
+        <div class="col-center"><input type="text" placeholder="请填写证件号码" class="edi-text-1"></div>
+    </div>
+    <div class="row">
+        <a href="javascript:;" class="a-expand btn-date">
+            <div class="col-left">出生日期</div>
+            <div class="col-right"><i class="sign sign-into">&#x12009;</i></div>
+            <div class="col-center">
+                <input type="text" value="2015-1-5" readonly class="date_picker">
+            </div>
+        </a>
+    </div>
+    <div class="row">
+        <div class="col-left">手机号码</div>
+        <div class="col-center"><input type="text" placeholder="请填写手机号码" class="edi-text-1"></div>
+    </div>
+    <div class="row">
+        <span class="checkbox-wrap col-left"><span class="col-right">勾选为联系人</span><input type="checkbox" id="checkbox-1-5" class="regular-checkbox"><label for="checkbox-1-5"></label></span>
+    </div></div>
+</div>
+<div class="wrapper form-list">
+    <h2 class="title">可选服务<span class="note">保险</span></h2>
+    <div class="row">
+        <div class="col-right"><i class="sign sign-into">&#x12009;</i></div>
+        <span class="col-right"><i class="price">123</i></span>
+        <span class="checkbox-wrap col-left">
+            <span class="col-right">平安境内长线保险 经典型3-4天</span>
+            <input type="checkbox" id="checkbox-1-6"class="regular-checkbox">
+            <label for="checkbox-1-6"></label>
+        </span>
+    </div>
+
+</div>
+<div class="tbox-3">
+    <div class="promt row">
+        <input type="checkbox" id="checb-promt" class="regular-checkbox">
+        <label for="checb-promt"></label>
+        我已阅读并接受<span class="green">合同条款</span>以及同意<span class="green">预订须知和重要条款</span>
+    </div>
+</div>
+<div class="wrapper combin-7">
+    <div class="col-right">
+        <a class="btn red" href="javascript:;">下一步</a>
+    </div>
+    <div class="col-center">
+        订单总额<i class="price">235</i>
+    </div>
+</div>
+</body>
+</html>
