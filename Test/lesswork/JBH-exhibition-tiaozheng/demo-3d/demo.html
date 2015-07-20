@@ -1,0 +1,135 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>Carousel demo</title>
+
+<style type="text/css">
+* {
+	margin:0;
+	padding:0;
+	list-style-type:none;
+}
+a, img {
+	border:0;
+}
+body {
+	font:12px/180% Tahoma, Geneva, sans-serif;
+    background: url('../images/slide-bg.jpg') no-repeat;
+}
+/* Carousel */
+#carousel1 {
+	width:1200px;
+	height:600px;
+	overflow:hidden;
+	position:relative;
+	/*border-bottom:solid 1px #d8d9da;*/
+	margin:0 auto;
+}
+#carousel1 img {
+	border:none;
+    /*width:380px;*/
+    /*height:300px;*/
+    /*border:solid 1px #000;*/
+    cursor:pointer;
+}
+#carousel1 #title-text {
+	font-size:22px;
+	margin:10px 20px 0 0;
+	padding:0;
+	text-align:right;
+}
+#carousel1 #alt-text {
+	font-size:14px;
+	margin:5px 20px 0 0;
+	padding:0;
+	text-align:right;
+}
+#carousel1 #user-c {
+	padding:0;
+	position:absolute;
+	right:15px;
+	bottom:10px;
+}
+/*.cloudcarousel-wrap{*/
+    /*text-align:center;*/
+    /*margin:0  52px;*/
+/*}*/
+#carousel1 .carouselLeft, #carousel1 .carouselRight {
+	position:absolute;
+	/*bottom:20px;*/
+	/*width:29px;*/
+	/*height:30px;*/
+    top:50%;
+    width:51px;
+    height:71px;
+	overflow:hidden;
+	cursor:pointer;
+}
+#carousel1 .carouselLeft {
+    /* right:60px;
+     background:url(images/templatemo_slider_right.png) no-repeat;*/
+    right:0;
+    background:url(images/arrow-next.png) no-repeat;
+    z-index: 200;
+}
+#carousel1 .carouselRight {
+    /* right:808px;
+     background:url(images/templatemo_slider_left.png) no-repeat;*/
+    left:0;
+    background:url(images/arrow-prev.png) no-repeat;
+    z-index: 200;
+}
+.reflection{
+    display: none;
+}
+a:hover .reflection{
+    display: block;
+}
+</style>
+<script type="text/javascript" src="js/jquery.js"></script>
+<script type="text/JavaScript" src="js/CloudCarousel.1.0.5.js"></script>
+<script type="text/JavaScript" src="js/jquery.mousewheel.js"></script><!--鼠标滚动插件-->
+<script type="text/javascript">
+$(document).ready(function(){
+	// 这初始化容器中指定的元素，在这种情况下，旋转木马.
+    $("#carousel1").CloudCarousel({
+        xPos:650,
+        yPos:120,
+        reflHeight:85,         //倒影的高度
+        reflOpacity:0.5,
+        minScale:0.5,
+        xRadius:450,
+        yRadius:-20,
+        buttonLeft: '#but1',
+        buttonRight: '#but2',
+        altBox: '#altbox',
+        FPS:30,
+        speed:0.1,
+        mouseWheel:true,
+        bringToFront:true
+    });
+
+
+});
+</script>
+</head>
+<body>
+<div id="carousel1">
+  <!--<p id="title-text"></p>-->
+  <!--<p id="alt-text"></p>-->
+
+    <div class="cloudcarousel-wrap">
+        <a target="_parent" href="#1"><img class="cloudcarousel" src="images/product-01.png"/></a>
+        <a target="_parent" href="#2"><img class="cloudcarousel" src="images/product-02.png"/></a>
+        <a target="_parent" href="#3"><img class="cloudcarousel" src="images/product-03.png"/></a>
+        <a target="_parent" href="#4"><img class="cloudcarousel" src="images/product-04.png"/></a>
+        <a target="_parent" href="#5"><img class="cloudcarousel" src="images/product-05.png"/></a>
+    </div>
+
+  <div id="but1" class="carouselLeft"></div>
+  <div id="but2" class="carouselRight"></div>
+</div>
+
+</body>
+</html>

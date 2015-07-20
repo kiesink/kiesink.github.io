@@ -1,0 +1,102 @@
+<div class="bg-navi">
+    <!--企业标题栏-->
+    <div class="top-title">
+        <span class="title-logo"><img src="../images/none.png" ms-src="enterpriseinfo.data.logo_rsurl" width="160"
+                                      height="100"/></span>
+
+        <h3 class="title-com" ms-text="enterpriseinfo.data.name"></h3>
+    </div>
+    <div class="bg-navi-wrap">
+        <ul>
+            <li><a href="#/index">展厅首页</a></li>
+            <li><a href="javascript:;" ms-href="#/enterprise/{{enterpriseinfo.data.id}}">企业首页</a></li>
+            <li><a href="javascript:;" ms-href="#/enterprise/{{enterpriseinfo.data.id}}/product">企业产品</a></li>
+        </ul>
+    </div>
+    <!--<legend>左侧栏固定，右侧内容变宽</legend>-->
+    <div class="container leftfix qi">
+        <!--左侧start-->
+        <div class="leftsidebar">
+            <div class="info-column enterprise-info">
+                <h3 class="info-head">企业信息</h3>
+
+                <div class="info-content">
+                    <div class="info-tit"><a ms-href="#/enterprise/{{enterpriseinfo.data.id}}" ms-text="enterpriseinfo.data.name"></a></div>
+                    <div class="item">
+                        <div class="item-name">经营模式：</div>
+                        <div class="item-des" ms-text="maps.business_model[enterpriseinfo.data.business_model]"></div>
+                    </div>
+                    <div class="item">
+                        <div class="item-name">所在地：</div>
+                        <div class="item-des" ms-text="enterpriseinfo.data.province_name + enterpriseinfo.data.city_name + enterpriseinfo.data.area_name + enterpriseinfo.data.address"></div>
+                    </div>
+                    <div class="item">
+                        <div class="item-name">产品数量：</div>
+                        <div class="item-des" ms-text="enterpriseinfo.data.product_count"></div>
+                    </div>
+                    <div class="item">
+                        <div class="item-name">资质认证：</div>
+                        <div class="item-des"><div class="gssmrz"><i class="gsm-ico"><img src="../images/gssm.png" alt=""/></i>公司实名认证</div></div>
+                    </div>
+                </div>
+                <div class="btn-wrap">
+                    <a class="btn red" href="javascript:;" ms-on-click="addFavorite()">收藏企业 </a>
+                </div>
+            </div>
+            <div class="info-column contactway-info">
+                <h3 class="info-head">联系方式</h3>
+
+                <div class="info-content">
+                    <div class="item">
+                        <div class="item-name">联系人：</div>
+                        <div class="item-des" ms-text="enterpriseinfo.data.contact_man"></div>
+                    </div>
+                    <div class="item">
+                        <div class="item-name">电话：</div>
+                        <div class="item-des" ms-text="enterpriseinfo.data.contact_tel"></div>
+                    </div>
+                    <div class="item">
+                        <div class="item-name">手机：</div>
+                        <div class="item-des" ms-text="enterpriseinfo.data.contact_mobile"></div>
+                    </div>
+                    <div class="item">
+                        <div class="item-name">QQ：</div>
+                        <div class="item-des" ms-text="enterpriseinfo.data.qq_no"></div>
+                    </div>
+                    <div class="item">
+                        <div class="item-name">传真：</div>
+                        <div class="item-des" ms-text="enterpriseinfo.data.fax"></div>
+                    </div>
+                    <div class="item">
+                        <div class="item-name">地址：</div>
+                        <div class="item-des"
+                             ms-text="enterpriseinfo.data.province_name + enterpriseinfo.data.city_name + enterpriseinfo.data.area_name + enterpriseinfo.data.address"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!--左侧end-->
+        <!--内容start-->
+        <div class="content">
+            <h2 class="column-title qi"><span class="title-name">产品展示</span></h2>
+
+            <div class="picimg-list">
+                <!--2行描述文字-->
+                <ul class="picimg-list-wrap row-03">
+                    <li ms-repeat="enterpriseproduct.data.result">
+                        <div class="img"><a href="javascript:;" ms-href="#/product/{{el.id}}/detail"><img
+                                src="../images/none.png" ms-src="el.pic" alt="" width="220" height="220"/></a></div>
+                        <div class="info"><a href="javascript:;" ms-href="#/product/{{el.id}}/detail"
+                                             ms-text="el.name"></a></div>
+                        <!--<div class="company" ms-text="el.company_name"></div>-->
+                    </li>
+                </ul>
+            </div>
+            <div class="pager-wrap qi-dashed">
+                <div ms-include-src="'pager.html'"></div>
+            </div>
+        </div>
+        <!--内容end-->
+
+    </div>
+</div>

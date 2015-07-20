@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title>08.资讯内容页</title>
+    <link rel="stylesheet" href="../css/project.css"/>
+</head>
+<body>
+<div ms-include-src="'mainnav.html'" data-include-replace="true"></div>
+
+<!--TOP AD-->
+<div class="list-top-ad-box">
+    <div class="wrapper">
+        <div class="ad-tt-box">
+            <h2>最新报道 <i>/</i> <span>News</span></h2>
+        </div>
+    </div>
+</div>
+
+<div class="container">
+    <h2 class="column-title" style="padding-top: 20px;"><span class="title-name">最新报道</span></h2>
+    <ul class="news-list">
+        <li class="item">
+                <div class="date"><span ms-text="informationdetail.data.infoContent.create_time | date('dd')"></span><i ms-text="informationdetail.data.infoContent.create_time | date('yyyy.MM')"></i></div>
+                <div class="info shownews_tt">
+                    <h1 ms-text="informationdetail.data.infoContent.title"></h1>
+                    <p>来源：xxx </p>
+                </div>
+        </li>
+    </ul>
+    <div class="editinfo" style="padding-top: 30px" ms-html="informationdetail.data.infoContent.content">
+
+    </div>
+    <div class="next_pre_box">
+        <p>上一篇： <a ms-href="#/information/{{informationdetail.data.prevInfoContent.id}}/detail" ms-text="informationdetail.data.prevInfoContent.title"></a></p>
+        <p>下一篇： <a ms-href="#/information/{{informationdetail.data.nenextInfoContent.id}}/detail" ms-text="informationdetail.data.nenextInfoContent.title"></a></p>
+    </div>
+</div>
+</body>
+</html>

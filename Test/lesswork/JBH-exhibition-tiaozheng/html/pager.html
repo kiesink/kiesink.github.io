@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title></title>
+    <link rel="stylesheet" href="../css/project.css"/>
+</head>
+<body>
+    <div class="page_box">
+        <div class="padding20">
+            <div class="pager-wrap">
+                <div class="pager">
+                    <span class="current">总共<em class="current-page" ms-text="pager.total_page"></em>个页面</span>
+                    <ul class="pages">
+                        <li ms-repeat="pager.pageList"
+                            ms-class="{{el.page_no == el.text ? 'page-number' : 'pgNext'}}"
+                            ms-class-1="pgCurrent: el.page_no == el.text && pager.page_no == el.page_no ">
+                            <a href="javascript:;" ms-on-click="gotoPage(el.page_no)" ms-text="el.text"></a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

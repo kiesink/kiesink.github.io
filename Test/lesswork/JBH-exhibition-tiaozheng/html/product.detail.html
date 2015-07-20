@@ -1,0 +1,48 @@
+<div class="content">
+    <div id="product-intro">
+        <div class="product-intro-wrap">
+            <div id="name">
+                <h1 ms-text="productdetail.data.name"><strong></strong></h1>
+            </div>
+
+            <div id="preview">
+                <div class="jqzoomWrap" id="spec-n1"><a href="javascript:;" data-rel="gal1" ms-href="productdetail.data.picRsurlList[0].picture_rsurl.picture_rsurl" class="jqzoom" title=""> <img src="../images/none.png" ms-src="productdetail.data.picRsurlList[0].picture_rsurl.picture_rsurl" title="" alt="" id="bigImg"/></a></div>
+                <div id="spec-list"><a id="spec-forward" class="spec-control disabled" href="javascript:;"></a> <a id="spec-backward" class="spec-control disabled" href="javascript:;"></a>
+
+                    <div class="spec-items" style="position: absolute; width:270px; height: 54px; overflow: hidden;">
+                        <ul class="spec-list" style="position: absolute; left: 0px; top: 0px; width: 310px;">
+                            <li class="imgList_blue" ms-repeat="productdetail.data.picRsurlList"><a href='javascript:void(0);' ms-data-rel="'{gallery: \'gal1\', smallimage: \'' + el.picture_rsurl.picture_rsurl + '\', largeimage: \'' + el.picture_rsurl.picture_rsurl + '\'}'"><img src='../images/blue_one.jpg' ms-src="el.picture_rsurl.picture_rsurl" alt=""/></a></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+            <div id="summary">
+                <div class="summary-wrap">
+                    <div id="price_list">
+                        <table width="100%" border="0" cellspacing="0" cellpadding="0" class="price_table">
+                            <thead>
+                            <tr>
+                                <th colspan="2">规格参数</th>
+                            </tr>
+                            </thead>
+                            <tbody>
+                            <tr ms-repeat="productdetail.data.specList">
+                                <td class="prece-name"><span ms-text="el.spec.spec"></span></td>
+                                <td ms-text="el.spec.parameter"></td>
+                            </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+
+
+        </div>
+    </div>
+    <div class="product-profile">
+        <h2 class="column-title"><span class="title-name">产品介绍</span></h2>
+        <div class="editinfo" ms-html="productdetail.data.describe_note"></div>
+    </div>
+
+</div>

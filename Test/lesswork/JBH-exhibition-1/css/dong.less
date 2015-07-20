@@ -1,0 +1,138 @@
+/**
+ * Created by xyz on 2015/4/10.
+ */
+@import 'common';
+
+.focus{
+  .relative();
+  width: 1200px;
+  height: 600px;
+}
+
+.box {
+  .absolute();
+
+  .box-wrapin{
+    .relative();
+    overflow: hidden;
+    width: 600px;
+    height: 500px;
+
+    &:hover{
+      .label{
+        display: block;
+      }
+    }
+
+    img{
+      display: block;
+    }
+
+    .stage{
+      .absolute(_, _, 0, 0);
+      width: 100%;
+      img{
+        width: 100%;
+      }
+    }
+
+    .label{
+      .absolute(_, _, 5px, -37px);
+      display: none;
+      width: 100%;
+      img{
+        width: 220px;
+      }
+    }
+
+    .image{
+      .absolute(_, _, 25px, 0);
+      width: 100%;
+      img{
+        width: 500px;
+        margin: 0 auto;
+      }
+    }
+
+  }
+
+  &.box-dq{
+  }
+  &.box-xb{
+  }
+  &.box-hzp{
+  }
+  &.box-sp{
+  }
+  &.box-fz{
+  }
+
+
+  &.box-45{
+    .setbox(4.5);
+  }
+
+  &.box-40{
+    bottom: 0px;
+    left: 400px;
+    .opacity(100);
+    z-index: 40;
+    .setbox(3.5);
+  }
+  &.box-35{
+    bottom: 35px;
+    left: 90px;
+    .opacity(90);
+    z-index: 35;
+    .setbox(2.8);
+  }
+  &.box-30{
+    bottom: 100px;
+    left: 605px;
+    .opacity(45);
+    z-index: 30;
+    .setbox(2.2);
+  }
+  &.box-25{
+    bottom: 128px;
+    left: 80px;
+    .opacity(35);
+    z-index: 25;
+    .setbox(2);
+  }
+  &.box-20{
+    bottom: 168px;
+    left: 380px;
+    .opacity(25);
+    z-index: 20;
+    .setbox(1.5);
+  }
+
+}
+
+
+
+.setbox(@num){
+  .box-wrapin{
+    width: 120px * @num;
+    height: 100px * @num;
+    .label{
+      bottom: 1px * @num;
+      left: -7.4px * @num;
+      img{
+        width: 44px * @num;
+      }
+    }
+
+    .image{
+      bottom: 5px * @num;
+      img{
+        width: 100px * @num;
+      }
+    }
+  }
+}
+
+.ds-block{
+  display: block!important;
+}

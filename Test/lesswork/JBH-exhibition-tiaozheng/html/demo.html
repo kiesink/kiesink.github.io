@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title></title>
+    <style type="text/css">
+        *{ margin:0; padding:0;}
+        ul,ul li{ list-style:none;}
+        .wrap{ width:1000px; margin:50px auto;}
+        .box1,.box2,.box3{ overflow:hidden; float:left;border:1px solid gray;}
+        .box1{ width:200px; height:450px;}
+        .box1 ul li{ width:200px; height:100px;}
+        .box2,.box3{ width:450px;height:150px; margin:40px;}
+        .box2 ul li,.box3 ul li{ width:100px; height:150px; float:left;}
+
+    </style>
+    <script src="../../common/js/jquery-1.8.0.js"></script>
+    <script src="../js/focus.js"></script>
+    <script type="text/javascript">
+        $(function () {
+            //奇数背景设置为灰色
+            $('.box1 li:even,.box2 li:even,.box3 li:even').css({ backgroundColor: "gray" });
+
+            $(".box1").Scroll({ direction: "y" }); //设置为纵向滚动
+            $(".box2").Scroll(); //默认横向滚动
+            $(".box3").Scroll();
+        });
+    </script>
+</head>
+<body>
+<div class="wrap">
+
+    <div class="box1">
+        <ul>
+            <li>111纵向</li>
+            <li>222纵向</li>
+            <li>333纵向</li>
+            <li>444纵向</li>
+            <li>555纵向</li>
+            <li>666纵向</li>
+        </ul>
+    </div>
+
+    <div class="box2">
+        <ul>
+            <li>111横向</li>
+            <li>222横向</li>
+            <li>333横向</li>
+            <li>444横向</li>
+            <li>555横向</li>
+            <li>666横向</li>
+        </ul>
+    </div>
+
+    <div class="box3">
+        <ul>
+            <li>ul长度小于box长度，不滚动</li>
+            <li>222横向</li>
+            <li>333横向</li>
+        </ul>
+    </div>
+</div>
+</body>
+</html>

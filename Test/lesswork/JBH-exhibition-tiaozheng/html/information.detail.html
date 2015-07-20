@@ -1,0 +1,23 @@
+<div class="container">
+    <h2 class="column-title" style="padding-top: 20px;"><span class="title-name">最新报道</span></h2>
+    <ul class="news-list">
+        <li class="item">
+            <div class="date"><span ms-text="informationdetail.data.infoContent.create_time | date('dd')"></span><i
+                    ms-text="informationdetail.data.infoContent.create_time | date('yyyy.MM')"></i></div>
+            <div class="info shownews_tt">
+                <h1 ms-text="informationdetail.data.infoContent.title"></h1>
+
+                <p>来源：<span ms-text="informationdetail.data.infoContent.cont_source"></span></p>
+            </div>
+        </li>
+    </ul>
+    <div class="editinfo" style="padding-top: 30px" ms-html="informationdetail.data.infoContent.content">
+
+    </div>
+    <div class="next_pre_box">
+        <p ms-visible="informationdetail.data.prevInfoContent">上一篇： <a ms-href="#/information/{{informationdetail.data.prevInfoContent.id}}"
+                   ms-text="informationdetail.data.prevInfoContent.title"></a></p>
+        <p ms-visible="informationdetail.data.nenextInfoContent">下一篇： <a ms-href="#/information/{{informationdetail.data.nenextInfoContent.id}}"
+                   ms-text="informationdetail.data.nenextInfoContent.title"></a></p>
+    </div>
+</div>

@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title>01.网上展厅首页</title>
+    <link rel="stylesheet" href="../css/project.css"/>
+    <style>
+
+    </style>
+</head>
+<body>
+<div class="body-wrapin">
+    <div ms-include-src="'mainnav.html'" data-include-replace="true"></div>
+
+    <div class="announcement">
+        <div class="wrapper">
+            <!--<marquee behavior="scroll" direction="up" scrollamount="4" onmouseenter="this.stop()" onmouseleave="this.start()" style="line-height: 42px;margin:0;">-->
+            <span><a href="javascript:;">郑州双塔涂料有限公司 振威展览集团河南卫华重型机械股份有限公司 凯迈（洛阳）机电有限公司 上海双兆传动设备有限公司</a></span>
+            <!--</marquee>-->
+        </div>
+    </div>
+    <div class="sider-focus">
+        <div class="sider-wrapper wrapper">
+            <div id="carousel1">
+                <!--<p id="title-text"></p>-->
+                <!--<p id="alt-text"></p>-->
+
+                <div class="cloudcarousel-wrap">
+                    <a target="_parent" href="javascript:;" id="sider-dqg"><img class="cloudcarousel" src="../images/product-dqg.png"/></a>
+                    <a target="_parent" href="javascript:;" id="sider-xbg"><img class="cloudcarousel" src="../images/product-xbg.png"/></a>
+                    <a target="_parent" href="javascript:;" id="sider-hzpg"><img class="cloudcarousel" src="../images/product-hzpg.png"/></a>
+                    <a target="_parent" href="javascript:;" id="sider-spg"><img class="cloudcarousel" src="../images/product-spg.png"/></a>
+                    <a target="_parent" href="javascript:;" id="sider-fzg"><img class="cloudcarousel" src="../images/product-fzg.png"/></a>
+                </div>
+
+                <div id="but1" class="carouselLeft"></div>
+                <div id="but2" class="carouselRight"></div>
+            </div>
+            <div class="sider-btns">
+                <ul>
+                    <li><a href="javascript:;" class="sider-trigger" tid="sider-fzg"><img src="../images/sider-btn-fzg.png" alt=""/></a></li>
+                    <li><a href="javascript:;" class="sider-trigger" tid="sider-hzpg"><img src="../images/sider-btn-hzpg.png" alt=""/></a></li>
+                    <li><a href="javascript:;" class="sider-trigger" tid="sider-dqg"><img src="../images/sider-btn-dqg.png" alt=""/></a></li>
+                    <li><a href="javascript:;" class="sider-trigger" tid="sider-xbg"><img src="../images/sider-btn-xbg.png" alt=""/></a></li>
+                    <li><a href="javascript:;" class="sider-trigger" tid="sider-spg"><img src="../images/sider-btn-spg.png" alt=""/></a></li>
+                    <li>
+                        <ul id="sider-more">
+                            <li><a href="javascript:;"><img src="../images/sider-btn-mywj.png" alt=""/></a></li>
+                            <li><a href="javascript:;"><img src="../images/sider-btn-jjjc.png" alt=""/></a></li>
+                        </ul>
+                        <a href="javascript:;" id="sider-btn-more"><img src="../images/sider-btn-more.png" alt=""/></a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </div>
+    <div class="container zt-index">
+        <div class="column-news">
+            <h2 class="column-title"><a href="#/information/list" class="more"></a><span class="title-name">最新资讯</span></h2>
+            <div class="news-picimg col-02">
+                <div class="modul" ms-repeat="indexmain.data.recommend">
+                    <div class="img"><img src="../images/none.png" ms-src="el.picture_rsurl" width="200" height="150" alt="#"/></div>
+                    <div class="info">
+                        <span class="tis"><i class="clock-ioc"></i><span ms-text="el.create_time | date('yyyy.M.d')"></span></span>
+
+                        <div class="title"><a href="javascript:;" ms-href="#/information/{{el.id}}/detail" ms-text="el.title"></a></div>
+                        <p><a href="javascript:;" ms-href="#/information/{{el.id}}/detail" ms-text="el.content"></a></p>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+        <div class="column news-column">
+            <ul class="news-list col-02">
+                <li class="item" ms-repeat="indexmain.data.contents">
+                    <a href="javascript:;" ms-href="#/information/{{el.id}}/detail">
+                        <div class="date">
+                            <span ms-text="el.create_time | date('d')"></span>
+                            <i ms-text="el.create_time | date('yyyy.MM')"></i>
+                        </div>
+
+                        <div class="info">
+                            <h3 ms-text="el.title"></h3>
+                            <p><span ms-text="el.content"></span><span class="more"></span></p>
+                        </div>
+                    </a>
+                </li>
+            </ul>
+        </div>
+        <div class="column ext-col2-modu">
+            <div class="exc-enter">
+                <h2 class="column-title"><span class="title-name">优秀企业</span></h2>
+
+                <div class="info-content">
+                    <ul class="info-list">
+                        <li ms-repeat="indexmain.data.companys">
+                            <div class="item">
+                                <div class="img"></div>
+                                <div class="info"><a href="javascript:;" ms-href="#/enterprise/{{el.id}}" class="alink" ms-text="el.name"></a></div>
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+            <div class="exc-firm">
+                <h2 class="column-title"><span class="title-name">优秀品牌</span></h2>
+                <div class="picimg-list">
+                    <ul class="picimg-list-wrap">
+                        <li ms-repeat="indexmain.data.advertisings">
+                            <div class="img"><a href="javascript:;" ms-href="#/enterprise/{{el.id}}"><img src="../images/none.png" ms-src="el.picture_rsurl" alt="#"/></a></div>
+                            <div class="info"><span ms-text="el.name"></span></div>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        <div class="column enter-product">
+            <h2 class="column-title"><a href="javascript:;" class="more"></a><span class="title-name">优秀产品</span></h2>
+            <div class="modul-l product-focus">
+                <ul class="pic-img">
+                    <li ms-repeat="indexmain.data.carousel">
+                        <div class="img"><a href="javascript:;" ms-href="#/product/{{el.id}}/detail"><img src="../images/none.png" ms-src="el.picture_rsurl" alt=""/></a></div>
+                        <div class="info"><a href="javascript:;" ms-href="#/product/{{el.id}}/detail" ms-text="el.name"></a></div>
+                    </li>
+                </ul>
+                <ul class="page">
+                    <li ms-repeat="indexmain.data.carousel" class="on" ms-text="$index + 1"></li>
+                </ul>
+            </div>
+            <div class="picimg-list modul-r">
+                <ul class="picimg-list-wrap">
+                    <li ms-repeat="indexmain.data.products" ms-class="fore{{$index + 1}}">
+                        <div class="info"><a href="javascript:;" ms-href="#/enterprise/{{el.id}}/product" ms-text="el.name"></a></div>
+                        <div class="img"><a href="javascript:;" ms-href="#/enterprise/{{el.id}}/product"><img src="../images/none.png" ms-src="el.pic" width="170" height="180" alt="#"/></a></div>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </div>
+</div>
+</body>
+</html>

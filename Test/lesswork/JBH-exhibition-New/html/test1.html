@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title></title>
+    <link rel="stylesheet" href="../css/dong1.css"/>
+</head>
+<body>
+<div class="focus">
+    <div class="box box-40">
+        <div class="box-wrapin">
+            <div class="stage">
+                <img src="../images/stage.png" alt=""/>
+            </div>
+            <div class="label">
+                <img src="../images/label-dq.png" alt=""/>
+            </div>
+            <div class="image">
+                <img src="../images/image-dq.png" alt=""/>
+            </div>
+        </div>
+    </div>
+    <div class="box box-30">
+        <div class="box-wrapin">
+            <div class="stage">
+                <img src="../images/stage.png" alt=""/>
+            </div>
+            <div class="label">
+                <img src="../images/label-xb.png" alt=""/>
+            </div>
+            <div class="image">
+                <img src="../images/image-xb.png" alt=""/>
+            </div>
+        </div>
+    </div>
+    <div class="box box-20">
+        <div class="box-wrapin">
+            <div class="stage">
+                <img src="../images/stage.png" alt=""/>
+            </div>
+            <div class="label">
+                <img src="../images/label-hzp.png" alt=""/>
+            </div>
+            <div class="image">
+                <img src="../images/image-hzp.png" alt=""/>
+            </div>
+        </div>
+    </div>
+    <div class="box box-25">
+        <div class="box-wrapin">
+            <div class="stage">
+                <img src="../images/stage.png" alt=""/>
+            </div>
+            <div class="label">
+                <img src="../images/label-sp.png" alt=""/>
+            </div>
+            <div class="image">
+                <img src="../images/image-sp.png" alt=""/>
+            </div>
+        </div>
+    </div>
+    <div class="box box-35">
+        <div class="box-wrapin">
+            <div class="stage">
+                <img src="../images/stage.png" alt=""/>
+            </div>
+            <div class="label">
+                <img src="../images/label-fz.png" alt=""/>
+            </div>
+            <div class="image">
+                <img src="../images/image-fz.png" alt=""/>
+            </div>
+        </div>
+    </div>
+</div>
+<script src="../js/jquery-1.8.0.js"></script>
+<script>
+    //自定义移动类
+    function Move(x, y, a, b){
+
+        this._x = x;
+        this._y = y;
+        this._a = a;
+        this._b = b;
+        this.items = [];
+        this.dxrad = -0.15;
+        this.step = 0.01;
+
+    }
+
+    //设置对象位置
+    Move.prototype.setPostion = function (obj, rad){
+
+        obj.style.left = this._a * Math.cos(rad) + this._x + "px";
+        obj.style.top = this._b * Math.sin(rad) + this._y + "px";
+        if (Math.sin(rad) > 0) obj.style.zIndex = 3;
+        else obj.style.zIndex = 2;
+
+    };
+
+    //设定大小
+    Move.prototype.setSize = function (obj, rad) {
+
+        var p = (Math.sin(rad) < 0) ? 2 * this._a - Math.abs(this._a * Math.cos(rad)) : this._a * Math.abs(Math.cos(rad));
+        p = 100 - 40 * p / this._a + 20;
+        obj.style.width = 'alpha(opacity=' + p + ')';
+        obj.style.height = p / 100;
+
+    };
+
+    //设定透明度
+    Move.prototype.setAlpha = function (obj, rad) {
+
+        var p = (Math.sin(rad) < 0) ? 2 * this._a - Math.abs(this._a * Math.cos(rad)) : this._a * Math.abs(Math.cos(rad));
+        p = 100 - 40 * p / this._a + 20;
+        obj.style.filter = 'alpha(opacity=' + p + ')';
+        obj.style.opacity = p / 100;
+    };
+
+    //根据轨迹运动
+    Move.prototype.play = function (n){
+
+        for (var i = 0; i < this.items.length; i++) {
+            this.setPostion(this.items[i], 2 * Math.PI * i / n + this.dxrad);
+            this.setSize(this.items[i], 2 * Math.PI * i / n + this.dxrad);
+            this.setAlpha(this.items[i], 2 * Math.PI * i / n + this.dxrad);
+        }
+        this.dxrad = this.dxrad + this.step;
+        if (this.dxrad >= Math.PI) this.dxrad = -Math.PI;
+
+    };
+
+    Move.prototype.init = function (n) {
+
+        var $list = $('.box');
+//        $list.find('img').css({
+//            width: 380,
+//            height: 300
+//        });
+        for (var i = 0; i < n; i++) {
+            this.items[i] = $list.eq(i)[0];
+            this.setPostion(this.items[i], 2 * Math.PI * i / n - .15);
+            this.setAlpha(this.items[i], 2 * Math.PI * i / n -.15);
+            //img.onclick=function(){alert(this.style.zIndex)};
+        }
+
+
+//        var ths = this;
+//        setInterval(function(){
+//            ths.play(n);
+//        },20);
+
+    };
+
+    var move = new Move(300, 100, 300, 60);
+    move.init(5);
+</script>
+</body>
+</html>

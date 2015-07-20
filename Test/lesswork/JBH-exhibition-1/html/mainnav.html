@@ -1,0 +1,51 @@
+<div class="mainbav">
+    <div class="wrapper">
+        <h1 class="logo"><a href="#/index"></a></h1>
+
+        <div class="search">
+            <div class="search-wrap">
+                <div class="search-op">
+                    <i></i>
+                    <span class="op-content" ms-text="maps.search_type[search_type]">产品</span>
+                    <ul class="search-list">
+                        <li ms-repeat="maps.search_type" ms-text="$val" ms-on-click="changeSearchType($key)"
+                            ms-visible="$key != search_type"></li>
+                    </ul>
+                </div>
+                <div class="search-btn">
+                    <input type="button" ms-on-click="search()"/>
+                </div>
+                <div class="search-input">
+                    <input type="text" ms-duplex="search_keyword"/>
+                </div>
+                <script>
+                    avalon.require(['jquery'], function ($) {
+                        setTimeout(function () {
+                            $('.search-op').bind({
+                                'mouseenter': function () {
+                                    $('.search-list').stop(true).show().animate({
+                                        opacity: 1
+                                    });
+                                },
+                                'mouseleave': function () {
+                                    $('.search-list').stop(true).hide().animate({
+                                        opacity: 0
+                                    });
+                                }
+                            });
+                        });
+
+                    });
+                </script>
+            </div>
+        </div>
+        <ul class="mainbav-wrap">
+            <li ms-class="on: mmState.currentState.stateName == 'index'"><s></s><a href="#/index"><em>首页</em></a>
+            </li>
+            <li ms-class="on: mmState.currentState.stateName == 'enterprise-search'"><a
+                    href="#/enterprise/search"><s></s><em>企业库</em></a></li>
+            <li ms-class="on: mmState.currentState.stateName == 'product-search'"><a href="#/product/search"><s></s><em>产品库</em></a>
+            </li>
+        </ul>
+    </div>
+</div>

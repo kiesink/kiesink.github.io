@@ -1,0 +1,68 @@
+<!--<legend>左侧栏固定，右侧内容变宽</legend>-->
+<div class="container leftfix qi">
+    <!--左侧start-->
+    <div class="leftsidebar">
+        <div class="info-column enterprise-info">
+            <h3 class="info-head">企业信息</h3>
+
+            <div class="info-content">
+                <div class="info-tit"><a ms-href="#/enterprise/{{enterpriseinfo.data.id}}" ms-text="enterpriseinfo.data.name"></a></div>
+                <div class="item">
+                    <div class="item-name">经营模式：</div>
+                    <div class="item-des" ms-text="maps.business_model[enterpriseinfo.data.business_model]"></div>
+                </div>
+                <div class="item">
+                    <div class="item-name">所在地：</div>
+                    <div class="item-des" ms-text="enterpriseinfo.data.province_name + enterpriseinfo.data.city_name + enterpriseinfo.data.area_name + enterpriseinfo.data.address"></div>
+                </div>
+                <div class="item">
+                    <div class="item-name">产品数量：</div>
+                    <div class="item-des" ms-text="enterpriseinfo.data.product_count"></div>
+                </div>
+                <div class="item">
+                    <div class="item-name">资质认证：</div>
+                    <div class="item-des"><div class="gssmrz"><i class="gsm-ico"><img src="../images/gssm.png" alt=""/></i>公司实名认证</div></div>
+                </div>
+            </div>
+            <div class="btn-wrap">
+                <a class="btn red" href="javascript:;" ms-on-click="addFavorite()">收藏企业 </a>
+            </div>
+        </div>
+        <div class="info-column contactway-info">
+            <h3 class="info-head">联系方式</h3>
+
+            <div class="info-content">
+                <div class="item">
+                    <div class="item-name">联系人：</div>
+                    <div class="item-des" ms-text="enterpriseinfo.data.contact_man"></div>
+                </div>
+                <div class="item">
+                    <div class="item-name">电话：</div>
+                    <div class="item-des" ms-text="enterpriseinfo.data.contact_tel"></div>
+                </div>
+                <div class="item">
+                    <div class="item-name">手机：</div>
+                    <div class="item-des" ms-text="enterpriseinfo.data.contact_mobile"></div>
+                </div>
+                <div class="item">
+                    <div class="item-name">QQ：</div>
+                    <div class="item-des" ms-text="enterpriseinfo.data.qq_no"></div>
+                </div>
+                <div class="item">
+                    <div class="item-name">传真：</div>
+                    <div class="item-des" ms-text="enterpriseinfo.data.fax"></div>
+                </div>
+                <div class="item">
+                    <div class="item-name">地址：</div>
+                    <div class="item-des"
+                         ms-text="enterpriseinfo.data.province_name + enterpriseinfo.data.city_name + enterpriseinfo.data.area_name + enterpriseinfo.data.address"></div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!--左侧end-->
+    <!--内容start-->
+    <div ms-view></div>
+    <!--内容end-->
+
+</div>

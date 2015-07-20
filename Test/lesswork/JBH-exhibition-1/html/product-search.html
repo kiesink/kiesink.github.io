@@ -1,0 +1,76 @@
+<div>
+    <div ms-include-src="'mainnav.html'"></div>
+
+    <!--<legend>公告栏模块</legend>-->
+    <!--<div class="announcement">-->
+    <!--<div class="wrapper">-->
+    <!--<span><a href="#">郑州双塔涂料有限公司 振威展览集团河南卫华重型机械股份有限公司 凯迈（洛阳）机电有限公司 上海双兆传动设备有限公司</a>-->
+    <!--</span>-->
+    <!--</div>-->
+    <!--</div>-->
+
+    <!--<legend>又侧栏固定，左侧侧内容变宽</legend>-->
+    <div class="container rightfix qi">
+        <!--右侧start-->
+        <div class="rightsidebar" ms-visible="enterpriserecommend.data.result.length > 0">
+            <div class="info-column picimg-info">
+                <h3 class="info-head">推荐企业</h3>
+                <div class="info-content">
+                    <div class="pic-img" ms-repeat="enterpriserecommend.data.result" ms-if-loop="$index < 3">
+                        <a href="javascript:;" ms-href="#/enterprise/{{el.id}}">
+                            <div class="img"><img src="../images/none.png" ms-src="el.logo_rsurl" width="160"
+                                                  height="160" alt=""/></div>
+                            <div class="info" ms-text="el.name"></div>
+                        </a>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+        <!--右侧end-->
+        <!--内容start-->
+        <div class="content">
+            <div class="select-bar">
+                <div class="item">
+                    <label>经营模式：</label>
+                    <select ms-duplex="selected.business_model">
+                        <option value="all">全部</option>
+                        <option ms-repeat="maps.business_model" ms-value="$key" ms-text="$val"></option>
+                    </select>
+                </div>
+                <div class="item">
+                    <label>所在地区：</label>
+                    <select ms-duplex="area.province_code">
+                        <option value="all">全部</option>
+                        <option ms-repeat="area.province_list" ms-value="el.ccode" ms-text="el.name"></option>
+                    </select>
+                    <select ms-duplex="area.city_code">
+                        <option value="all">全部</option>
+                        <option ms-repeat="area.city_list" ms-value="el.ccode" ms-text="el.name"></option>
+                    </select>
+                    <select ms-duplex="area.area_code">
+                        <option value="all">全部</option>
+                        <option ms-repeat="area.area_list" ms-value="el.ccode" ms-text="el.name"></option>
+                    </select>
+                </div>
+            </div>
+            <div class="picimg-list">
+                <!--2行描述文字-->
+                <ul class="picimg-list-wrap row-03 style1" ms-visible="productsearch.data.result.length > 0">
+                    <li ms-repeat="productsearch.data.result">
+                        <div class="img"><a href="javascript:;" ms-href="#/product/{{el.id}}/detail"><img
+                                src="../images/none.png" ms-src="el.pic" width="220" height="220" alt=""/></a></div>
+                        <div class="info"><a href="javascript:;" ms-href="#/product/{{el.id}}/detail"
+                                             ms-text="el.name"></a></div>
+                        <div class="company"><a href="javascript:;" ms-text="el.company_name"></a></div>
+                    </li>
+                </ul>
+                <p ms-visible="productsearch.data.result.length == 0" style="text-align: center;line-height:5em;">没有符合条件的记录。</p>
+            </div>
+            <!--内容end-->
+            <div class="pager-wrap qi">
+                <div ms-include-src="'pager.html'"></div>
+            </div>
+        </div>
+    </div>
+</div>

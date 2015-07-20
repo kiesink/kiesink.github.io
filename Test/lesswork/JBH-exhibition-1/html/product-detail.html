@@ -1,0 +1,126 @@
+<div class="bg-navi">
+    <!--企业标题栏-->
+    <div class="top-title">
+        <span class="title-logo"><img src="../images/none.png" ms-src="enterpriseinfo.data.logo_rsurl" width="160" height="100"/></span>
+        <h3 class="title-com" ms-text="enterpriseinfo.data.name"></h3>
+    </div>
+    <div class="bg-navi-wrap">
+        <ul>
+            <li><a href="#/index">展厅首页</a></li>
+            <li><a ms-href="#/enterprise/{{enterpriseinfo.data.id}}">企业首页</a></li>
+            <li><a ms-href="#/enterprise/{{enterpriseinfo.data.id}}/product">企业产品</a></li>
+        </ul>
+    </div>
+
+    <!--<legend>左侧栏固定，右侧内容变宽</legend>-->
+    <div class="container leftfix qi">
+        <!--左侧start-->
+        <div class="leftsidebar">
+            <div class="info-column enterprise-info">
+                <h3 class="info-head">企业信息</h3>
+                <div class="info-content">
+                    <div class="info-tit" ms-text="enterpriseinfo.data.name"></div>
+                    <div class="item">
+                        <div class="item-name">经营模式：</div>
+                        <div class="item-des" ms-text="maps.business_model[enterpriseinfo.data.business_model]"></div>
+                    </div>
+                    <div class="item">
+                        <div class="item-name">所在地：</div>
+                        <div class="item-des" ms-text="enterpriseinfo.data.province_name + enterpriseinfo.data.city_name + enterpriseinfo.data.area_name + enterpriseinfo.data.address"></div>
+                    </div>
+                    <div class="item">
+                        <div class="item-name">产品数量：</div>
+                        <div class="item-des" ms-text="enterpriseinfo.data.product_count"></div>
+                    </div>
+                    <div class="item">
+                        <div class="item-name">资质认证：</div>
+                        <div class="item-des"><div class="gssmrz"><i class="gsm-ico"><img src="../images/gssm.png" alt=""/></i>公司实名认证</div></div>
+                    </div>
+                </div>
+                <div class="btn-wrap">
+                    <a class="btn red" href="javascript:;" ms-on-click="addFavorite()">收藏企业</a>
+                </div>
+            </div>
+            <div class="info-column contactway-info">
+                <h3 class="info-head">联系方式</h3>
+                <div class="info-content">
+                    <div class="item">
+                        <div class="item-name">联系人：</div>
+                        <div class="item-des" ms-text="enterpriseinfo.data.contact_man"></div>
+                    </div>
+                    <div class="item">
+                        <div class="item-name">电话：</div>
+                        <div class="item-des" ms-text="enterpriseinfo.data.contact_tel"></div>
+                    </div>
+                    <div class="item">
+                        <div class="item-name">手机：</div>
+                        <div class="item-des" ms-text="enterpriseinfo.data.contact_mobile"></div>
+                    </div>
+                    <div class="item">
+                        <div class="item-name">QQ：</div>
+                        <div class="item-des" ms-text="enterpriseinfo.data.qq_no"></div>
+                    </div>
+                    <div class="item">
+                        <div class="item-name">传真：</div>
+                        <div class="item-des" ms-text="enterpriseinfo.data.fax"></div>
+                    </div>
+                    <div class="item">
+                        <div class="item-name">地址：</div>
+                        <div class="item-des" ms-text="enterpriseinfo.data.province_name + enterpriseinfo.data.city_name + enterpriseinfo.data.area_name + enterpriseinfo.data.address"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!--左侧end-->
+        <!--内容start-->
+        <div class="content">
+            <div id="product-intro">
+                <div class="product-intro-wrap">
+                    <div id="name">
+                        <h1 ms-text="productdetail.data.name"><strong></strong></h1>
+                    </div>
+
+                    <div id="preview">
+                        <div class="jqzoomWrap" id="spec-n1"><a href="javascript:;" data-rel="gal1" ms-href="productdetail.data.picRsurlList[0].picture_rsurl.picture_rsurl" class="jqzoom" title=""> <img src="../images/none.png" ms-src="productdetail.data.picRsurlList[0].picture_rsurl.picture_rsurl" title="" alt="" id="bigImg"/></a></div>
+                        <div id="spec-list"><a id="spec-forward" class="spec-control disabled" href="javascript:;"></a> <a id="spec-backward" class="spec-control disabled" href="javascript:;"></a>
+
+                            <div class="spec-items" style="position: absolute; width:270px; height: 54px; overflow: hidden;">
+                                <ul class="spec-list" style="position: absolute; left: 0px; top: 0px; width: 310px;">
+                                    <li class="imgList_blue" ms-repeat="productdetail.data.picRsurlList"><a href='javascript:void(0);' ms-data-rel="'{gallery: \'gal1\', smallimage: \'' + el.picture_rsurl.picture_rsurl + '\', largeimage: \'' + el.picture_rsurl.picture_rsurl + '\'}'"><img src='../images/none.png' ms-src="el.picture_rsurl.picture_rsurl" alt=""/></a></li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div id="summary">
+                        <div class="summary-wrap">
+                            <div id="price_list">
+                                <table width="100%" border="0" cellspacing="0" cellpadding="0" class="price_table">
+                                    <thead>
+                                    <tr>
+                                        <th colspan="2">规格参数</th>
+                                    </tr>
+                                    </thead>
+                                    <tbody>
+                                    <tr ms-repeat="productdetail.data.specList">
+                                        <td class="prece-name"><span ms-text="el.spec.spec"></span></td>
+                                        <td ms-text="el.spec.parameter"></td>
+                                    </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>
+                    </div>
+
+
+                </div>
+            </div>
+            <div class="product-profile">
+                <h2 class="column-title"><span class="title-name">产品介绍</span></h2>
+                <div class="editinfo" ms-html="productdetail.data.describe_note"></div>
+            </div>
+
+        </div>
+        <!--内容end-->
+    </div>
+</div>

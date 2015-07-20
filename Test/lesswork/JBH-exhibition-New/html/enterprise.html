@@ -1,0 +1,147 @@
+<div class="bg-navi">
+    <!--企业标题栏-->
+    <div class="top-title">
+        <span class="title-logo"><img src="../images/none.png" ms-src="enterprise.data.company_info.logo_rsurl" width="160" height="100"/></span>
+        <h3 class="title-com" ms-text="enterprise.data.company_info.name"></h3>
+    </div>
+    <div class="bg-navi-wrap">
+        <ul>
+            <li><a href="javascript:;" ms-href="#/enterprise/{{enterprise.data.company_info.id}}">企业首页</a></li>
+            <li><a href="javascript:;" ms-href="#/enterprise/{{enterprise.data.company_info.id}}/product">企业产品</a></li>
+        </ul>
+    </div>
+    <!--<legend>左侧栏固定，右侧内容变宽</legend>-->
+    <div class="container leftfix enter-index">
+
+        <!--内容start-->
+        <div class="collsect-info col-03">
+            <div class="model-01">
+                <div class="info-tit"><span>企业信息</span></div>
+                <div class="item fs-04">
+                    <div class="item-name">经营模式：</div>
+                    <div class="item-des" ms-text="maps.business_model[enterprise.data.company_info.business_model]"></div>
+                </div>
+                <div class="item fs-03">
+                    <div class="item-name">所在地：</div>
+                    <div class="item-des" ms-text="enterprise.data.company_info.city_name + enterprise.data.company_info.area_name"></div>
+                </div>
+                <div class="item fs-04">
+                    <div class="item-name">产品类型：</div>
+                    <div class="item-des">服装饰品</div>
+                </div>
+                <div class="item fs-04">
+                    <div class="item-name">资质认证：</div>
+                    <div class="item-des"><div class="gssmrz"><i class="gsm-ico"><img alt="" src="../images/gssm.png"></i>公司实名认证</div></div>
+                </div>
+            </div>
+            <div class="model-03">
+                <div class="info-tit"><span>联系方式</span></div>
+                <div class="item fs-03">
+                    <div class="item-name">联系人：</div>
+                    <div class="item-des" ms-text="enterprise.data.company_info.contact_man"></div>
+                </div>
+                <div class="item">
+                    <div class="item-name">电话：</div>
+                    <div class="item-des" ms-text="enterprise.data.company_info.contact_tel"></div>
+                </div>
+                <div class="item">
+                    <div class="item-name">手机：</div>
+                    <div class="item-des" ms-text="enterprise.data.company_info.contact_mobile"></div>
+                </div>
+                <div class="item">
+                    <div class="item-name">QQ：</div>
+                    <div class="item-des" ms-text="enterprise.data.company_info.qq_no"></div>
+                </div>
+                <div class="item">
+                    <div class="item-name">传真：</div>
+                    <div class="item-des" ms-text="enterprise.data.company_info.fax"></div>
+                </div>
+                <div class="item">
+                    <div class="item-name">地址：</div>
+                    <div class="item-des" ms-text="enterprise.data.company_info.address"></div>
+                </div>
+            </div>
+            <div class="model-02">
+                <div class="info-tit"><span>企业信息</span></div>
+                <p class="info-text" ms-text="enterprise.data.company_info.profile"></p>
+            </div>
+            <a href="javascript:;" class="collect-ico"></a>
+        </div>
+        <div class="column-picimg">
+            <h2 class="column-title"><span class="title-name">企业文化</span></h2>
+            <div class="picimg-list">
+                <ul class="picimg-list-wrap col-05">
+                    <li ms-repeat="enterprise.data.culture_list">
+                        <div class="img"><a href="javascript:;"><img src="../images/none.png" ms-src="el.file_rsurl" alt=""/></a></div>
+                    </li>
+                </ul>
+            </div>
+        </div>
+        <div class="column-picimg">
+            <h2 class="column-title"><span class="title-name">产品展示</span></h2>
+            <div class="picimg-list">
+                <ul class="picimg-list-wrap col-05">
+                    <li ms-repeat="enterprise.data.product_list">
+                        <div class="img"><img src="../images/none.png" ms-src="el.pic" alt="#"/></div>
+                    </li>
+                </ul>
+            </div>
+        </div>
+        <div class="column-tabinfo">
+            <h2 class="column-title"><span class="title-name">认证信息 </span></h2>
+            <h4 class="sub-title"><span class="subtit-name">工商注册信息</span></h4>
+            <table cellpadding="0" cellspacing="0" width="100%" class="table-info">
+                <tbody>
+                <tr>
+                    <td class="name">公司名称</td>
+                    <td ms-text="enterprise.data.verify_info.name"></td>
+                    <td class="name">注册地址</td>
+                    <td ms-text="enterprise.data.verify_info.gs_reg_address"></td>
+                </tr>
+                <tr>
+                    <td class="name">注册资本</td>
+                    <td ms-text="enterprise.data.verify_info.gs_reg_capital"></td>
+                    <td class="name">成立日期</td>
+                    <td ms-text="enterprise.data.verify_info.gs_establishment_time | date('yyyy年M月d日')"></td>
+                </tr>
+                <tr>
+                    <td class="name">注 册 号</td>
+                    <td ms-text="enterprise.data.verify_info.gs_reg_no"></td>
+                    <td class="name">法定代表人</td>
+                    <td ms-text="enterprise.data.verify_info.gs_legal_representative"></td>
+                </tr>
+                <tr>
+                    <td class="name">登记机关</td>
+                    <td ms-text="enterprise.data.verify_info.gs_reg_authority"></td>
+                    <td class="name">企业类型</td>
+                    <td ms-text="maps.enterprise_type[enterprise.data.verify_info.gs_enterprise_type]"></td>
+                </tr>
+                <tr>
+                    <td class="name">营业期限</td>
+                    <td><span ms-text="enterprise.data.verify_info.gs_business_start | date('yyyy-MM-dd')"></span> 至 <span ms-text="enterprise.data.verify_info.gs_business_end | date('yyyy-MM-dd')"></span></td>
+                    <td class="name">年检时间</td>
+                    <td ms-text="enterprise.data.verify_info.gs_annual_audit_date | date('yyyy年MM月dd日（最近）')"></td>
+                </tr>
+                <tr>
+                    <td class="name">经营范围</td>
+                    <td colspan="3" ms-text="enterprise.data.verify_info.gs_operating_range"></td>
+                </tr>
+                </tbody>
+            </table>
+        </div>
+        <div class="column-picimg">
+            <h2 class="column-title"><span class="title-name">资质证书</span></h2>
+            <div class="picimg-list">
+                <!--1行描述文字-->
+                <ul class="picimg-list-wrap col-06">
+                    <li ms-repeat="enterprise.data.verify_pic_list">
+                        <div class="img"><span><img src="../images/none.png" ms-src="el.pic_url" alt="#"/></span></div>
+                        <div class="info"><span>韩版时尚双排扣棉袄身靓</span></div>
+                    </li>
+                </ul>
+            </div>
+        </div>
+        <!--内容end-->
+
+    </div>
+</div>

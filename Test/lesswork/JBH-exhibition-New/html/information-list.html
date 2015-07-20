@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title>07.资讯列表页</title>
+    <link rel="stylesheet" href="../css/project.css"/>
+</head>
+<body>
+<div ms-include-src="'mainnav.html'" data-include-replace="true"></div>
+
+<!--TOP AD-->
+<div class="list-top-ad-box">
+    <div class="wrapper">
+        <div class="ad-tt-box">
+            <h2>最新报道 <i>/</i> <span>News</span></h2>
+        </div>
+    </div>
+</div>
+
+<!--最新报道-->
+<div class="container">
+    <h2 class="column-title" style="padding-top: 20px;"><span class="title-name">最新报道</span></h2>
+    <div class="column-news" style="padding: 20px 0;">
+        <div class="news-picimg col-02">
+            <div class="modul" ms-repeat="informationlist.data.recommend">
+                <div class="img"><img ms-src="el.picture_rsurl" width="200" height="150" alt="#"/></div>
+                <div class="info">
+                    <span class="tis"><i class="clock-ioc"></i><span ms-text="el.createTime"></span></span>
+                    <div class="title"><a href="javascript:;" ms-href="#/information/{{el.id}}/detail" ms-text="el.title"></a></div>
+                    <p><a href="javascript:;" ms-href="#/information/{{el.id}}/detail" ms-text="el.content"></a></p>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="" style="margin-bottom: 30px;">
+        <ul class="news-list">
+            <li class="item" ms-repeat="informationlist.data.result">
+                <a href="javascript:;" ms-href="#/information/{{el.id}}/detail">
+                    <div class="date"><span ms-text="el.create_time | date('d')"></span><i ms-text="el.create_time | date('yyyy.M')"></i></div>
+                    <div class="info">
+                        <h3 ms-text="el.title"></h3>
+                        <p><span ms-text="el.content"></span><span class="more">[详细]</span></p>
+                    </div>
+                </a>
+            </li>
+        </ul>
+    </div>
+    <div ms-include-src="'pager.html'" data-include-replace="true"></div>
+</div>
+
+</body>
+</html>

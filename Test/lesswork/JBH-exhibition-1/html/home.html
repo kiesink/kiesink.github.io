@@ -1,0 +1,168 @@
+<div class="body-wrapin">
+    <div ms-include-src="'mainnav.html'"></div>
+
+    <div class="announcement">
+        <div class="wrapper">
+            <ul>
+                <li ms-repeat="indexmain.data.recommend"><a ms-href="#/information/{{el.id}}/detail" ms-text="el.title"></a></li>
+            </ul>
+        </div>
+    </div>
+    <div class="sider-focus">
+        <div class="sider-wrapper wrapper">
+            <div id="carousel1">
+                <!--<p id="title-text"></p>-->
+                <!--<p id="alt-text"></p>-->
+                <div class="cloudcarousel-wrap">
+                    <a target="_parent" href="#/enterprise/search?company_type=2" id="sider-1"><img class="cloudcarousel"
+                                                                                src="../images/product-1.png"/></a>
+                    <a target="_parent" href="#/enterprise/search?company_type=1" id="sider-2"><img class="cloudcarousel"
+                                                                                src="../images/product-2.png"/></a>
+                    <a target="_parent" href="#/enterprise/search?company_type=3" id="sider-3"><img class="cloudcarousel"
+                                                                                 src="../images/product-3.png"/></a>
+                    <a target="_parent" href="#/enterprise/search?company_type=4" id="sider-4"><img class="cloudcarousel"
+                                                                                src="../images/product-4.png"/></a>
+                    <a target="_parent" href="#/enterprise/search?company_type=6" id="sider-5"><img class="cloudcarousel"
+                                                                                src="../images/product-5.png"/></a>
+                </div>
+
+                <div id="but1" class="carouselLeft"></div>
+                <div id="but2" class="carouselRight"></div>
+            </div>
+            <div class="sider-btns">
+                <!--1=服装服饰馆-->
+                <!--2=3C数码馆-->
+                <!--3=箱包名鞋馆-->
+                <!--4=玩具礼品馆-->
+                <!--5=护肤美妆馆-->
+                <!--6=家居日用馆-->
+                <!--7=其他-->
+                <ul>
+                    <!--3C数码馆-->
+                    <li><a href="#/enterprise/search?company_type=2" class="sider-trigger" tid="sider-1"><img
+                            src="../images/sider-btn-1.png" alt=""/></a></li>
+                    <!--服装服饰馆-->
+                    <li><a href="#/enterprise/search?company_type=1" class="sider-trigger" tid="sider-2"><img
+                            src="../images/sider-btn-2.png" alt=""/></a></li>
+                    <!--箱包名鞋馆-->
+                    <li><a href="#/enterprise/search?company_type=3" class="sider-trigger" tid="sider-3"><img
+                            src="../images/sider-btn-3.png" alt=""/></a></li>
+                    <!--玩具礼品馆-->
+                    <li><a href="#/enterprise/search?company_type=4" class="sider-trigger" tid="sider-4"><img
+                            src="../images/sider-btn-4.png" alt=""/></a></li>
+                    <!--家居日用馆-->
+                    <li><a href="#/enterprise/search?company_type=6" class="sider-trigger" tid="sider-5"><img
+                            src="../images/sider-btn-5.png" alt=""/></a></li>
+                    <li>
+                        <ul id="sider-more">
+                            <!--护肤美妆馆-->
+                            <li><a href="#/enterprise/search?company_type=5"><img src="../images/sider-btn-6.png" alt=""/></a></li>
+                            <!--其他-->
+                            <li><a href="#/enterprise/search?company_type=7"><img src="../images/sider-btn-7.png" alt=""/></a></li>
+                        </ul>
+                        <a href="javascript:;" id="sider-btn-more"><img src="../images/sider-btn-more.png" alt=""/></a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </div>
+    <div class="container zt-index">
+        <div class="column-news">
+            <h2 class="column-title"><a href="#/information/list" class="more"></a><span class="title-name">最新资讯</span>
+            </h2>
+
+            <div class="news-picimg col-02">
+                <div class="modul" ms-repeat="indexmain.data.recommend">
+                    <div class="img"><a href="javascript:;" ms-href="#/information/{{el.id}}/detail"><img src="../images/none.png" ms-src="el.picture_rsurl" width="200" height="150"
+                                          alt=""/></a></div>
+                    <div class="info">
+                        <span class="tis"><i class="clock-ioc"></i><span
+                                ms-text="el.create_time | date('yyyy.M.d')"></span></span>
+
+                        <div class="title"><a href="javascript:;" ms-href="#/information/{{el.id}}/detail"
+                                              ms-text="el.title"></a></div>
+                        <p><a href="javascript:;" ms-href="#/information/{{el.id}}/detail"
+                              ms-text="el.part_content + '……'"></a>
+                        </p>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+        <div class="column news-column">
+            <ul class="news-list col-02">
+                <li class="item" ms-repeat="indexmain.data.contents">
+                    <a href="javascript:;" ms-href="#/information/{{el.id}}/detail">
+                        <div class="date">
+                            <span ms-text="el.create_time | date('d')"></span>
+                            <i ms-text="el.create_time | date('yyyy.MM')"></i>
+                        </div>
+
+                        <div class="info">
+                            <h3 ms-text="el.title.length > 28 ? el.title.substring(0, 28) + '……' : el.title"></h3>
+
+                            <p><span ms-text="el.part_content.substring(0, 35) + '……'"></span><span class="more">[详细]</span></p>
+                        </div>
+                    </a>
+                </li>
+            </ul>
+        </div>
+        <div class="column ext-col2-modu">
+            <div class="exc-enter">
+                <h2 class="column-title"><span class="title-name">优秀企业</span></h2>
+
+                <div class="info-content">
+                    <ul class="info-list">
+                        <li ms-repeat="indexmain.data.companys">
+                            <div class="item">
+                                <div class="img"></div>
+                                <div class="info"><a href="javascript:;" ms-href="#/enterprise/{{el.id}}" class="alink"
+                                                     ms-text="el.name"></a></div>
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+            <div class="exc-firm">
+                <h2 class="column-title"><span class="title-name">优秀品牌</span></h2>
+
+                <div class="picimg-list">
+                    <ul class="picimg-list-wrap">
+                        <li ms-repeat="indexmain.data.advertisings">
+                            <div class="img"><img
+                                    src="../images/none.png" ms-src="el.picture_rsurl" width="130" height="75" alt=""/></div>
+                            <div class="info"><span ms-text="el.name"></span></div>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        <div class="column enter-product">
+            <h2 class="column-title"><a href="javascript:;" class="more"></a><span class="title-name">优秀产品</span></h2>
+
+            <div class="modul-l product-focus">
+                <ul class="pic-img">
+                    <li ms-repeat="indexmain.data.carousel">
+                        <div class="img"><a href="javascript:;" ms-href="{{el.link_url}}"><img
+                                src="../images/none.png" ms-src="el.picture_rsurl" width="320" height="520" alt=""/></a></div>
+                        <div class="info"><a href="javascript:;" ms-href="{{el.link_url}}"
+                                             ms-text="el.name"></a></div>
+                    </li>
+                </ul>
+                <ul class="page">
+                    <li ms-repeat="indexmain.data.carousel" ms-class-1="on: $index == 0" ms-text="$index + 1"></li>
+                </ul>
+            </div>
+            <div class="picimg-list modul-r">
+                <ul class="picimg-list-wrap">
+                    <li ms-repeat="indexmain.data.products" ms-class="fore{{$index + 1}}">
+                        <div class="info"><a href="javascript:;" ms-href="#/product/{{el.id}}/detail"
+                                             ms-text="el.name"></a></div>
+                        <div class="img"><a href="javascript:;" ms-href="#/product/{{el.id}}/detail"><img
+                                src="../images/none.png" ms-src="el.pic" width="170" height="180" alt=""/></a></div>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </div>
+</div>

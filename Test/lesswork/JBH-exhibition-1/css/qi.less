@@ -1,0 +1,132 @@
+@import "common";
+
+//带背景导航
+.bg-navi{
+  background: url("../images/top-bg0.png") no-repeat center -15px;
+// background: url("../images/top-bg.png") no-repeat top center;
+  .bg-navi-wrap{
+   background: url("../images/navi-bg.png") no-repeat center;
+   // margin:182px auto 0 auto;
+    margin:0 auto 30px auto;
+   // width:1152px;
+    width:100%;
+    height:50px;
+    line-height:50px;
+    font-size:16px;
+    font-weight:bold;
+    color:#666;
+    //padding:0 150px;
+   // .clearfix();
+    min-width:1200px;
+    ul{
+      
+      width:1200px;
+      margin:0 auto;
+      .clearfix();
+    }
+    li{
+      float:left;
+      a{
+        line-height:50px;
+        border-left:1px solid #b2b2b2;
+        padding:0 30px;
+      }
+      a:hover{
+        color:#3399cc;
+      }
+    }
+    li:first-child a{
+      border:none;
+    }
+  }
+  //企业标题栏
+  .top-title{
+    width:1200px;
+    min-width:1200px;
+    margin:0px auto 30px auto;
+    padding-top: 50px;
+    height:110px;
+    .clearfix();
+  }
+  .title-logo{
+    float:left;
+    display:inline-block;
+    width:160px;
+    height:100px;
+    background:rgba(255,255,255,0.3);
+    padding:5px;
+  }
+  .title-com{
+  float:left;
+  color:#666;
+  font: normal 36px/110px @family;
+  display:inline-block;
+  margin-left:50px;
+  }
+}
+
+
+//标题
+.column-title{
+  &.qi{
+    margin-bottom:20px;
+  }
+  &.qi-nobd{
+    margin-bottom:20px;
+    border: none;
+  }
+}
+
+//分页上面的横线
+.pager-wrap{
+  &.qi{
+    margin:20px 0;
+    padding-top:30px;
+    border-top:1px solid #ccc;
+  }
+  &.qi-dashed{
+    margin:20px 0;
+    padding-top:30px;
+    border-top:1px dashed #ccc;
+  }
+}
+
+//页尾上边距
+.footer{
+  &.qi{
+    //margin-top:10em;
+  }
+}
+
+//页面主体内容
+.container{
+  &.qi{
+    margin-top:15px;
+    //margin-top:260px;
+  }
+}
+
+.select-bar{
+  background:#f5f6f8;
+  border-bottom:2px solid #dee1e7;
+  line-height:3em;
+  height:3em;
+  padding:0 10px;
+  margin-bottom:15px;
+  font-size:14px;
+  .clearfix();
+  .item{
+    float:left;
+    margin-right:10px;
+  }
+  select{
+    line-height:2em;
+    width:80px;
+    //outline: none;
+    height:2em;
+    font-size:14px;
+  }
+}
+.product-profile{
+  margin-top:15px;
+}

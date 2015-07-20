@@ -1,0 +1,19 @@
+<div class="content">
+    <h2 class="column-title qi"><span class="title-name">产品展示</span></h2>
+
+    <div class="picimg-list">
+        <!--2行描述文字-->
+        <ul class="picimg-list-wrap row-03">
+            <li ms-repeat="enterpriseproduct.data.result">
+                <div class="img"><a href="javascript:;" ms-href="#/enterprise/{{el.company_id}}/product/{{el.id}}"><img
+                        src="../images/none.png" ms-src="el.pic" alt="#" width="220" height="220"/></a></div>
+                <div class="info"><a href="javascript:;" ms-href="#/enterprise/{{el.company_id}}/product/{{el.id}}"
+                                     ms-text="el.name"></a></div>
+                <!--<div class="company" ms-text="el.company_name"></div>-->
+            </li>
+        </ul>
+    </div>
+    <div class="pager-wrap qi-dashed">
+        <div ms-include-src="'pager.html'"></div>
+    </div>
+</div>
