@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>过往优惠</title>
+    <link rel="stylesheet" href="../css/project.css"/>
+    <script src="../js/avalon.js" data-main="../js/p-discount"></script>
+</head>
+<body class="p-discount" ms-controller="Ctrl">
+    <div ms-include-src="'header.html'" data-include-replace="true"></div>
+    <div class="me-body">
+        <div class="me-wrapper">
+            <div class="me-main">
+                <ul class="main-split">
+                    <li ms-repeat-item="data.list">
+                        <a href="detail.html">
+                            <div class="imgtext">
+                                <div class="img">
+                                    <img ms-attr-src="item.img.src" alt=""/>
+                                </div>
+                                <div class="text">
+                                    <h2>{{item.text.title}}</h2>
+                                    <div>{{item.text.content}}</div>
+                                </div>
+                                <div class="tips" ms-class="gray:item.state=='finish'">
+                                    <span class="tips-ct">
+                                        <span>{{item.tips}}</span>
+                                        <span class="x1"></span>
+                                        <span class="x2"></span>
+                                    </span>
+                                </div>
+                            </div>
+                        </a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

@@ -1,0 +1,197 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>详细页</title>
+    <link rel="stylesheet" href="../css/project.css"/>
+    <script src="../js/avalon.js" data-main="../js/p-detail"></script>
+</head>
+<body class="p-detail" ms-controller="Ctrl">
+    <div ms-include-src="'header.html'" data-include-replace="true"></div>
+    <div class="me-body">
+        <div class="me-wrapper">
+            <div class="me-main">
+                <ol class="crumb">
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="discount.html">活动首页</a></li>
+                    <li class="active">选择产品</li>
+                </ol>
+                <div class="main-product">
+                    <div class="imgtext">
+                        <div class="img">
+                            <img ms-attr-src="data.img.src" alt="" me-imganchor="test1"/>
+                            <div class="info"><i class="sign-clock"><img src="../images/sign-clock.png" alt=""/></i><span ms-text="data.img.info"></span></div>
+                        </div>
+                        <div class="imglist">
+                            <a href="javascript:;" class="btn-prev">&lt;</a>
+                            <a href="javascript:;" class="btn-next">&gt;</a>
+                            <div class="list">
+                                <ul>
+                                    <li ms-repeat-src="data.thumbnail">
+                                        <a href="javascript:;">
+                                            <img ms-attr-src="src" alt="" me-imganchor="#test1" ms-data-src="src"/>
+                                        </a>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                        <div class="tips">
+                            <span class="tips-ct">
+                                <span ms-text="data.tips"></span>
+                                <span class="x1"></span>
+                                <span class="x2"></span>
+                            </span>
+                        </div>
+                    </div>
+                    <div class="product-info">
+                        <ul class="list">
+                            <li><h2 ms-text="data.name"></h2></li>
+                            <li><div class="pricebox">
+                                <div class="tips">
+                                <span class="tips-ct">
+                                    <span>4.2折</span>
+                                    <span class="x1"></span>
+                                </span>
+                                </div>
+                                <span class="price"><i class="sign-price">¥</i><span ms-text="data.price"></span></span>
+                                <span class="price-old"><i class="sign-price">¥</i><span ms-text="data.oldprice"></span></span>
+                                <span class="price-drop-info">净省</span>
+                                <span class="price-drop"><i class="sign-price">¥</i>599</span>
+                            </div>
+                            </li>
+                            <li>门票类型：成人票<span class="child-ticket">儿童票<i class="sign-help"><img src="../images/sign-help.png" alt=""><div class="help">儿童票提示信息</div></i></span></li>
+                            <li>兑票方式：电子券兑换</li>
+                            <li>兑票时间/景区开放时间：15:00 - 17:00</li>
+                            <li>兑票地址：华侨城大峡谷售票处</li>
+                            <li>游玩时间：
+                                <span class="input-date">
+                                    <input type="text" class="input-text" ms-duplex="data.date"/>
+                                    <button class="input-btn"><i class="fa" ms-text="fa.calendar">&#xf073;</i></button>
+                                </span>
+                            </li>
+                            <li>产品数量：
+                                <span class="input-num">
+                                    <button class="input-btn"><i class="fa" ms-text="fa.minus">&#xf068;</i></button>
+                                    <input type="text" class="input-text" ms-duplex="data.count"/>
+                                    <button class="input-btn"><i class="fa" ms-text="fa.plus">&#xf067;</i></button>
+                                </span>
+                            </li>
+                            <li><a class="btn red btn-buy" href="orderfill.html">点击抢购</a></li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="main-detail">
+                    <div class="tab-wrapper">
+                        <div class="tab">
+                            <ul me-fixbar="fixbar1">
+                                <li class="on" me-anchor="#1">产品亮点</li>
+                                <li me-anchor="#2" me-animate="ed-flipInX">费用说明</li>
+                                <li me-anchor="#3">产品详情</li>
+                                <li me-anchor="#4">预定须知</li>
+                                <li me-anchor="#5">交通线路</li>
+                                <li me-anchor="#6">常见问题</li>
+                            </ul>
+                        </div>
+                        <div class="tab-ct">
+                            <div class="modulebox" me-anchor="1">
+                                <div class="title">
+                                    <img src="../images/detail-tab1.png" alt=""/>
+                                </div>
+                                <div class="content">
+                                    <h3><i class="sign-star"><img src="../images/sign-star.png" alt=""/></i>景点特色</h3>
+                                    <p>柏林是德国首都、也是德国最大城市。现有居民340万、是德国文化、政治、传媒中心。是东西方交汇点、欧洲的心脏、城市面积883平方公里。柏林是德国首都、也是德国最大城市。现有居民340万、是德国文化、政治、传媒中心。是东西方交汇点、欧洲的心脏、城市面积883平方公里。</p>
+                                    <h3><i class="sign-star"><img src="../images/sign-star.png" alt=""/></i>酒店特色</h3>
+                                    <p>柏林是德国首都、也是德国最大城市。现有居民340万、是德国文化、政治、传媒中心。是东西方交汇点、欧洲的心脏、城市面积883平方公里。柏林是德国首都、也是德国最大城市。现有居民340万、是德国文化、政治、传媒中心。是东西方交汇点、欧洲的心脏。</p>
+                                    <h3><i class="sign-star"><img src="../images/sign-star.png" alt=""/></i>重要</h3>
+                                    <p>该商品为秒杀商品，已经订购，不退不改，请于xx时间前往xx地点换票入园，门票为当天有效</p>
+                                </div>
+                            </div>
+                            <div class="modulebox" me-anchor="2">
+                                <div class="title">
+                                    <img src="../images/detail-tab2.png" alt=""/>
+                                </div>
+                                <div class="content">
+                                    <h3><i class="sign-star"><img src="../images/sign-star.png" alt=""/></i>费用包含</h3>
+                                    <p>酒店]雅兰酒店高级标准房（双床）</p>
+                                    <p>拿房须知：酒店前台报优游网+名字+手机号码拿房</p>
+                                    <p>[景区]东部华侨城大侠谷门票2张</p>
+                                    <p>取票须知：凭优游网下发券号于景区售票处取票 营业时间09：00—18:00【取票地址请以最终短信确认为准】</p>
+                                    <p>*房间免费宽带上网</p>
+                                    <p>*入住期间免费停车</p>
+                                    <h3><i class="sign-star"><img src="../images/sign-star.png" alt=""/></i>费用不包含</h3>
+                                    <p>酒店]雅兰酒店高级标准房（双床）</p>
+                                    <p>拿房须知：酒店前台报优游网+名字+手机号码拿房</p>
+                                    <p>[景区]东部华侨城大侠谷门票2张</p>
+                                    <p>取票须知：凭优游网下发券号于景区售票处取票 营业时间09：00—18:00【取票地址请以最终短信确认为准】</p>
+                                    <p>*房间免费宽带上网</p>
+                                    <p>*入住期间免费停车</p>
+                                </div>
+                            </div>
+                            <div class="modulebox" me-anchor="3">
+                                <div class="title">
+                                    <img src="../images/detail-tab3.png" alt=""/>
+                                </div>
+                                <div class="content">
+                                    <p>南京巴厘原墅·沃阁温泉酒店坐落于半山之上，群山环抱，绿树掩映，视野开阔，美景迷人，温泉喷涌，是风靡世界半山原生态的代表作。 会馆的豪华餐厅可供一百多人同时就餐。餐厅的鱼翅、鲍鱼、海鲜名闻遐迩，具有丰富的营养价值；各式川菜、粤菜、炖品、当地土菜、精致面点亦颇具特色，让人回味无穷。 温泉SPA水疗区，内有温泉泡汤池，温泉游泳池，桑拿蒸房，健身南京巴厘原墅·沃阁温泉酒店坐落于半山之上，群山</p>
+                                    <ul class="content-split">
+                                        <li><img src="../images/detail-tab3-01.jpg" alt=""/></li>
+                                        <li><img src="../images/detail-tab3-02.jpg" alt=""/></li>
+                                    </ul>
+                                    <p>南京巴厘原墅·沃阁温泉酒店坐落于半山之上，群山环抱，绿树掩映，视野开阔，美景迷人，温泉喷涌，是风靡世界半山原生态的代表作。 会馆的豪华餐厅可供一百多人同时就餐。餐厅的鱼翅、鲍鱼、海鲜名闻遐迩，具有丰富</p>
+                                    <p>的营养价值；各式川菜、粤菜、炖品、当地土菜、精致面点亦颇具特色，让人回味无穷。 温泉SPA水疗区，内有温泉泡汤池，温泉游泳池，桑拿蒸房，健身南京巴厘原墅·沃阁温泉酒店坐落于半山之上，群山环抱，绿树掩映，视野开阔，美景迷人，温泉喷涌，是风靡世界半山原生态的代表作。 会馆的豪华餐厅可供一百多人同时就餐。餐厅的鱼翅、鲍鱼、海鲜名闻遐迩，具有丰富的营养价值；各式川菜、粤菜、炖品、当地土菜、精致面点亦颇具特色，让人回味无穷。 温泉SPA水疗区，内有温泉泡汤池，温泉游泳池，桑拿蒸房，健身</p>
+                                    <img src="../images/detail-tab3-03.jpg" alt=""/>
+                                    <p>南京巴厘原墅·沃阁温泉酒店坐落于半山之上，群山环抱，绿树掩映，视野开阔，美景迷人，温泉喷涌，是风靡世界半山原生态的代表作。 会馆的豪华餐厅可供一百多人同时就餐。餐厅的鱼翅、鲍鱼、海鲜名闻遐迩，具有丰富</p>
+                                </div>
+                            </div>
+                            <div class="modulebox" me-anchor="4">
+                                <div class="title">
+                                    <img src="../images/detail-tab4.png" alt=""/>
+                                </div>
+                                <div class="content">
+                                    <h3><i class="sign-star"><img src="../images/sign-star.png" alt=""/></i>预订须知</h3>
+                                    <p>柏林是德国首都、也是德国最大城市。现有居民340万、是德国文化、政治、传媒中心。是东西方交汇点、欧洲的心脏、城市面积883平方公里。柏林是德国首都、也是德国最大城市。现有居民340万、是德国文化、政治、传媒中心。是东西方交汇点、欧洲的心脏、城市面积883平方公里。</p>
+                                    <h3><i class="sign-star"><img src="../images/sign-star.png" alt=""/></i>使用须知</h3>
+                                    <p>柏林是德国首都、也是德国最大城市。现有居民340万、是德国文化、政治、传媒中心。是东西方交汇点、欧洲的心脏、城市面积883平方公里。柏林是德国首都、也是德国最大城市。现有居民340万、是德国文化、政治、传媒中心。是东西方交汇点、欧洲的心脏、城市面积883平方公里。</p>
+                                    <h3><i class="sign-star"><img src="../images/sign-star.png" alt=""/></i>退票说明</h3>
+                                    <p>柏林是德国首都、也是德国最大城市。现有居民340万、是德国文化、政治、传媒中心。是东西方交汇点、欧洲的心脏、城市面积883平方公里。柏林是德国首都、也是德国最大城市。现有居民340万、是德国文化、政治、传媒中心。是东西方交汇点、欧洲的心脏、城市面积883平方公里。</p>
+                                </div>
+                            </div>
+                            <div class="modulebox" me-anchor="5">
+                                <div class="title">
+                                    <img src="../images/detail-tab5.png" alt=""/>
+                                </div>
+                                <div class="content">
+                                    <h3><i class="sign-star"><img src="../images/sign-star.png" alt=""/></i>自驾</h3>
+                                    <p>柏林是德国首都、也是德国最大城市。现有居民340万、是德国文化、政治、传媒中心。是东西方交汇点、欧洲的心脏、城市面积883平方公里。柏林是德国首都、也是德国最大城市。现有居民340万、是德国文化、政治、传媒中心。是东西方交汇点、欧洲的心脏、城市面积883平方公里。</p>
+                                    <h3><i class="sign-star"><img src="../images/sign-star.png" alt=""/></i>背客</h3>
+                                    <p>柏林是德国首都、也是德国最大城市。现有居民340万、是德国文化、政治、传媒中心。是东西方交汇点、欧洲的心脏、城市面积883平方公里。柏林是德国首都、也是德国最大城市。现有居民340万、是德国文化、政治、传媒中心。是东西方交汇点、欧洲的心脏。</p>
+                                </div>
+                            </div>
+                            <div class="modulebox" me-anchor="6">
+                                <div class="title">
+                                    <img src="../images/detail-tab6.png" alt=""/>
+                                </div>
+                                <div class="content">
+                                    <p>1、南京巴厘原墅·沃阁温泉酒店坐落于半山之上，群山环抱，绿树掩映，视野开阔，</p>
+                                    <p>2、美景迷人，温泉喷涌，是风靡世界半山原生态的代表作。 会馆的豪华餐厅可供一百多人同时就餐。</p>
+                                    <p>3、餐厅的鱼翅、鲍鱼、海鲜名闻遐迩，具有丰富的营养价值；各式川菜、粤菜、炖品、当地土菜、精致面点亦颇具特色</p>
+                                    <p>4、让人回味无穷。 温泉SPA水疗区，内有温泉泡汤池，温泉游泳池，桑拿蒸房，健身</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="sidebar">
+                        <h2 class="tt">其他优惠</h2>
+                        <a class="link" href="#">
+                            <img src="../images/detail-01.jpg" alt=""/>
+                        </a>
+                        <a class="link" href="#">
+                            <img src="../images/detail-01.jpg" alt=""/>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>首页</title>
+    <link rel="stylesheet" href="../css/project.css"/>
+    <script src="../js/avalon.js" data-main="../js/p-index"></script>
+</head>
+<body class="p-index" ms-controller="Ctrl">
+    <div ms-include-src="'header.html'" data-include-replace="true"></div>
+    <div class="me-body">
+        <div class="me-wrapper">
+            <div class="banner"></div>
+            <div class="nav">
+                <div class="me-main">
+                    <ul>
+                        <li><a class="btn red3" href="#" me-anchor="#limit"><i class="sign-clock"><img src="../images/sign-clock.png" alt=""/></i>限时秒杀</a></li>
+                        <li><a class="btn orange" href="#" me-anchor="#bargain"><i class="sign-sale"><img src="../images/sign-sale.png" alt=""/></i>特价购买</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="me-main">
+                <div class="modulebox limit" me-anchor="limit">
+                    <div class="title">
+                        <i class="sign-clock"><img src="../images/sign-clock.png" alt=""/></i>限时秒杀
+                        <i class="x1"></i>
+                    </div>
+                    <div class="product" ms-repeat-item="data.limit">
+                        <div class="imgtext">
+                            <div class="img">
+                                <img ms-attr-src="item.img.src" alt=""/>
+                                <div class="info"><i class="sign-clock"><img src="../images/sign-clock.png" alt=""/></i><span ms-text="item.img.info"></span></div>
+                            </div>
+                            <div class="tips">
+                                <span class="tips-ct">
+                                    <span ms-text="item.tips"></span>
+                                    <span class="x1"></span>
+                                    <span class="x2"></span>
+                                </span>
+                            </div>
+                        </div>
+                        <div class="product-info">
+                            <ul class="list">
+                                <li><h2>
+                                    <div class="tips">
+                                        <span class="tips-ct">
+                                            <span>限时秒杀</span>
+                                            <span class="x1"></span>
+                                        </span>
+                                    </div>
+                                    <span ms-text="item.name"></span></h2></li>
+                                <li>游玩时间：<span ms-text="item.date"></span></li>
+                                <li>兑票地址：<span ms-text="item.address"></span></li>
+                                <li>产品特色：<div class="product-detail">
+                                        <a href="detail.html" ms-text="item.detail"></a>
+                                    </div>
+                                </li>
+                                <li>
+                                    <div class="pricebox">
+                                        <div class="tips">
+                                            <span class="tips-ct">
+                                                <span><span ms-text="4.2"></span>折</span>
+                                                <span class="x1"></span>
+                                            </span>
+                                        </div>
+                                        <span class="price"><i class="sign-price">¥</i><span ms-text="item.price"></span></span>
+                                        <span class="price-old"><i class="sign-price">¥</i><span ms-text="item.oldprice"></span></span>
+                                        <span class="price-drop-info">净省</span>
+                                        <span class="price-drop"><i class="sign-price">¥</i><span ms-text="item.oldprice - item.price"></span></span>
+                                    </div>
+                                </li>
+                                <li>
+                                    <a class="btn red btn-buy" href="orderfill.html">点击抢购</a>
+                                    <a class="btn btn-qrcode" href="#">手机抢购<img src="../images/qrcode-wx.png" alt=""/></a>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+                <div class="modulebox bargain" me-anchor="bargain">
+                    <div class="title">
+                        <i class="sign-sale"><img src="../images/sign-sale.png" alt=""/></i>特价购买乐不停
+                        <i class="x1"></i>
+                    </div>
+                    <div class="product" ms-repeat-item="data.bargain">
+                        <div class="imgtext">
+                            <div class="img">
+                                <img ms-attr-src="item.img.src" alt=""/>
+                                <div class="info"><i class="sign-clock"><img src="../images/sign-clock.png" alt=""/></i><span ms-text="item.img.info"></span></div>
+                            </div>
+                            <div class="tips">
+                                <span class="tips-ct">
+                                    <span ms-text="item.tips"></span>
+                                    <span class="x1"></span>
+                                    <span class="x2"></span>
+                                </span>
+                            </div>
+                        </div>
+                        <div class="product-info">
+                            <ul class="list">
+                                <li><h2>
+                                    <div class="tips">
+                                        <span class="tips-ct">
+                                            <span>限时秒杀</span>
+                                            <span class="x1"></span>
+                                        </span>
+                                    </div>
+                                    <span ms-text="item.name"></span></h2></li>
+                                <li>游玩时间：<span ms-text="item.date"></span></li>
+                                <li>兑票地址：<span ms-text="item.address"></span></li>
+                                <li>产品特色：<div class="product-detail">
+                                    <a href="detail.html" ms-text="item.detail"></a>
+                                </div>
+                                </li>
+                                <li>
+                                    <div class="pricebox">
+                                        <div class="tips">
+                                            <span class="tips-ct">
+                                                <span><span ms-text="4.2"></span>折</span>
+                                                <span class="x1"></span>
+                                            </span>
+                                        </div>
+                                        <span class="price"><i class="sign-price">¥</i><span ms-text="item.price"></span></span>
+                                        <span class="price-old"><i class="sign-price">¥</i><span ms-text="item.oldprice"></span></span>
+                                        <span class="price-drop-info">净省</span>
+                                        <span class="price-drop"><i class="sign-price">¥</i><span ms-text="item.oldprice - item.price"></span></span>
+                                    </div>
+                                </li>
+                                <li>
+                                    <a class="btn red btn-buy" href="orderfill.html">点击抢购</a>
+                                    <a class="btn btn-qrcode" href="#">手机抢购<img src="../images/qrcode-wx.png" alt=""/></a>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

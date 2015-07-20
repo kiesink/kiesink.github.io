@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>我的订单</title>
+    <link rel="stylesheet" href="../css/project.css"/>
+    <script src="../js/avalon.js" data-main="../js/p-orderquery"></script>
+</head>
+<body class="p-orderquery" ms-controller="Ctrl">
+    <div ms-include-src="'header.html'" data-include-replace="true"></div>
+    <div class="me-body">
+        <div class="me-wrapper">
+            <div class="me-main">
+                <div class="img">
+                    <img src="../images/myorder-01.jpg" alt=""/>
+                </div>
+                <div class="query">
+                    <h2>查询订单</h2>
+                    <p class="info">请输入订单联系人姓名，手机号</p>
+                    <ul class="list">
+                        <li>
+                            <i class="sign-import">*</i>联系人：
+                            <input type="text" class="input-text" placeholder="姓名"/>
+                        </li>
+                        <li>
+                            <i class="sign-import">*</i>手机号：
+                            <input type="text" class="input-text" placeholder="接收提取凭证"/>
+                        </li>
+                    </ul>
+                    <p class="btn-wrapper">
+                        <a class="btn red2 btn-query" href="#">查询</a>
+                    </p>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

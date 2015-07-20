@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>订单查询</title>
+    <link rel="stylesheet" href="../css/project.css"/>
+    <script src="../js/avalon.js" data-main="../js/p-orderfill"></script>
+</head>
+<body class="p-orderfill" ms-controller="Ctrl">
+    <div ms-include-src="'header.html'" data-include-replace="true"></div>
+    <div class="me-body">
+        <div class="me-wrapper">
+            <div class="me-main">
+                <ol class="crumb">
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="discount.html">活动首页</a></li>
+                    <li class="active">选择产品</li>
+                </ol>
+                <ol class="steps">
+                    <li>选择产品<i class="x1"></i><i class="x2"></i></li>
+                    <li class="on">订单填写<i class="x1"></i><i class="x2"></i></li>
+                    <li>在线支付<i class="x1"></i><i class="x2"></i></li>
+                    <li>成功预订<i class="x1"></i><i class="x2"></i></li>
+                </ol>
+                <div class="modulebox">
+                    <h2 class="title">填写订单信息</h2>
+                    <table class="tablelist">
+                        <thead>
+                            <tr>
+                                <th>产品名称</th>
+                                <th>会员价</th>
+                                <th>产品数量</th>
+                                <th>游玩日期</th>
+                                <th>小计</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>深圳华侨城茶溪谷门票</td>
+                                <td><i class="sign-price">¥</i><span ms-text="data.price"></span></td>
+                                <td>
+                                    <span class="input-num">
+                                        <button class="input-btn"><i class="fa" ms-text="fa.minus">&#xf068;</i></button>
+                                        <input type="text" class="input-text" ms-duplex="data.count"/>
+                                        <button class="input-btn"><i class="fa" ms-text="fa.plus">&#xf067;</i></button>
+                                    </span>
+                                </td>
+                                <td>
+                                    <span class="input-date">
+                                        <input type="text" class="input-text" ms-duplex="data.date"/>
+                                        <button class="input-btn"><i class="fa" ms-text="fa.calendar">&#xf073;</i></button>
+                                    </span>
+                                </td>
+                                <td><span ms-text="data.price * data.count"></span>元</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                    <ul class="list">
+                        <li>请输入订单联系人</li>
+                        <li>
+                            <i class="sign-import">*</i>联系人：
+                            <input type="text" class="input-text" placeholder="姓名"/>
+                        </li>
+                        <li>
+                            <i class="sign-import">*</i>手机号：
+                            <input type="text" class="input-text" placeholder="接收提取凭证"/>
+                        </li>
+                        <li>
+                            <hr/>
+                            <i class="sign-import">*</i>订单状态：
+                            <span class="order-state">待支付</span>
+                            <span class="order-price">订单总额：<span class="price"><i class="sign-price">¥</i>120</span></span></li>
+                        <li class="btn-wrapper">
+                            <a class="btn gray btn-cancel" href="#">取消</a>
+                            <a class="btn red btn-pay" href="#">现在支付</a>
+                        </li>
+                    </ul>
+                    <div class="attention">
+                        <h3>温馨提示：</h3>
+                        <p>1、本活动产品有预订数量限制，提交订单后则占用其限额，支付失败请在"我的订单"中重新支付；</p>
+                        <p>2、订单有效期为30分钟，超时作废，作废后释放限额可再次购买。</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

@@ -1,0 +1,451 @@
+@import "../../common/css/web";
+@import "../../common/css/font-awesome.min.css";
+//@import "../../common/css/animate";
+//.anm-ed();
+//.anm-cfs();
+@import "../../common/css/ed-animate.css";
+@import "../../common/css/cfs-animate.css";
+
+//...
+// 0-Method
+// 1-position-float-state(dp-of)
+// 2-wh-box(mg-bd-pd)
+// 3-font
+// 4-other
+
+
+// 重置样式
+.global-reset();
+
+// 公共样式
+html {
+  height: 100%;
+  font-family: "Microsoft YaHei"; //, "Consolas", "Courier";
+}
+
+body {
+  background-color: #fff;
+  color: #555;
+}
+
+a {
+  color: #555;
+  text-decoration: none;
+  img {
+    border: 0;
+  }
+}
+
+.using-btn();
+.using-tab();
+.using-tips();
+.using-imgtext();
+.using-crumb();
+.using-sidebar();
+.using-steps();
+.using-pricebox();
+.using-sign();
+.using-modulebox();
+.using-tablelist();
+.using-form();
+.using-js();
+
+// 公共变量
+@margin-top: 25px;
+
+// 公用部分样式
+.me-main {
+  .me-center(1200px);
+}
+
+// 页头样式
+.me-header {
+  @header-height: 85px;
+  .me-layout(top-fixed, @header-height);
+  .me-wrapper {
+    background-color: #CA3D4E;
+    .me-main {
+      .relative();
+    }
+  }
+  .logo {
+    .absolute(0, _, _, 0);
+    display: block;
+    width: 140px;
+    height: @header-height;
+    line-height: @header-height;
+  }
+  .nav-split {
+    .me-center(780px);
+    .me-split(3);
+    overflow: hidden;
+    > li {
+      height: @header-height;
+      //line-height: @header-height;
+      a {
+        display: block;
+        .margin(14px, _, _, -2px);
+        border-left: 2px solid #ccc;
+        padding: 5px 0;
+        text-align: center;
+      }
+    }
+  }
+}
+
+// 主体内容样式
+.me-body {
+  .me-layout();
+  .me-wrapper {
+    .me-main {
+      //...
+      .margin(20px, _);
+    }
+  }
+}
+
+// 页尾样式
+.me-footer {
+  .me-layout(bottom-fixed, 60px);
+  .me-wrapper {
+    background-color: #CA3D4E;
+    .me-main {
+      //...
+    }
+  }
+}
+
+// 一个列表的公共类
+.list {
+  li {
+    line-height: 30px;
+    padding: 5px 0;
+    li {
+      line-height: 1;
+      padding: 0;
+    }
+  }
+}
+
+// 【p-】开头的为单页面样式
+// 【折扣】样式
+.p-discount {
+  background-color: #B22E44;
+  .me-body {
+    //.me-wrapper {
+    .me-main {
+      .padding(20px, _, 60px);
+      background-color: #fff;
+    }
+    //}
+    .main-split {
+      .me-split(3);
+      a {
+        display: block;
+        margin: 10px 15px;
+      }
+    }
+    .imgtext {
+      .imgtext.v1;
+    }
+  }
+}
+
+// 【详情】样式
+.p-detail {
+  .me-body {
+    //.me-wrapper {
+    //.me-main {
+    .main-product {
+      .clearfix();
+      margin-top: @margin-top - 10px;
+      .border-radius(5px);
+      padding: 10px 0;
+      background-color: #eee;
+    }
+    .imgtext {
+      .imgtext.v2;
+      display: inline;
+      float: left;
+      width: 420px;
+      margin: 10px 15px 10px 30px;
+      .img {
+        img {
+          height: 330px;
+        }
+      }
+    }
+    .product-info {
+      float: right;
+      width: 710px;
+      margin-top: 10px;
+      .pricebox {
+        background-color: #fff;
+      }
+      .list {
+        width: 500px;
+        h2 {
+          font-size: 22px;
+        }
+        .child-ticket {
+          float: right;
+        }
+      }
+    }
+    .btn-buy {
+      .btn.big;
+    }
+    .main-detail {
+      .clearfix();
+      margin-top: @margin-top;
+    }
+    .tab-wrapper {
+      float: left;
+      width: 960px;
+      .tab {
+        .tab.v1;
+        ul {
+          .me-split(7);
+          background-color: #fff;
+        }
+      }
+      .tab-ct {
+        border: 1px solid #eee;
+        border-top: 0;
+        padding: 20px 20px 20px;
+
+      }
+    }
+    .sidebar {
+      float: right;
+      .sidebar.v1;
+    }
+    .modulebox {
+      .modulebox.v3;
+    }
+    .content-split{
+      .me-split(2);
+    }
+    //}
+    //}
+  }
+}
+
+// 【订单】样式
+.p-orderfill {
+  .me-body {
+    //.me-wrapper {
+    //.me-main {
+    .steps {
+      .steps.v1;
+      .me-split(4.01);
+      margin-top: @margin-top - 10px;
+      border: 1px solid #eee;
+    }
+    .modulebox {
+      .modulebox.v1;
+      margin-top: @margin-top;
+      .tablelist {
+        .tablelist.v1;
+        td:nth-child(5) {
+          color: #f00;
+        }
+      }
+      ul {
+        margin-top: @margin-top;
+        li {
+          .relative();
+          hr {
+            height: 0;
+            border: 0;
+            border-bottom: 1px solid #eee;
+          }
+        }
+      }
+    }
+    .order-state {
+      color: #db0000;
+    }
+    .order-price {
+      .absolute(_, 10px, _, _);
+      .price {
+        font-size: 22px;
+        color: #f00;
+      }
+    }
+    &.btn-wrapper {
+      height: 80px;
+      margin-top: 10px;
+      text-align: right;
+      .btn {
+        .btn.big;
+        margin-left: 10px;
+      }
+    }
+    .attention {
+      margin-top: @margin-top;
+      line-height: 1.8;
+      font-size: 14px;
+      color: #999;
+      h3 {
+        font-size: 16px;
+        font-weight: bold;
+      }
+    }
+    //}
+    //}
+  }
+}
+
+// 【我的订单】样式
+.p-orderquery {
+  .me-body {
+    //.me-wrapper {
+    .me-main {
+      padding-top: 70px;
+    }
+    .img {
+      float: left;
+      width: 500px;
+      height: 305px;
+      margin-left: 75px;
+    }
+    .query {
+      float: right;
+      width: 460px;
+      height: 261px;
+      margin-right: 75px;
+      border: 2px solid #FDA3A3;
+      padding: 20px;
+      h2 {
+        border-bottom: 1px solid #ddd;
+        padding-bottom: 20px;
+        font-size: 24px;
+        text-align: center;
+      }
+    }
+    .info {
+      .margin(30px, _, _, 10px);
+    }
+    .list {
+      margin: 10px;
+      border: 1px solid #ddd;
+      padding: 10px;
+      li {
+        padding: 8px;
+      }
+    }
+    .btn-wrapper {
+      text-align: center;
+    }
+    .btn-query {
+      .padding(_, 3em);
+    }
+    //}
+  }
+}
+
+// 【首页】样式
+.p-index {
+  background-color: #B22E44;
+  .me-body {
+    //.me-wrapper {
+    .banner {
+      height: 600px;
+      background: url("../images/index-banner.jpg") no-repeat center 0;
+    }
+    .nav {
+      background-color: #c93d4e;
+      .me-main {
+        .margin(0, _);
+      }
+      ul {
+        .me-split(2);
+      }
+      li {
+        font-size: 40px;
+      }
+      .btn {
+        .btn.full;
+        .btn.angle;
+      }
+    }
+    //.me-main {
+    .modulebox {
+      .modulebox.v2;
+      padding-bottom: 20px;
+    }
+    .product {
+      .clearfix();
+      margin: 20px 20px 0;
+      .border-radius(5px);
+      padding: 8px 5px;
+      background-color: #eee;
+      .imgtext {
+        .imgtext.v1;
+        float: left;
+        width: 400px;
+        margin: 10px 15px;
+      }
+      .product-info {
+        float: right;
+        width: 680px;
+      }
+    }
+    .list {
+      li {
+        vertical-align: top;
+        h2 {
+          .relative();
+          font-size: 22px;
+        }
+      }
+    }
+    .product-detail {
+      .inline-block();
+      overflow: hidden;
+      width: 540px;
+      height: 60px;
+      .omit(60px, #eee);
+    }
+    .pricebox {
+      .margin(-10px, _, _, -10px);
+    }
+    .btn-buy {
+      .btn.big;
+    }
+    .btn-qrcode {
+      margin-left: 10px;
+    }
+    .limit {
+      .modulebox.v2.red;
+      h2 {
+        .tips {
+          .tips.v1;
+          .tips.v1.red;
+        }
+      }
+    }
+    .bargain {
+      .modulebox.v2.orange;
+      margin-top: @margin-top;
+      h2 {
+        .tips {
+          .tips.v1;
+          .tips.v1.orange;
+        }
+      }
+    }
+    //}
+    //}
+  }
+}
+
+
+
+
+
+
+
+
+
