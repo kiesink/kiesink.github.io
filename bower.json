@@ -1,0 +1,42 @@
+{
+  "name": "Learn",
+  "version": "0.0.0",
+  "homepage": "",
+  "authors": [
+    "xyz"
+  ],
+  "license": "MIT",
+  "ignore": [
+    "down/"
+  ],
+  "devDependencies": {
+    "underscore": "~1.8.3",
+    "backbone": "~1.2.0",
+    "jquery": "~2.1.4",
+    "requirejs": "~2.1.18",
+    "seajs": "~3.0.0",
+    "angularjs": "~1.3.15",
+    "avalon": "~1.4.3",
+    "zepto": "~1.1.6",
+    "ember": "~1.12.0",
+    "express": "~4.12.4",
+    "extjs": "~5.1.1-451",
+    "iscroll": "~5.1.3",
+    "knockout": "~3.3.0",
+    "doT": "~1.0.1",
+    "artTemplate": "~3.0.1",
+    "mustache": "~2.0.0",
+    "handlebars": "~3.0.3",
+    "animate.css": "~3.3.0",
+    "mootools": "~1.5.1",
+    "prototype.js": "~1.7.1",
+    "dojo": "~1.10.4",
+    "react": "~0.13.3",
+    "coffeescript": "~1.9.2",
+    "hammerjs": "~2.0.4",
+    "promise": "~0.2.2",
+    "less": "~2.5.1",
+    "yui": "~3.18.1",
+    "angular-guide-zh": "https://github.com/jingyanjiaoliu/angular-guide-zh.git"
+  }
+}
